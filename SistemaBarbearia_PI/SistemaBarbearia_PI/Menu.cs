@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace SistemaBarbearia_PI
 {
-    public partial class Menu : Form
-    {
-        public Menu()
-        {
-            InitializeComponent();
-          
-        }
-        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmCadastroUsuario form = new FrmCadastroUsuario();
-            form.Show();
-        }
+	public partial class Menu : Form
+	{
+		public Menu()
+		{
+			InitializeComponent();
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-    }
+		}
+		private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FrmCadastroUsuario form = new FrmCadastroUsuario();
+			form.Show();
+		}
+
+		private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+	}
 }

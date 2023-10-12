@@ -9,7 +9,7 @@ namespace SistemaBarbearia_PI
     public class Funcoes
     {
         public string teste = "teste";
-
+        public string viuArtur = "???";
         public static bool VerivicaVazio(Form formulario)
         {
             bool passou = false;
