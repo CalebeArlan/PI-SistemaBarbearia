@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Hi75Ed5vghYMST07BHV0xAV9TZ9x+ptNjvZYD2KoCuy/VeT2+d3Vv/uBJhM1BCAqTdyX+e3Op6osKs+LHX6IeA==",
+  "dgSpecHash": "7lcNPc6KcSKFsoiRx/9XcWaBlREaf+LPLLBTxidpyEeqh5BiKOcp/e3NC2mh9ldLCUUegRJ3o7UHTCU7psVZhg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\caleb\\OneDrive\\Documentos\\_Programas e diretorios\\Projeto Integrador Sistema Barbearia\\SistemaBarbearia_PI v4.2\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
+  "projectFilePath": "C:\\Users\\caleb\\OneDrive\\Documentos\\_Programas e diretorios\\Projeto Integrador Sistema Barbearia\\SistemaBarbearia_PI\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\caleb\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\caleb\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",
