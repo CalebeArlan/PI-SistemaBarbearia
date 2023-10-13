@@ -10,13 +10,14 @@ namespace SistemaBarbearia_PI
 {
     public class Usuario
     {
-        public Usuario(string nomeusuario, string senha, string tipoacesso)
+        public Usuario(int idusuario, string nomeusuario, string senha, string tipoacesso)
         {
+            IdUsuario = idusuario;
             NomeUsuario = nomeusuario;
             Senha = senha;
             TipoAcesso = tipoacesso;
         }
-
+        public int IdUsuario;
         public string NomeUsuario;
         public string Senha;
         public string TipoAcesso;
