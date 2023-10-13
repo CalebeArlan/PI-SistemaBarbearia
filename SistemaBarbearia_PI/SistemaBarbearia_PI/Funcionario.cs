@@ -8,7 +8,7 @@ namespace SistemaBarbearia_PI
 {
     public class Funcionario
     {
-        public Funcionario(int idfuncionario, string nomefuncionario, int nascfuncionario, string cpffuncionario, string rgfuncionario, string enderecofuncionario, int codcargo, string emailfuncionario)
+        public Funcionario(int idfuncionario, string nomefuncionario, string nascfuncionario, string cpffuncionario, string rgfuncionario, string enderecofuncionario, int codcargo, string emailfuncionario)
         {
             IdFuncionario = idfuncionario;
             NomeFuncionario = nomefuncionario;
@@ -21,7 +21,7 @@ namespace SistemaBarbearia_PI
         }
         public int IdFuncionario;
         public string NomeFuncionario;
-        public int DataNascFuncionario;
+        public string DataNascFuncionario;
         public string CPFFuncionario;
         public string RGFuncionario;
         public string EnderecoFuncionario;
