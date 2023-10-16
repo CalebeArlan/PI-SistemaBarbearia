@@ -8,9 +8,9 @@ namespace SistemaBarbearia_PI
 {
     public class Cliente
     {
-        public Cliente(int idcliente, string nomecliente, string telefonecliente, string emailcliente, string nasccliente, string cpfcliente, string rgcliente)
+        public Cliente(string nomecliente, string telefonecliente, string emailcliente, string nasccliente, string cpfcliente, string rgcliente)
         {
-            IdCliente = idcliente;
+            //IdCliente = idcliente;
             NomeCliente = nomecliente;
             TelefoneCliente = telefonecliente;
             EmailCliente = emailcliente;
@@ -19,7 +19,7 @@ namespace SistemaBarbearia_PI
             RGCliente = rgcliente;
             
         }
-        public int IdCliente;
+       // public int IdCliente;
         public string NomeCliente;
         public string TelefoneCliente;
         public string EmailCliente;

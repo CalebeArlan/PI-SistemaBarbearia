@@ -27,5 +27,10 @@ namespace SistemaBarbearia_PI
 		{
 			this.Close();
 		}
+
+		private void usuárioToolStripMenuItem2_Click(object sender, EventArgs e)
+		{
+			//TODO
+		}
 	}
 }

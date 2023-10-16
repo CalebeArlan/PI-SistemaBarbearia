@@ -12,7 +12,6 @@ using System.Windows.Forms;
 namespace SistemaBarbearia_PI
 {
     public partial class FrmCadastroUsuario : Form
-
     {
         public string strConexao = "server=localhost;uid=root;database=barbearia";
         public FrmCadastroUsuario()
