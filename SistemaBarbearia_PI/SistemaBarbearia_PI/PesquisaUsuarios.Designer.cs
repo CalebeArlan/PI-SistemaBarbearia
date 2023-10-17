@@ -52,12 +52,15 @@
 			serviçoToolStripMenuItem2 = new ToolStripMenuItem();
 			vendaToolStripMenuItem = new ToolStripMenuItem();
 			horárioToolStripMenuItem2 = new ToolStripMenuItem();
-			textBox1 = new TextBox();
+			TxtNome = new TextBox();
 			label4 = new Label();
 			dataGridView1 = new DataGridView();
 			usuarioBindingSource = new BindingSource(components);
 			button1 = new Button();
 			imageList1 = new ImageList(components);
+			id = new DataGridViewTextBoxColumn();
+			nome_usuario = new DataGridViewTextBoxColumn();
+			tipo_acesso = new DataGridViewTextBoxColumn();
 			menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
@@ -204,13 +207,13 @@
 			horárioToolStripMenuItem2.Size = new Size(169, 26);
 			horárioToolStripMenuItem2.Text = "Horário";
 			// 
-			// textBox1
+			// TxtNome
 			// 
-			textBox1.Location = new Point(12, 89);
-			textBox1.Name = "textBox1";
-			textBox1.Size = new Size(423, 27);
-			textBox1.TabIndex = 3;
-			textBox1.Text = "Digite um nome para pesquisar.";
+			TxtNome.Location = new Point(12, 89);
+			TxtNome.Name = "TxtNome";
+			TxtNome.Size = new Size(423, 27);
+			TxtNome.TabIndex = 3;
+			TxtNome.Text = "Digite um nome para pesquisar.";
 			// 
 			// label4
 			// 
@@ -224,9 +227,8 @@
 			// 
 			// dataGridView1
 			// 
-			dataGridView1.AutoGenerateColumns = false;
 			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView1.DataSource = usuarioBindingSource;
+			dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, nome_usuario, tipo_acesso });
 			dataGridView1.Location = new Point(12, 178);
 			dataGridView1.Name = "dataGridView1";
 			dataGridView1.RowHeadersWidth = 51;
@@ -247,6 +249,7 @@
 			button1.Size = new Size(56, 27);
 			button1.TabIndex = 10;
 			button1.UseVisualStyleBackColor = true;
+			button1.Click += button1_Click;
 			// 
 			// imageList1
 			// 
@@ -254,6 +257,27 @@
 			imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
 			imageList1.TransparentColor = Color.Transparent;
 			imageList1.Images.SetKeyName(0, "LupaPng.png");
+			// 
+			// id
+			// 
+			id.HeaderText = "id";
+			id.MinimumWidth = 6;
+			id.Name = "id";
+			id.Width = 125;
+			// 
+			// nome_usuario
+			// 
+			nome_usuario.HeaderText = "nome_usuario";
+			nome_usuario.MinimumWidth = 6;
+			nome_usuario.Name = "nome_usuario";
+			nome_usuario.Width = 125;
+			// 
+			// tipo_acesso
+			// 
+			tipo_acesso.HeaderText = "tipo_acesso";
+			tipo_acesso.MinimumWidth = 6;
+			tipo_acesso.Name = "tipo_acesso";
+			tipo_acesso.Width = 125;
 			// 
 			// PesquisaUsuarios
 			// 
@@ -263,7 +287,7 @@
 			Controls.Add(button1);
 			Controls.Add(dataGridView1);
 			Controls.Add(label4);
-			Controls.Add(textBox1);
+			Controls.Add(TxtNome);
 			Controls.Add(menuStrip1);
 			Name = "PesquisaUsuarios";
 			Text = "PesquisaUsuarios";
@@ -299,11 +323,14 @@
 		private ToolStripMenuItem serviçoToolStripMenuItem2;
 		private ToolStripMenuItem vendaToolStripMenuItem;
 		private ToolStripMenuItem horárioToolStripMenuItem2;
-		private TextBox textBox1;
+		private TextBox TxtNome;
 		private Label label4;
 		private DataGridView dataGridView1;
 		private BindingSource usuarioBindingSource;
 		private Button button1;
 		private ImageList imageList1;
+		private DataGridViewTextBoxColumn id;
+		private DataGridViewTextBoxColumn nome_usuario;
+		private DataGridViewTextBoxColumn tipo_acesso;
 	}
 }

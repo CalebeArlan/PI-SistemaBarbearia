@@ -30,7 +30,8 @@ namespace SistemaBarbearia_PI
 
 		private void usuárioToolStripMenuItem2_Click(object sender, EventArgs e)
 		{
-			//TODO
+			PesquisaUsuarios pesquisaUsuarios = new PesquisaUsuarios();
+			pesquisaUsuarios.Show();
 		}
 	}
 }

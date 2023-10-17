@@ -13,6 +13,7 @@ namespace SistemaBarbearia_PI
     public class Usuario
     {
 		public string strConexao = "server=localhost;uid=root;database=barbearia";
+        public Usuario() { }
 		public Usuario(string nomeusuario, string senha, string tipoacesso)
         {
 
@@ -33,7 +34,7 @@ namespace SistemaBarbearia_PI
             {
 				MySqlConnection MySqlConexaoBanco = new MySqlConnection(strConexao);
                 MySqlConexaoBanco.Open();
-                string select = $"select id, nome_usuario, tipoacesso from usuarios where nome like =  %'{nome}'%;";
+                string select = $"select id, nome_usuario, tipo_acesso from usuarios where nome_usuario like '%{nome}%';";
                 MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
                 comandoSQL.CommandText = select;
 
@@ -42,6 +43,7 @@ namespace SistemaBarbearia_PI
 			}
             catch (Exception ex)
             {
+                MessageBox.Show("Erro no banco de dados - método localizarUsuario: " + ex.Message);
                 return null;
             }
            
