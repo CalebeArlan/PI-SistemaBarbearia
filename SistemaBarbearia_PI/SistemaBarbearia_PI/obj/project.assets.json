@@ -149,6 +149,19 @@
           }
         }
       },
+      "MySqlConnector/2.2.7": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/MySqlConnector.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MySqlConnector.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Portable.BouncyCastle/1.9.0": {
         "type": "package",
         "compile": {
@@ -720,6 +733,33 @@
         "runtimes/win-x64/native/k5sprt64.dll",
         "runtimes/win-x64/native/krb5_64.dll",
         "runtimes/win-x64/native/krbcc64.dll"
+      ]
+    },
+    "MySqlConnector/2.2.7": {
+      "sha512": "rwFa71MlOJ142S+BXDvtLRdAIn7l6PTNWu+Xehs2qRehK8dckjKqwvK8azEADCMkQyXS1LXgh9HkSvItpTi6WA==",
+      "type": "package",
+      "path": "mysqlconnector/2.2.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net461/MySqlConnector.dll",
+        "lib/net461/MySqlConnector.xml",
+        "lib/net471/MySqlConnector.dll",
+        "lib/net471/MySqlConnector.xml",
+        "lib/net6.0/MySqlConnector.dll",
+        "lib/net6.0/MySqlConnector.xml",
+        "lib/net7.0/MySqlConnector.dll",
+        "lib/net7.0/MySqlConnector.xml",
+        "lib/netcoreapp3.1/MySqlConnector.dll",
+        "lib/netcoreapp3.1/MySqlConnector.xml",
+        "lib/netstandard2.0/MySqlConnector.dll",
+        "lib/netstandard2.0/MySqlConnector.xml",
+        "lib/netstandard2.1/MySqlConnector.dll",
+        "lib/netstandard2.1/MySqlConnector.xml",
+        "logo.png",
+        "mysqlconnector.2.2.7.nupkg.sha512",
+        "mysqlconnector.nuspec"
       ]
     },
     "Portable.BouncyCastle/1.9.0": {
@@ -1781,23 +1821,29 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "MySql.Data >= 8.1.0"
+      "MySql.Data >= 8.1.0",
+      "MySqlConnector >= 2.2.7"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\caleb\\.nuget\\packages\\": {}
+    "C:\\Users\\Terceiros Anos\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\caleb\\OneDrive\\Documentos\\_Programas e diretorios\\Projeto Integrador Sistema Barbearia\\SistemaBarbearia_PI\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
+      "projectUniqueName": "C:\\351_2023\\Calebe_e_Artur\\Sistema Barbearia\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
       "projectName": "SistemaBarbearia_PI",
-      "projectPath": "C:\\Users\\caleb\\OneDrive\\Documentos\\_Programas e diretorios\\Projeto Integrador Sistema Barbearia\\SistemaBarbearia_PI\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
-      "packagesPath": "C:\\Users\\caleb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\caleb\\OneDrive\\Documentos\\_Programas e diretorios\\Projeto Integrador Sistema Barbearia\\SistemaBarbearia_PI\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\obj\\",
+      "projectPath": "C:\\351_2023\\Calebe_e_Artur\\Sistema Barbearia\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
+      "packagesPath": "C:\\Users\\Terceiros Anos\\.nuget\\packages\\",
+      "outputPath": "C:\\351_2023\\Calebe_e_Artur\\Sistema Barbearia\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\caleb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Terceiros Anos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1826,6 +1872,10 @@
           "MySql.Data": {
             "target": "Package",
             "version": "[8.1.0, )"
+          },
+          "MySqlConnector": {
+            "target": "Package",
+            "version": "[2.2.7, )"
           }
         },
         "imports": [

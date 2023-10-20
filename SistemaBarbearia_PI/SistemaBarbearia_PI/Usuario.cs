@@ -14,16 +14,14 @@ namespace SistemaBarbearia_PI
     {
 		public string strConexao = "server=localhost;uid=root;database=barbearia";
         public Usuario() { }
-		public Usuario(string nomeusuario, string senha, string tipoacesso)
+		public Usuario(int idusuario, string nomeusuario, string senha, string tipoacesso)
         {
-
-           // IdUsuario = idusuario; <-- Comentado porque ele precisava ser construido no construtor, porém na inserção não temos o id, porque é AutoIncrement.
-           // Isso pode gerar problemas futuros.
+            IdUsuario = idusuario;
             NomeUsuario = nomeusuario;
             Senha = senha;
             TipoAcesso = tipoacesso;
         }
-       // public int IdUsuario;
+        public int IdUsuario;
         public string NomeUsuario;
         public string Senha;
         public string TipoAcesso;
@@ -39,7 +37,9 @@ namespace SistemaBarbearia_PI
                 comandoSQL.CommandText = select;
 
                 MySqlDataReader reader = comandoSQL.ExecuteReader();
+                MySqlConexaoBanco.Close();
                 return reader;
+
 			}
             catch (Exception ex)
             {

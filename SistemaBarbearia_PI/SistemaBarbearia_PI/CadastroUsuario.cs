@@ -22,11 +22,8 @@ namespace SistemaBarbearia_PI
 
         private void button1_Click(object sender, EventArgs e)
         { 
-            Usuario usuario = new Usuario(TxtUsuario.Text, TxtSenha.Text, Convert.ToString(CbTipoAcesso.SelectedIndex));
-            
-
+            Usuario usuario = new Usuario(0, TxtUsuario.Text, TxtSenha.Text, Convert.ToString(CbTipoAcesso.SelectedIndex));
             var connection = new MySqlConnection(strConexao);
-
 
             if (Funcoes.VerivicaVazio(this) == false)
             {
@@ -38,7 +35,6 @@ namespace SistemaBarbearia_PI
             }
 
         }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
