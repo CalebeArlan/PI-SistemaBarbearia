@@ -49,7 +49,7 @@ namespace SistemaBarbearia_PI
             {
                 Menu form = new Menu();
                 form.Show();
-                
+                   
                 this.Visible = false;
             }
 
