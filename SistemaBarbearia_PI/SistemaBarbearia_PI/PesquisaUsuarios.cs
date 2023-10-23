@@ -14,59 +14,64 @@ using MySqlDataReader = MySql.Data.MySqlClient.MySqlDataReader;
 
 namespace SistemaBarbearia_PI
 {
-    public partial class PesquisaUsuarios : Form
-    {
-        public PesquisaUsuarios()
-        {
-            InitializeComponent();
-        }
+	public partial class PesquisaUsuarios : Form
+	{
+		public PesquisaUsuarios()
+		{
+			InitializeComponent();
+		}
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!TxtNome.Text.Equals(""))
-                {
-                    Usuario usuario = new Usuario();
-                    usuario.NomeUsuario = TxtNome.Text;
+		private void button1_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (!TxtNome.Text.Equals(""))
+				{
+					Usuario usuario = new Usuario();
+					usuario.NomeUsuario = TxtNome.Text;
 
-                    MySqlDataReader reader = usuario.LocalizaUsuario(usuario.NomeUsuario);
+					MySqlDataReader reader = usuario.LocalizaUsuario(usuario.NomeUsuario);
 
-                    if (reader != null)
-                    {
-                        if (reader.HasRows)
-                        {
-                            reader.Read();
-                            string? coluna1 = reader["id"].ToString();
-                            string? coluna2 = reader["nome_usuario"].ToString();
-                            string? coluna3 = reader["tipo_acesso"].ToString();
+					if (reader != null)
+					{
+						if (reader.HasRows)
+						{
+							reader.Read();
+							string? coluna1 = reader["id"].ToString();
+							string? coluna2 = reader["nome_usuario"].ToString();
+							string? coluna3 = reader["tipo_acesso"].ToString();
 
-                            dataGridView1.Rows.Add(coluna1, coluna2, coluna3);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Usuário não encontrado.");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuário não encontrado.");
-                        TxtNome.Clear();
-                        TxtNome.Focus();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Favor preencher o campo Nome para pesquisa");
-                    TxtNome.Clear();
-                    TxtNome.Focus();
+							dataGridView1.Rows.Add(coluna1, coluna2, coluna3);
+						}
+						else
+						{
+							MessageBox.Show("Usuário não encontrado.");
+						}
+					}
+					else
+					{
+						MessageBox.Show("Usuário não encontrado.");
+						TxtNome.Clear();
+						TxtNome.Focus();
+					}
+				}
+				else
+				{
+					MessageBox.Show("Favor preencher o campo Nome para pesquisa");
+					TxtNome.Clear();
+					TxtNome.Focus();
 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao encontrar usuário: " + ex.Message);
-            }
-        }
-    }
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Erro ao encontrar usuário: " + ex.Message);
+			}
+		}
+
+		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			//TODO
+		}
+	}
 }
