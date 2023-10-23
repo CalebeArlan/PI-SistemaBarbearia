@@ -21,7 +21,7 @@ namespace SistemaBarbearia_PI
         }
 
         private void button1_Click(object sender, EventArgs e)
-        { 
+        {
             Usuario usuario = new Usuario(0, TxtUsuario.Text, TxtSenha.Text, Convert.ToString(CbTipoAcesso.SelectedIndex));
             var connection = new MySqlConnection(strConexao);
 

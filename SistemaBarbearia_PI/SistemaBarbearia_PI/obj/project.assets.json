@@ -1826,19 +1826,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\caleb\\.nuget\\packages\\": {}
+    "C:\\Users\\Terceiros Anos\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\caleb\\OneDrive\\Documentos\\_Programas e diretorios\\Projeto Integrador Sistema Barbearia\\SistemaBarbearia_PI\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
+      "projectUniqueName": "C:\\351_2023\\Calebe_e_Artur\\Sistema Barbearia\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
       "projectName": "SistemaBarbearia_PI",
-      "projectPath": "C:\\Users\\caleb\\OneDrive\\Documentos\\_Programas e diretorios\\Projeto Integrador Sistema Barbearia\\SistemaBarbearia_PI\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
-      "packagesPath": "C:\\Users\\caleb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\caleb\\OneDrive\\Documentos\\_Programas e diretorios\\Projeto Integrador Sistema Barbearia\\SistemaBarbearia_PI\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\obj\\",
+      "projectPath": "C:\\351_2023\\Calebe_e_Artur\\Sistema Barbearia\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
+      "packagesPath": "C:\\Users\\Terceiros Anos\\.nuget\\packages\\",
+      "outputPath": "C:\\351_2023\\Calebe_e_Artur\\Sistema Barbearia\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\caleb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Terceiros Anos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
