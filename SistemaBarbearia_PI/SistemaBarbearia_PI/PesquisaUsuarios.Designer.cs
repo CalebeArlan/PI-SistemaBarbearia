@@ -61,6 +61,7 @@
             usuarioBindingSource = new BindingSource(components);
             button1 = new Button();
             imageList1 = new ImageList(components);
+            BtnSair = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
@@ -283,11 +284,22 @@
             imageList1.TransparentColor = Color.Transparent;
             imageList1.Images.SetKeyName(0, "LupaPng.png");
             // 
+            // BtnSair
+            // 
+            BtnSair.Location = new Point(468, 66);
+            BtnSair.Name = "BtnSair";
+            BtnSair.Size = new Size(75, 23);
+            BtnSair.TabIndex = 11;
+            BtnSair.Text = "Sair";
+            BtnSair.UseVisualStyleBackColor = true;
+            BtnSair.Click += BtnSair_Click;
+            // 
             // PesquisaUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
+            Controls.Add(BtnSair);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(label4);
@@ -338,5 +350,6 @@
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn nome_usuario;
         private DataGridViewTextBoxColumn tipo_acesso;
+        private Button BtnSair;
     }
 }

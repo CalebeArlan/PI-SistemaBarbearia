@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using MySqlDataReader = MySql.Data.MySqlClient.MySqlDataReader;
 
 namespace SistemaBarbearia_PI
@@ -36,6 +37,7 @@ namespace SistemaBarbearia_PI
                     {
                         if (reader.HasRows)
                         {
+                            dataGridView1.Rows.Clear();
                             while (reader.Read())
                             {
                                 string? coluna1 = reader["id"].ToString();
@@ -44,6 +46,8 @@ namespace SistemaBarbearia_PI
 
                                 dataGridView1.Rows.Add(coluna1, coluna2, coluna3);
                             }
+
+
                         }
                         else
                         {
@@ -66,9 +70,11 @@ namespace SistemaBarbearia_PI
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
+        { 
+            Usuario usuario = new Usuario();
+            usuario.IdUsuario = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            usuario.NomeUsuario = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
+            usuario.TipoAcesso = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
 
             AlterarUsuario alterarusuario = new AlterarUsuario();
             alterarusuario.Show();
@@ -87,13 +93,16 @@ namespace SistemaBarbearia_PI
 
                 dataGridView1.Rows.Add(coluna1, coluna2, coluna3);
             }
-
-
         }
 
         private void TxtNome_Click(object sender, EventArgs e)
         {
             TxtNome.Clear();
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
