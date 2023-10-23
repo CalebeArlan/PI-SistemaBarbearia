@@ -26,8 +26,31 @@ namespace SistemaBarbearia_PI
         public string Senha;
         public string TipoAcesso;
 
+        public MySqlDataReader LocalizaTodosUsuarios()
+        {
+            try
+            {
+                MySqlConnection MySqlConexaoBanco = new MySqlConnection(strConexao);
+                MySqlConexaoBanco.Open();
+                string select = "select id, nome_usuario, tipo_acesso from usuarios;";
+                MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
+                comandoSQL.CommandText = select;
+
+                MySqlDataReader reader = comandoSQL.ExecuteReader();
+                return reader;
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro no banco de dados - método localizaTodosUsuario: " + ex.Message);
+                return null;
+            }
+        }
+
         public MySqlDataReader LocalizaUsuario(string nome)
         {
+            
+
             try
             {
 				MySqlConnection MySqlConexaoBanco = new MySqlConnection(strConexao);
@@ -35,9 +58,7 @@ namespace SistemaBarbearia_PI
                 string select = $"select id, nome_usuario, tipo_acesso from usuarios where nome_usuario like '%{nome}%';";
                 MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
                 comandoSQL.CommandText = select;
-
                 MySqlDataReader reader = comandoSQL.ExecuteReader();
-                MySqlConexaoBanco.Close();
                 return reader;
 
 			}

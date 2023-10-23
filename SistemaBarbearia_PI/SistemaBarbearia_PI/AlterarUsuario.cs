@@ -17,6 +17,9 @@ namespace SistemaBarbearia_PI
             InitializeComponent();
         }
 
-
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

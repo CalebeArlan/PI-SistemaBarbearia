@@ -49,6 +49,7 @@
             BtnSair.TabIndex = 19;
             BtnSair.Text = "Sair";
             BtnSair.UseVisualStyleBackColor = true;
+            BtnSair.Click += BtnSair_Click;
             // 
             // CbTipoAcesso
             // 
