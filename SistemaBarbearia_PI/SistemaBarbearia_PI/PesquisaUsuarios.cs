@@ -15,94 +15,98 @@ using MySqlDataReader = MySql.Data.MySqlClient.MySqlDataReader;
 
 namespace SistemaBarbearia_PI
 {
-    public partial class PesquisaUsuarios : Form
-    {
-        public PesquisaUsuarios()
-        {
-            InitializeComponent();
-        }
+	public partial class PesquisaUsuarios : Form
+	{
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (!TxtNome.Text.Equals(""))
-                {
-                    Usuario usuario = new Usuario();
-                    usuario.NomeUsuario = TxtNome.Text;
+		public PesquisaUsuarios()
+		{
+			InitializeComponent();
+		}
 
-                    MySqlDataReader reader = usuario.LocalizaUsuario(usuario.NomeUsuario);
+		private void button1_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (!TxtNome.Text.Equals(""))
+				{
+					Usuario usuario = new Usuario();
+					usuario.NomeUsuario = TxtNome.Text;
 
-                    if (reader != null)
-                    {
-                        if (reader.HasRows)
-                        {
-                            dataGridView1.Rows.Clear();
-                            while (reader.Read())
-                            {
-                                string? coluna1 = reader["id"].ToString();
-                                string? coluna2 = reader["nome_usuario"].ToString();
-                                string? coluna3 = reader["tipo_acesso"].ToString();
+					MySqlDataReader reader = usuario.LocalizaUsuario(usuario.NomeUsuario);
 
-                                dataGridView1.Rows.Add(coluna1, coluna2, coluna3);
-                            }
+					if (reader != null)
+					{
+						if (reader.HasRows)
+						{
+							dataGridView1.Rows.Clear();
+							while (reader.Read())
+							{
+								string? coluna1 = reader["id"].ToString();
+								string? coluna2 = reader["nome_usuario"].ToString();
+								string? coluna3 = reader["senha"].ToString();
+								string? coluna4 = reader["tipo_acesso"].ToString();
+
+								dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4);
+							}
 
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Usuário não encontrado.");
-                            TxtNome.Clear();
-                            TxtNome.Focus();
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Favor preencher o campo Nome para pesquisa");
-                    TxtNome.Focus();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao encontrar usuário: " + ex.Message);
-            }
-        }
+						}
+						else
+						{
+							MessageBox.Show("Usuário não encontrado.");
+							TxtNome.Clear();
+							TxtNome.Focus();
+						}
+					}
+				}
+				else
+				{
+					MessageBox.Show("Favor preencher o campo Nome para pesquisa");
+					TxtNome.Focus();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Erro ao encontrar usuário: " + ex.Message);
+			}
+		}
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        { 
-            Usuario usuario = new Usuario();
-            usuario.IdUsuario = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            usuario.NomeUsuario = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
-            usuario.TipoAcesso = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
+		public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			Usuario usuarioAlterar = new Usuario();
+			usuarioAlterar.IdUsuario = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+			usuarioAlterar.NomeUsuario = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
+			usuarioAlterar.Senha = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
+			usuarioAlterar.TipoAcesso = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
 
-            AlterarUsuario alterarusuario = new AlterarUsuario();
-            alterarusuario.Show();
-        }
+			AlterarUsuario alterarusuario = new AlterarUsuario(usuarioAlterar.IdUsuario, usuarioAlterar.NomeUsuario, usuarioAlterar.TipoAcesso, usuarioAlterar.Senha);
+			alterarusuario.Show();
+		}
 
-        private void PesquisaUsuarios_Load(object sender, EventArgs e)
-        {
-            Usuario usuario = new Usuario();
-            MySqlDataReader reader = usuario.LocalizaTodosUsuarios();
+		private void PesquisaUsuarios_Load(object sender, EventArgs e)
+		{
+			Usuario usuario = new Usuario();
+			MySqlDataReader reader = usuario.LocalizaTodosUsuarios();
 
-            while (reader.Read())
-            {
-                string? coluna1 = reader["id"].ToString();
-                string? coluna2 = reader["nome_usuario"].ToString();
-                string? coluna3 = reader["tipo_acesso"].ToString();
+			while (reader.Read())
+			{
+				string? coluna1 = reader["id"].ToString();
+				string? coluna2 = reader["nome_usuario"].ToString();
+				string? coluna3 = reader["senha"].ToString();
+				string? coluna4 = reader["tipo_acesso"].ToString();
 
-                dataGridView1.Rows.Add(coluna1, coluna2, coluna3);
-            }
-        }
+				dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4);
+			}
+		}
 
-        private void TxtNome_Click(object sender, EventArgs e)
-        {
-            TxtNome.Clear();
-        }
+		private void TxtNome_Click(object sender, EventArgs e)
+		{
+			TxtNome.Clear();
+		}
 
-        private void BtnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-    }
+		private void BtnSair_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+	}
 }

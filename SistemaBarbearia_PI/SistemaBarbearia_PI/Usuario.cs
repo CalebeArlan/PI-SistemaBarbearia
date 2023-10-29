@@ -32,7 +32,7 @@ namespace SistemaBarbearia_PI
             {
                 MySqlConnection MySqlConexaoBanco = new MySqlConnection(strConexao);
                 MySqlConexaoBanco.Open();
-                string select = "select id, nome_usuario, tipo_acesso from usuarios;";
+                string select = "select id, nome_usuario, senha, tipo_acesso from usuarios;";
                 MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
                 comandoSQL.CommandText = select;
 
@@ -55,7 +55,7 @@ namespace SistemaBarbearia_PI
             {
 				MySqlConnection MySqlConexaoBanco = new MySqlConnection(strConexao);
                 MySqlConexaoBanco.Open();
-                string select = $"select id, nome_usuario, tipo_acesso from usuarios where nome_usuario like '%{nome}%';";
+                string select = $"select id, nome_usuario, senha, tipo_acesso from usuarios where nome_usuario like '%{nome}%';";
                 MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
                 comandoSQL.CommandText = select;
                 MySqlDataReader reader = comandoSQL.ExecuteReader();
