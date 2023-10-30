@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace SistemaBarbearia_PI
 {
 	public partial class AlterarUsuario : Form
 	{
+		public string strConexao = "server=localhost;uid=root;database=barbearia";
 		public AlterarUsuario()
 		{
 			InitializeComponent();
@@ -24,8 +26,6 @@ namespace SistemaBarbearia_PI
 			LblId.Text = Convert.ToString(idUsuario);
 			TxtSenha.Text = senha;
 			CbTipoAcesso.SelectedIndex = Convert.ToInt32(tipoAcesso);
-
-
 		}
 
 		private void BtnSair_Click(object sender, EventArgs e)
@@ -40,7 +40,27 @@ namespace SistemaBarbearia_PI
 
 		private void BtnCadastrar_Click(object sender, EventArgs e)
 		{
+			Usuario usuario = new Usuario(0, TxtUsuario.Text, TxtSenha.Text, Convert.ToString(CbTipoAcesso.SelectedIndex));
+			
 
+			if (Funcoes.VerivicaVazio(this) == false)
+			{
+				var connection = new MySqlConnection(strConexao);
+				connection.Open();
+				try
+				{
+					MySqlCommand cmd = new MySqlCommand($"UPDATE usuarios SET nome_usuario = '{usuario.NomeUsuario}', senha = '{usuario.Senha}', tipo_acesso = {usuario.TipoAcesso} WHERE id = '{LblId.Text}'", connection);
+					cmd.ExecuteNonQuery();
+					connection.Close();
+					MessageBox.Show("Registro alterado com sucesso.");
+				}
+				catch(Exception ex)
+				{
+					MessageBox.Show("Ocorreu um erro na alteração do registro. " + ex.Message);
+				}
+
+				
+			}
 		}
 	}
 }
