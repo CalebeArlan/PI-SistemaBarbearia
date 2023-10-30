@@ -45,12 +45,19 @@ namespace SistemaBarbearia_PI
             int count = Convert.ToInt32(cmd.ExecuteScalar());
             connection.Close();
 
+            TxtSenha.Clear();
+            TxtUsuario.Clear();
+
             if (count > 0)
             {
                 Menu form = new Menu();
                 form.Show();
                    
                 this.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha inválidos. Acesso negado.");
             }
 
 
