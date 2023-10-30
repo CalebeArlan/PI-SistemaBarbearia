@@ -33,16 +33,10 @@ namespace SistemaBarbearia_PI
 			this.Close();
 		}
 
-		private void AlterarUsuario_Load(object sender, EventArgs e)
-		{
-
-		}
-
 		private void BtnCadastrar_Click(object sender, EventArgs e)
 		{
 			Usuario usuario = new Usuario(0, TxtUsuario.Text, TxtSenha.Text, Convert.ToString(CbTipoAcesso.SelectedIndex));
 			
-
 			if (Funcoes.VerivicaVazio(this) == false)
 			{
 				var connection = new MySqlConnection(strConexao);
@@ -53,13 +47,17 @@ namespace SistemaBarbearia_PI
 					cmd.ExecuteNonQuery();
 					connection.Close();
 					MessageBox.Show("Registro alterado com sucesso.");
-				}
-				catch(Exception ex)
+					//atualizar a grid
+
+					PesquisaUsuarios f1 = (PesquisaUsuarios)Application.OpenForms["PesquisaUsuarios"];
+					f1.PesquisarTodosUsuarios();
+
+
+                }
+                catch (Exception ex)
 				{
 					MessageBox.Show("Ocorreu um erro na alteração do registro. " + ex.Message);
 				}
-
-				
 			}
 		}
 	}

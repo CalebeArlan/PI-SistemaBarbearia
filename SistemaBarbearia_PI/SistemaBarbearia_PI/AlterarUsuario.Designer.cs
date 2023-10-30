@@ -173,7 +173,6 @@
 			Margin = new Padding(3, 4, 3, 4);
 			Name = "AlterarUsuario";
 			Text = "AlterarUsuario";
-			Load += AlterarUsuario_Load;
 			ResumeLayout(false);
 			PerformLayout();
 		}
