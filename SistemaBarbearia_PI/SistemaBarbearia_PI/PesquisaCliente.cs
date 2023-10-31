@@ -1,23 +1,18 @@
-﻿using MySql.Data.MySqlClient;
-using MySqlConnector;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using MySqlDataReader = MySql.Data.MySqlClient.MySqlDataReader;
-
 namespace SistemaBarbearia_PI
 {
-    public partial class PesquisaUsuarios : Form
+    public partial class PesquisaCliente : Form
     {
-        public PesquisaUsuarios()
+        public PesquisaCliente()
         {
             InitializeComponent();
         }
@@ -67,32 +62,22 @@ namespace SistemaBarbearia_PI
             {
                 MessageBox.Show("Erro ao encontrar usuário: " + ex.Message);
             }
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Usuario usuario = new Usuario();
-            usuario.IdUsuario = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            usuario.NomeUsuario = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
-            usuario.TipoAcesso = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
+            Cliente cliente = new Cliente();
+            cliente.Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            cliente.Nome = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
+            cliente.Telefone = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
+            cliente.Email = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
+            cliente.DataNasc = Convert.ToString(dataGridView1.CurrentRow.Cells[4].Value);
+            cliente.CPF = Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value);
+            cliente.RG = Convert.ToString(dataGridView1.CurrentRow.Cells[6].Value);
 
-            AlterarUsuario alterarusuario = new AlterarUsuario();
-            alterarusuario.Show();
-        }
-
-        private void PesquisaUsuarios_Load(object sender, EventArgs e)
-        {
-            Usuario usuario = new Usuario();
-            MySqlDataReader reader = usuario.LocalizaTodosUsuarios();
-
-            while (reader.Read())
-            {
-                string? coluna1 = reader["id"].ToString();
-                string? coluna2 = reader["nome_usuario"].ToString();
-                string? coluna3 = reader["tipo_acesso"].ToString();
-
-                dataGridView1.Rows.Add(coluna1, coluna2, coluna3);
-            }
+            /* AlterarCliente alterarcliente = new AlterarCliente();
+             alterarcliente.Show();*/
         }
 
         private void TxtNome_Click(object sender, EventArgs e)
