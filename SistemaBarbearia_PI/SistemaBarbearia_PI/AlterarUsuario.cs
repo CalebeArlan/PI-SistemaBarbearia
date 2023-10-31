@@ -13,7 +13,6 @@ namespace SistemaBarbearia_PI
 {
 	public partial class AlterarUsuario : Form
 	{
-		public string strConexao = "server=localhost;uid=root;database=barbearia";
 		public AlterarUsuario()
 		{
 			InitializeComponent();
@@ -39,7 +38,7 @@ namespace SistemaBarbearia_PI
 			
 			if (Funcoes.VerivicaVazio(this) == false)
 			{
-				var connection = new MySqlConnection(strConexao);
+				var connection = new MySqlConnection(Conexao.strConexao);
 				connection.Open();
 				try
 				{
@@ -47,7 +46,6 @@ namespace SistemaBarbearia_PI
 					cmd.ExecuteNonQuery();
 					connection.Close();
 					MessageBox.Show("Registro alterado com sucesso.");
-					//atualizar a grid
 
 					PesquisaUsuarios f1 = (PesquisaUsuarios)Application.OpenForms["PesquisaUsuarios"];
 					f1.PesquisarTodosUsuarios();

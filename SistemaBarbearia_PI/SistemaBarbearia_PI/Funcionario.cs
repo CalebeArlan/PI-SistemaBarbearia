@@ -6,26 +6,28 @@ using System.Threading.Tasks;
 
 namespace SistemaBarbearia_PI
 {
-    public class Funcionario
+    public class Funcionario : IPessoa
     {
-        public Funcionario(int idfuncionario, string nomefuncionario, string nascfuncionario, string cpffuncionario, string rgfuncionario, string enderecofuncionario, int codcargo, string emailfuncionario)
+        public Funcionario(int idfuncionario, string nomefuncionario, string nascfuncionario, string telefone, string cpffuncionario, string rgfuncionario, string enderecofuncionario, string codcargo, string emailfuncionario)
         {
-            IdFuncionario = idfuncionario;
-            NomeFuncionario = nomefuncionario;
-            DataNascFuncionario = nascfuncionario;
-            CPFFuncionario = cpffuncionario;
-            RGFuncionario = rgfuncionario;
-            EnderecoFuncionario = enderecofuncionario;
-            CodCargo = codcargo;
-            EmailFuncionario = emailfuncionario;
+            Id = idfuncionario;
+            Nome = nomefuncionario;
+            DataNasc = nascfuncionario;
+            Telefone = telefone;
+            CPF = cpffuncionario;
+            RG = rgfuncionario;
+            Endereco = enderecofuncionario;
+            Cargo = codcargo;
+            Email = emailfuncionario;
         }
-        public int IdFuncionario;
-        public string NomeFuncionario;
-        public string DataNascFuncionario;
-        public string CPFFuncionario;
-        public string RGFuncionario;
-        public string EnderecoFuncionario;
-        public int CodCargo;
-        public string EmailFuncionario;
-    }
+        public int Id { get; set; }
+        public string Nome { get; set; }
+		public string DataNasc { get; set; }
+        public string Telefone { get; set; }
+		public string CPF { get; set; }
+		public string RG { get; set; }
+		public string Endereco { get; set; }
+		public string Cargo { get; set; }
+		public string Email { get; set; }
+	}
 }

@@ -4,6 +4,9 @@
     <Compile Update="AlterarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CadastroFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="LoginUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

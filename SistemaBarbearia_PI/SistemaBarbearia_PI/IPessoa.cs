@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaBarbearia_PI
 {
-    internal interface IPessoa
+    public interface IPessoa
     {
         string Nome { get; set; }
         string CPF { get; set; }

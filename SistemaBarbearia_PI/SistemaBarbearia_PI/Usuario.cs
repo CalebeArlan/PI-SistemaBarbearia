@@ -12,7 +12,6 @@ namespace SistemaBarbearia_PI
 {
     public class Usuario
     {
-		public string strConexao = "server=localhost;uid=root;database=barbearia";
         public Usuario() { }
 		public Usuario(int idusuario, string nomeusuario, string senha, string tipoacesso)
         {
@@ -30,7 +29,7 @@ namespace SistemaBarbearia_PI
         {
             try
             {
-                MySqlConnection MySqlConexaoBanco = new MySqlConnection(strConexao);
+                MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao) ;
                 MySqlConexaoBanco.Open();
                 string select = "select id, nome_usuario, senha, tipo_acesso from usuarios;";
                 MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
@@ -49,11 +48,9 @@ namespace SistemaBarbearia_PI
 
         public MySqlDataReader LocalizaUsuario(string nome)
         {
-            
-
             try
             {
-				MySqlConnection MySqlConexaoBanco = new MySqlConnection(strConexao);
+				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
                 MySqlConexaoBanco.Open();
                 string select = $"select id, nome_usuario, senha, tipo_acesso from usuarios where nome_usuario like '%{nome}%';";
                 MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();

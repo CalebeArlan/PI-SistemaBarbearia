@@ -25,15 +25,21 @@ namespace SistemaBarbearia_PI
 
 		private void sairToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-            FrmLoginUsuario login = (FrmLoginUsuario)Application.OpenForms["FrmLoginUsuario"];
+			FrmLoginUsuario login = (FrmLoginUsuario)Application.OpenForms["FrmLoginUsuario"];
 			login.Visible = true;
-            this.Close();
+			this.Close();
 		}
 
 		public void usuárioToolStripMenuItem2_Click(object sender, EventArgs e)
 		{
 			PesquisaUsuarios pesquisaUsuarios = new PesquisaUsuarios();
 			pesquisaUsuarios.Show();
+		}
+
+		private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			CadastroFuncionario cadastrofuncionarios = new CadastroFuncionario();
+			cadastrofuncionarios.Show();
 		}
 	}
 }

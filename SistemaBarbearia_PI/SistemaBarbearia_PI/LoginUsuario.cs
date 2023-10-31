@@ -5,8 +5,6 @@ namespace SistemaBarbearia_PI
 {
     public partial class FrmLoginUsuario : Form
     {
-
-        public string strConexao = "server=localhost;uid=root;database=barbearia";
         public FrmLoginUsuario()
         {
             InitializeComponent();
@@ -18,7 +16,7 @@ namespace SistemaBarbearia_PI
             try
             {
 
-                var conexao = new MySqlConnection(strConexao);
+                var conexao = new MySqlConnection(Conexao.strConexao);
                 conexao.Open();
                 MessageBox.Show("Conexão bem sucedida");
             }
@@ -36,7 +34,7 @@ namespace SistemaBarbearia_PI
         {
             string usuario = TxtUsuario.Text;
             string senha = TxtSenha.Text;
-            var connection = new MySqlConnection(strConexao);
+            var connection = new MySqlConnection(Conexao.strConexao);
 
             MySqlCommand cmd = new MySqlCommand("SELECT count(*) FROM usuarios where nome_usuario = '" + usuario + "' and senha = '" + senha + "'", connection);
             connection.Open();
