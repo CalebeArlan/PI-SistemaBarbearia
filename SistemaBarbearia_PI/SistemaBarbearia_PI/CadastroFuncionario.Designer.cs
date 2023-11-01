@@ -58,6 +58,7 @@
 			button1.TabIndex = 19;
 			button1.Text = "Sair";
 			button1.UseVisualStyleBackColor = true;
+			button1.Click += button1_Click;
 			// 
 			// label4
 			// 
@@ -150,6 +151,7 @@
 			// MtxtTelefone
 			// 
 			MtxtTelefone.Location = new Point(101, 166);
+			MtxtTelefone.Mask = "(00)00000-0000";
 			MtxtTelefone.Name = "MtxtTelefone";
 			MtxtTelefone.Size = new Size(174, 27);
 			MtxtTelefone.TabIndex = 27;
@@ -210,7 +212,7 @@
 			label6.TabIndex = 33;
 			label6.Text = "Cargo:";
 			// 
-			// CadastroFuncionáriocs
+			// CadastroFuncionario
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
@@ -234,7 +236,7 @@
 			Controls.Add(LblTelefone);
 			Controls.Add(TxtNome);
 			Controls.Add(LblNome);
-			Name = "CadastroFuncionáriocs";
+			Name = "CadastroFuncionario";
 			Text = "CadastroFuncionáriocs";
 			ResumeLayout(false);
 			PerformLayout();

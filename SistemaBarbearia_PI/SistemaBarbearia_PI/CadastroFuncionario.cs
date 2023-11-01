@@ -21,7 +21,7 @@ namespace SistemaBarbearia_PI
 		private void BtnCadastrar_Click(object sender, EventArgs e)
 		{
 
-			Funcionario funcionario = new Funcionario(0, TxtNome.Text, MtxtDataNasc.Text, MtxtTelefone.Text, MtxtCPF.Text, MtxtRG.Text, TxtEndereco.Text,TxtCargo.Text, TxtEmail.Text);
+			Funcionario funcionario = new Funcionario(0, TxtNome.Text, MtxtDataNasc.Text, MtxtTelefone.Text, MtxtCPF.Text, MtxtRG.Text, TxtEndereco.Text, TxtCargo.Text, TxtEmail.Text);
 			var connection = new MySqlConnection(Conexao.strConexao);
 
 			if (Funcoes.VerivicaVazio(this) == false)
@@ -32,6 +32,11 @@ namespace SistemaBarbearia_PI
 				connection.Close();
 				MessageBox.Show("Cadastrado com sucesso");
 			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			Close();
 		}
 	}
 }
