@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,8 +22,14 @@ namespace SistemaBarbearia_PI
 		private void BtnCadastrar_Click(object sender, EventArgs e)
 		{
 
+			
+
+
+
 			Funcionario funcionario = new Funcionario(0, TxtNome.Text, MtxtDataNasc.Text, MtxtTelefone.Text, MtxtCPF.Text, MtxtRG.Text, TxtEndereco.Text, TxtCargo.Text, TxtEmail.Text);
 			var connection = new MySqlConnection(Conexao.strConexao);
+			
+			funcionario.DataNasc =  (DateTime.Parse(funcionario.DataNasc)).ToString("yyyy-MM-dd");
 
 			if (Funcoes.VerivicaVazio(this) == false)
 			{

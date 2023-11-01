@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace SistemaBarbearia_PI
 {
     public class Funcionario : IPessoa
     {
+		public Funcionario() { }
         public Funcionario(int idfuncionario, string nomefuncionario, string nascfuncionario, string telefone, string cpffuncionario, string rgfuncionario, string enderecofuncionario, string codcargo, string emailfuncionario)
         {
             Id = idfuncionario;
@@ -29,5 +31,49 @@ namespace SistemaBarbearia_PI
 		public string Endereco { get; set; }
 		public string Cargo { get; set; }
 		public string Email { get; set; }
+
+		public static MySqlDataReader LocalizaTodosFuncionarios()
+		{
+			try
+			{
+				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
+				MySqlConexaoBanco.Open();
+				string select = "select id, nome, datanasc, cpf, rg, endereco, email, cargo from funcionarios;";
+				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
+				comandoSQL.CommandText = select;
+
+				MySqlDataReader reader = comandoSQL.ExecuteReader();
+				return reader;
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Erro no banco de dados - método localizaTodosFuncionarios: " + ex.Message);
+				return null;
+			}
+		}
+
+		public MySqlDataReader LocalizaFuncionario(string nome)
+		{
+			try
+			{
+				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
+				MySqlConexaoBanco.Open();
+				string select = $"select select id, nome, datanasc, cpf, rg, endereco, email, cargo where nome like '%{nome}%';";
+				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
+				comandoSQL.CommandText = select;
+				MySqlDataReader reader = comandoSQL.ExecuteReader();
+				return reader;
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Erro no banco de dados - método localizarFuncionario: " + ex.Message);
+				return null;
+			}
+
+
+		}
+
 	}
 }

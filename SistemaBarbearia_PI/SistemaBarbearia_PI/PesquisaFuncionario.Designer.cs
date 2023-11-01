@@ -1,6 +1,6 @@
 ﻿namespace SistemaBarbearia_PI
 {
-	partial class Menu
+	partial class PesquisaFuncionario
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,7 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			statusStrip1 = new StatusStrip();
+			components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PesquisaFuncionario));
 			menuStrip1 = new MenuStrip();
 			aToolStripMenuItem = new ToolStripMenuItem();
 			sairToolStripMenuItem = new ToolStripMenuItem();
@@ -51,18 +52,27 @@
 			serviçoToolStripMenuItem2 = new ToolStripMenuItem();
 			vendaToolStripMenuItem = new ToolStripMenuItem();
 			horárioToolStripMenuItem2 = new ToolStripMenuItem();
+			TxtNome = new TextBox();
+			label4 = new Label();
+			dataGridView1 = new DataGridView();
+			usuarioBindingSource = new BindingSource(components);
+			button1 = new Button();
+			imageList1 = new ImageList(components);
+			BtnSair = new Button();
+			id = new DataGridViewTextBoxColumn();
+			nome = new DataGridViewTextBoxColumn();
+			datanasc = new DataGridViewTextBoxColumn();
+			cpf = new DataGridViewTextBoxColumn();
+			rg = new DataGridViewTextBoxColumn();
+			endereco = new DataGridViewTextBoxColumn();
+			email = new DataGridViewTextBoxColumn();
+			cargo = new DataGridViewTextBoxColumn();
+			funcionarioBindingSource = new BindingSource(components);
 			menuStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+			((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
+			((System.ComponentModel.ISupportInitialize)funcionarioBindingSource).BeginInit();
 			SuspendLayout();
-			// 
-			// statusStrip1
-			// 
-			statusStrip1.ImageScalingSize = new Size(20, 20);
-			statusStrip1.Location = new Point(0, 578);
-			statusStrip1.Name = "statusStrip1";
-			statusStrip1.Padding = new Padding(1, 0, 16, 0);
-			statusStrip1.Size = new Size(914, 22);
-			statusStrip1.TabIndex = 0;
-			statusStrip1.Text = "Sistema de Gestão e Agendamento de Barbearia  v4.1";
 			// 
 			// menuStrip1
 			// 
@@ -71,8 +81,8 @@
 			menuStrip1.Location = new Point(0, 0);
 			menuStrip1.Name = "menuStrip1";
 			menuStrip1.Padding = new Padding(7, 3, 0, 3);
-			menuStrip1.Size = new Size(914, 30);
-			menuStrip1.TabIndex = 1;
+			menuStrip1.Size = new Size(1076, 30);
+			menuStrip1.TabIndex = 2;
 			menuStrip1.Text = "menuStrip1";
 			// 
 			// aToolStripMenuItem
@@ -87,7 +97,6 @@
 			sairToolStripMenuItem.Name = "sairToolStripMenuItem";
 			sairToolStripMenuItem.Size = new Size(117, 26);
 			sairToolStripMenuItem.Text = "Sair";
-			sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
 			// 
 			// novoToolStripMenuItem1
 			// 
@@ -107,14 +116,12 @@
 			usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
 			usuárioToolStripMenuItem.Size = new Size(169, 26);
 			usuárioToolStripMenuItem.Text = "Usuário";
-			usuárioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
 			// 
 			// funcionárioToolStripMenuItem
 			// 
 			funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
 			funcionárioToolStripMenuItem.Size = new Size(169, 26);
 			funcionárioToolStripMenuItem.Text = "Funcionário";
-			funcionárioToolStripMenuItem.Click += funcionárioToolStripMenuItem_Click;
 			// 
 			// serviçoToolStripMenuItem
 			// 
@@ -175,63 +182,191 @@
 			// usuárioToolStripMenuItem2
 			// 
 			usuárioToolStripMenuItem2.Name = "usuárioToolStripMenuItem2";
-			usuárioToolStripMenuItem2.Size = new Size(224, 26);
+			usuárioToolStripMenuItem2.Size = new Size(169, 26);
 			usuárioToolStripMenuItem2.Text = "Usuário";
-			usuárioToolStripMenuItem2.Click += usuárioToolStripMenuItem2_Click;
 			// 
 			// funcionárioToolStripMenuItem2
 			// 
 			funcionárioToolStripMenuItem2.Name = "funcionárioToolStripMenuItem2";
-			funcionárioToolStripMenuItem2.Size = new Size(224, 26);
+			funcionárioToolStripMenuItem2.Size = new Size(169, 26);
 			funcionárioToolStripMenuItem2.Text = "Funcionário";
-			funcionárioToolStripMenuItem2.Click += funcionárioToolStripMenuItem2_Click;
 			// 
 			// clienteToolStripMenuItem2
 			// 
 			clienteToolStripMenuItem2.Name = "clienteToolStripMenuItem2";
-			clienteToolStripMenuItem2.Size = new Size(224, 26);
+			clienteToolStripMenuItem2.Size = new Size(169, 26);
 			clienteToolStripMenuItem2.Text = "Cliente";
 			// 
 			// serviçoToolStripMenuItem2
 			// 
 			serviçoToolStripMenuItem2.Name = "serviçoToolStripMenuItem2";
-			serviçoToolStripMenuItem2.Size = new Size(224, 26);
+			serviçoToolStripMenuItem2.Size = new Size(169, 26);
 			serviçoToolStripMenuItem2.Text = "Serviço";
 			// 
 			// vendaToolStripMenuItem
 			// 
 			vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-			vendaToolStripMenuItem.Size = new Size(224, 26);
+			vendaToolStripMenuItem.Size = new Size(169, 26);
 			vendaToolStripMenuItem.Text = "Venda";
 			// 
 			// horárioToolStripMenuItem2
 			// 
 			horárioToolStripMenuItem2.Name = "horárioToolStripMenuItem2";
-			horárioToolStripMenuItem2.Size = new Size(224, 26);
+			horárioToolStripMenuItem2.Size = new Size(169, 26);
 			horárioToolStripMenuItem2.Text = "Horário";
 			// 
-			// Menu
+			// TxtNome
+			// 
+			TxtNome.Location = new Point(11, 89);
+			TxtNome.Name = "TxtNome";
+			TxtNome.Size = new Size(423, 27);
+			TxtNome.TabIndex = 3;
+			TxtNome.Text = "Digite um nome para pesquisar.";
+			TxtNome.Click += TxtNome_Click;
+			// 
+			// label4
+			// 
+			label4.AutoSize = true;
+			label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+			label4.Location = new Point(11, 45);
+			label4.Name = "label4";
+			label4.Size = new Size(338, 41);
+			label4.TabIndex = 8;
+			label4.Text = "Pesquisar Funcionários";
+			// 
+			// dataGridView1
+			// 
+			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, nome, datanasc, cpf, rg, endereco, email, cargo });
+			dataGridView1.Location = new Point(11, 181);
+			dataGridView1.Name = "dataGridView1";
+			dataGridView1.RowHeadersWidth = 51;
+			dataGridView1.RowTemplate.Height = 29;
+			dataGridView1.Size = new Size(1053, 330);
+			dataGridView1.TabIndex = 9;
+			dataGridView1.CellClick += dataGridView1_CellClick;
+			// 
+			// usuarioBindingSource
+			// 
+			usuarioBindingSource.DataSource = typeof(Usuario);
+			// 
+			// button1
+			// 
+			button1.ImageKey = "LupaPng.png";
+			button1.ImageList = imageList1;
+			button1.Location = new Point(441, 89);
+			button1.Name = "button1";
+			button1.Size = new Size(56, 31);
+			button1.TabIndex = 10;
+			button1.UseVisualStyleBackColor = true;
+			button1.Click += button1_Click;
+			// 
+			// imageList1
+			// 
+			imageList1.ColorDepth = ColorDepth.Depth8Bit;
+			imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+			imageList1.TransparentColor = Color.Transparent;
+			imageList1.Images.SetKeyName(0, "LupaPng.png");
+			// 
+			// BtnSair
+			// 
+			BtnSair.Location = new Point(535, 88);
+			BtnSair.Margin = new Padding(3, 4, 3, 4);
+			BtnSair.Name = "BtnSair";
+			BtnSair.Size = new Size(86, 31);
+			BtnSair.TabIndex = 11;
+			BtnSair.Text = "Sair";
+			BtnSair.UseVisualStyleBackColor = true;
+			BtnSair.Click += BtnSair_Click;
+			// 
+			// id
+			// 
+			id.HeaderText = "id";
+			id.MinimumWidth = 6;
+			id.Name = "id";
+			id.Width = 125;
+			// 
+			// nome
+			// 
+			nome.HeaderText = "Nome";
+			nome.MinimumWidth = 6;
+			nome.Name = "nome";
+			nome.Width = 125;
+			// 
+			// datanasc
+			// 
+			datanasc.HeaderText = "Data de Nascimento";
+			datanasc.MinimumWidth = 6;
+			datanasc.Name = "datanasc";
+			datanasc.Width = 125;
+			// 
+			// cpf
+			// 
+			cpf.HeaderText = "CPF";
+			cpf.MinimumWidth = 6;
+			cpf.Name = "cpf";
+			cpf.Width = 125;
+			// 
+			// rg
+			// 
+			rg.HeaderText = "RG";
+			rg.MinimumWidth = 6;
+			rg.Name = "rg";
+			rg.Width = 125;
+			// 
+			// endereco
+			// 
+			endereco.HeaderText = "Endereço";
+			endereco.MinimumWidth = 6;
+			endereco.Name = "endereco";
+			endereco.Width = 125;
+			// 
+			// email
+			// 
+			email.HeaderText = "Email";
+			email.MinimumWidth = 6;
+			email.Name = "email";
+			email.Width = 125;
+			// 
+			// cargo
+			// 
+			cargo.HeaderText = "Cargo";
+			cargo.MinimumWidth = 6;
+			cargo.Name = "cargo";
+			cargo.Width = 125;
+			// 
+			// funcionarioBindingSource
+			// 
+			funcionarioBindingSource.DataSource = typeof(Funcionario);
+			// 
+			// PesquisaFuncionario
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(914, 600);
-			Controls.Add(statusStrip1);
+			ClientSize = new Size(1076, 523);
+			Controls.Add(BtnSair);
+			Controls.Add(button1);
+			Controls.Add(dataGridView1);
+			Controls.Add(label4);
+			Controls.Add(TxtNome);
 			Controls.Add(menuStrip1);
-			MainMenuStrip = menuStrip1;
-			Margin = new Padding(3, 4, 3, 4);
-			Name = "Menu";
-			Text = "Menu";
+			Name = "PesquisaFuncionario";
+			Text = "PesquisaFuncionario";
+			Load += PesquisaUsuarios_Load;
 			menuStrip1.ResumeLayout(false);
 			menuStrip1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+			((System.ComponentModel.ISupportInitialize)usuarioBindingSource).EndInit();
+			((System.ComponentModel.ISupportInitialize)funcionarioBindingSource).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
 
 		#endregion
 
-		private StatusStrip statusStrip1;
 		private MenuStrip menuStrip1;
 		private ToolStripMenuItem aToolStripMenuItem;
+		private ToolStripMenuItem sairToolStripMenuItem;
 		private ToolStripMenuItem novoToolStripMenuItem1;
 		private ToolStripMenuItem clienteToolStripMenuItem;
 		private ToolStripMenuItem usuárioToolStripMenuItem;
@@ -244,7 +379,6 @@
 		private ToolStripMenuItem funcionárioToolStripMenuItem1;
 		private ToolStripMenuItem serviçoToolStripMenuItem1;
 		private ToolStripMenuItem horárioToolStripMenuItem1;
-		private ToolStripMenuItem sairToolStripMenuItem;
 		private ToolStripMenuItem pesquisarToolStripMenuItem;
 		private ToolStripMenuItem usuárioToolStripMenuItem2;
 		private ToolStripMenuItem funcionárioToolStripMenuItem2;
@@ -252,5 +386,21 @@
 		private ToolStripMenuItem serviçoToolStripMenuItem2;
 		private ToolStripMenuItem vendaToolStripMenuItem;
 		private ToolStripMenuItem horárioToolStripMenuItem2;
+		private TextBox TxtNome;
+		private Label label4;
+		private BindingSource usuarioBindingSource;
+		private Button button1;
+		private ImageList imageList1;
+		private Button BtnSair;
+		public DataGridView dataGridView1;
+		private DataGridViewTextBoxColumn id;
+		private DataGridViewTextBoxColumn nome;
+		private DataGridViewTextBoxColumn datanasc;
+		private DataGridViewTextBoxColumn cpf;
+		private DataGridViewTextBoxColumn rg;
+		private DataGridViewTextBoxColumn endereco;
+		private DataGridViewTextBoxColumn email;
+		private DataGridViewTextBoxColumn cargo;
+		private BindingSource funcionarioBindingSource;
 	}
 }

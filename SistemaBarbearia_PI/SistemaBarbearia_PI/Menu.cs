@@ -41,5 +41,11 @@ namespace SistemaBarbearia_PI
 			CadastroFuncionario cadastrofuncionarios = new CadastroFuncionario();
 			cadastrofuncionarios.Show();
 		}
+
+		private void funcionárioToolStripMenuItem2_Click(object sender, EventArgs e)
+		{
+			PesquisaFuncionario pesquisafuncionario = new PesquisaFuncionario();
+			pesquisafuncionario.Show();
+		}
 	}
 }
