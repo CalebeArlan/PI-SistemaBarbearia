@@ -89,5 +89,17 @@ namespace SistemaBarbearia_PI
         {
             this.Close();
         }
+
+        private void PesquisaCliente_Load(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            MySqlDataReader reader = Cliente.LocalizaTodosClientes;
+            dataGridView1.Rows.Clear();
+            while (reader.Read())
+            {
+                
+                
+            }
+        }
     }
 }

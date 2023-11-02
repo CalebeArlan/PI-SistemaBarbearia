@@ -32,7 +32,7 @@ namespace SistemaBarbearia_PI
         public string RG;
 
     }
-    public MySqlDataReader LocalizaTodosClientes()
+    public static MySqlDataReader LocalizaTodosClientes()
     {
         try
         {

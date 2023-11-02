@@ -298,6 +298,7 @@
             Controls.Add(TxtNome);
             Name = "PesquisaCliente";
             Text = "PesquisaCliente";
+            Load += PesquisaCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
