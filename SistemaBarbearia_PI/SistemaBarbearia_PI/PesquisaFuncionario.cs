@@ -43,7 +43,7 @@ namespace SistemaBarbearia_PI
 							{
 								string? coluna1 = reader["id"].ToString();
 								string? coluna2 = reader["nome"].ToString();
-								string? coluna3 = reader["datanasc"].ToString();
+								string? coluna3 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
 								string? coluna4 = reader["cpf"].ToString();
 								string? coluna5 = reader["rg"].ToString();
 								string? coluna6 = reader["endereco"].ToString();
@@ -96,7 +96,7 @@ namespace SistemaBarbearia_PI
 			{
 				string? coluna1 = reader["id"].ToString();
 				string? coluna2 = reader["nome"].ToString();
-				string? coluna3 = reader["datanasc"].ToString();
+				string? coluna3 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
 				string? coluna4 = reader["cpf"].ToString();
 				string? coluna5 = reader["rg"].ToString();
 				string? coluna6 = reader["endereco"].ToString();
@@ -116,7 +116,7 @@ namespace SistemaBarbearia_PI
 			{
 				string? coluna1 = reader["id"].ToString();
 				string? coluna2 = reader["nome"].ToString();
-				string? coluna3 = reader["datanasc"].ToString();
+				string? coluna3 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
 				string? coluna4 = reader["cpf"].ToString();
 				string? coluna5 = reader["rg"].ToString();
 				string? coluna6 = reader["endereco"].ToString();

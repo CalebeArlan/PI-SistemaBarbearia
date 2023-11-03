@@ -59,6 +59,7 @@
 			button1 = new Button();
 			imageList1 = new ImageList(components);
 			BtnSair = new Button();
+			funcionarioBindingSource = new BindingSource(components);
 			id = new DataGridViewTextBoxColumn();
 			nome = new DataGridViewTextBoxColumn();
 			datanasc = new DataGridViewTextBoxColumn();
@@ -67,7 +68,6 @@
 			endereco = new DataGridViewTextBoxColumn();
 			email = new DataGridViewTextBoxColumn();
 			cargo = new DataGridViewTextBoxColumn();
-			funcionarioBindingSource = new BindingSource(components);
 			menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
@@ -279,6 +279,10 @@
 			BtnSair.UseVisualStyleBackColor = true;
 			BtnSair.Click += BtnSair_Click;
 			// 
+			// funcionarioBindingSource
+			// 
+			funcionarioBindingSource.DataSource = typeof(Funcionario);
+			// 
 			// id
 			// 
 			id.HeaderText = "id";
@@ -296,6 +300,7 @@
 			// datanasc
 			// 
 			datanasc.HeaderText = "Data de Nascimento";
+			datanasc.MaxInputLength = 11;
 			datanasc.MinimumWidth = 6;
 			datanasc.Name = "datanasc";
 			datanasc.Width = 125;
@@ -334,10 +339,6 @@
 			cargo.MinimumWidth = 6;
 			cargo.Name = "cargo";
 			cargo.Width = 125;
-			// 
-			// funcionarioBindingSource
-			// 
-			funcionarioBindingSource.DataSource = typeof(Funcionario);
 			// 
 			// PesquisaFuncionario
 			// 
@@ -393,6 +394,7 @@
 		private ImageList imageList1;
 		private Button BtnSair;
 		public DataGridView dataGridView1;
+		private BindingSource funcionarioBindingSource;
 		private DataGridViewTextBoxColumn id;
 		private DataGridViewTextBoxColumn nome;
 		private DataGridViewTextBoxColumn datanasc;
@@ -401,6 +403,5 @@
 		private DataGridViewTextBoxColumn endereco;
 		private DataGridViewTextBoxColumn email;
 		private DataGridViewTextBoxColumn cargo;
-		private BindingSource funcionarioBindingSource;
 	}
 }
