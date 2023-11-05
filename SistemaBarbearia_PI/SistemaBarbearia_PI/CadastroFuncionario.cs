@@ -21,20 +21,15 @@ namespace SistemaBarbearia_PI
 
 		private void BtnCadastrar_Click(object sender, EventArgs e)
 		{
-
-			
-
-
-
-			Funcionario funcionario = new Funcionario(0, TxtNome.Text, MtxtDataNasc.Text, MtxtTelefone.Text, MtxtCPF.Text, MtxtRG.Text, TxtEndereco.Text, TxtCargo.Text, TxtEmail.Text);
+			Funcionario funcionario = new Funcionario(0, TxtNome.Text, MtxtDataNasc.Text, MtxtTelefone.Text, MtxtCPF.Text, MtxtRG.Text, TxtEndereco.Text, TxtCargo.Text, TxtEmail.Text, Double.Parse(TxtSalario.Text));
 			var connection = new MySqlConnection(Conexao.strConexao);
 
-			funcionario.DataNasc =  (DateTime.Parse(funcionario.DataNasc)).ToString("yyyy-MM-dd");
+			funcionario.DataNasc = (DateTime.Parse(funcionario.DataNasc)).ToString("yyyy-MM-dd");
 
 			if (Funcoes.VerivicaVazio(this) == false)
 			{
 				connection.Open();
-				MySqlCommand cmd = new MySqlCommand($"INSERT INTO `funcionarios`(`nome`, `datanasc`, `cpf`, `rg`, `endereco`, `email`, `cargo`) VALUES ('{funcionario.Nome}','{funcionario.DataNasc}','{funcionario.CPF}','{funcionario.RG}','{funcionario.Endereco}','{funcionario.Email}','{funcionario.Cargo}')", connection);
+				MySqlCommand cmd = new MySqlCommand($"INSERT INTO `funcionarios`(`nome`, `telefone`, `datanasc`, `cpf`, `rg`, `endereco`, `email`, `cargo`, `salario`) VALUES('{funcionario.Nome}','{funcionario.Telefone}','{funcionario.DataNasc}','{funcionario.CPF}','{funcionario.RG}','{funcionario.Endereco}','{funcionario.Email}','{funcionario.Cargo}',{funcionario.Salario});", connection);
 				cmd.ExecuteNonQuery();
 				connection.Close();
 				MessageBox.Show("Cadastrado com sucesso");

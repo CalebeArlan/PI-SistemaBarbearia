@@ -25,55 +25,111 @@ namespace SistemaBarbearia_PI
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			try
+			if (RdBNome.Checked == true)
 			{
-				if (!TxtNome.Text.Equals(""))
+				try
 				{
-					Funcionario funcionario = new Funcionario();
-					funcionario.Nome = TxtNome.Text;
-
-					MySqlDataReader reader = funcionario.LocalizaFuncionario(funcionario.Nome);
-
-					if (reader != null)
+					if (!TxtBusca.Text.Equals(""))
 					{
-						if (reader.HasRows)
+						Funcionario funcionario = new Funcionario();
+						funcionario.Nome = TxtBusca.Text;
+
+						MySqlDataReader reader = funcionario.LocalizaPorNome();
+
+						if (reader != null)
 						{
-							dataGridView1.Rows.Clear();
-							while (reader.Read())
+							if (reader.HasRows)
 							{
-								string? coluna1 = reader["id"].ToString();
-								string? coluna2 = reader["nome"].ToString();
-								string? coluna3 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
-								string? coluna4 = reader["cpf"].ToString();
-								string? coluna5 = reader["rg"].ToString();
-								string? coluna6 = reader["endereco"].ToString();
-								string? coluna7 = reader["email"].ToString();
-								string? coluna8 = reader["cargo"].ToString();
+								dataGridView1.Rows.Clear();
+								while (reader.Read())
+								{
+									string? coluna1 = reader["id"].ToString();
+									string? coluna2 = reader["nome"].ToString();
+									string? coluna3 = reader["telefone"].ToString();
+									string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
+									string? coluna5 = reader["cpf"].ToString();
+									string? coluna6 = reader["rg"].ToString();
+									string? coluna7 = reader["endereco"].ToString();
+									string? coluna8 = reader["email"].ToString();
+									string? coluna9 = reader["cargo"].ToString();
+									string? coluna10 = reader["salario"].ToString();
 
-								dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8);
+									dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10);
+								}
 							}
-
-
-						}
-						else
-						{
-							MessageBox.Show("Funcionário não encontrado.");
-							TxtNome.Clear();
-							TxtNome.Focus();
+							else
+							{
+								MessageBox.Show("Funcionário não encontrado.");
+								TxtBusca.Clear();
+								TxtBusca.Focus();
+							}
 						}
 					}
+					else
+					{
+						MessageBox.Show("Favor preencher o campo Nome para pesquisa");
+						TxtBusca.Focus();
+					}
 				}
-				else
+				catch (Exception ex)
 				{
-					MessageBox.Show("Favor preencher o campo Nome para pesquisa");
-					TxtNome.Focus();
+					MessageBox.Show("Erro ao encontrar funcionário: " + ex.Message);
 				}
 			}
-			catch (Exception ex)
+			else if (RdbCPF.Checked == true)
 			{
-				MessageBox.Show("Erro ao encontrar funcionário: " + ex.Message);
+				try
+				{
+					if (!TxtBusca.Text.Equals(""))
+					{
+						Funcionario funcionario = new Funcionario();
+						funcionario.CPF = TxtBusca.Text;
+
+						MySqlDataReader reader = funcionario.LocalizaPorCPF();
+
+						if (reader != null)
+						{
+							if (reader.HasRows)
+							{
+								dataGridView1.Rows.Clear();
+								while (reader.Read())
+								{
+									string? coluna1 = reader["id"].ToString();
+									string? coluna2 = reader["nome"].ToString();
+									string? coluna3 = reader["telefone"].ToString();
+									string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
+									string? coluna5 = reader["cpf"].ToString();
+									string? coluna6 = reader["rg"].ToString();
+									string? coluna7 = reader["endereco"].ToString();
+									string? coluna8 = reader["email"].ToString();
+									string? coluna9 = reader["cargo"].ToString();
+									string? coluna10 = reader["salario"].ToString();
+
+									dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10);
+								}
+							}
+							else
+							{
+								MessageBox.Show("Funcionário não encontrado.");
+								TxtBusca.Clear();
+								TxtBusca.Focus();
+							}
+						}
+					}
+					else
+					{
+						MessageBox.Show("Favor preencher o campo Nome para pesquisa");
+						TxtBusca.Focus();
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Erro ao encontrar funcionário: " + ex.Message);
+				}
 			}
 		}
+
+
 
 		public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
@@ -87,7 +143,7 @@ namespace SistemaBarbearia_PI
 			alterarusuario.Show();
 		}
 
-		public void PesquisarTodosUsuarios()
+		public void PesquisarTodosFuncionarios()
 		{
 			Funcionario funcionario = new Funcionario();
 			MySqlDataReader reader = Funcionario.LocalizaTodosFuncionarios();
@@ -96,40 +152,26 @@ namespace SistemaBarbearia_PI
 			{
 				string? coluna1 = reader["id"].ToString();
 				string? coluna2 = reader["nome"].ToString();
-				string? coluna3 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
-				string? coluna4 = reader["cpf"].ToString();
-				string? coluna5 = reader["rg"].ToString();
-				string? coluna6 = reader["endereco"].ToString();
-				string? coluna7 = reader["email"].ToString();
-				string? coluna8 = reader["cargo"].ToString();
+				string? coluna3 = reader["telefone"].ToString();
+				string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
+				string? coluna5 = reader["cpf"].ToString();
+				string? coluna6 = reader["rg"].ToString();
+				string? coluna7 = reader["endereco"].ToString();
+				string? coluna8 = reader["email"].ToString();
+				string? coluna9 = reader["cargo"].ToString();
+				string? coluna10 = reader["salario"].ToString();
 
-				dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8);
+				dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10);
 			}
 		}
 
 		private void PesquisaUsuarios_Load(object sender, EventArgs e)
 		{
-			Usuario usuario = new Usuario();
-			MySqlDataReader reader = Funcionario.LocalizaTodosFuncionarios();
-
-			while (reader.Read())
-			{
-				string? coluna1 = reader["id"].ToString();
-				string? coluna2 = reader["nome"].ToString();
-				string? coluna3 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
-				string? coluna4 = reader["cpf"].ToString();
-				string? coluna5 = reader["rg"].ToString();
-				string? coluna6 = reader["endereco"].ToString();
-				string? coluna7 = reader["email"].ToString();
-				string? coluna8 = reader["cargo"].ToString();
-
-				dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8);
-			}
+			PesquisarTodosFuncionarios();
 		}
-
 		private void TxtNome_Click(object sender, EventArgs e)
 		{
-			TxtNome.Clear();
+			TxtBusca.Clear();
 		}
 
 		private void BtnSair_Click(object sender, EventArgs e)

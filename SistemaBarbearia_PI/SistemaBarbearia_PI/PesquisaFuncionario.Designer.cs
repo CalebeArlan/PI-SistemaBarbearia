@@ -52,7 +52,7 @@
 			serviçoToolStripMenuItem2 = new ToolStripMenuItem();
 			vendaToolStripMenuItem = new ToolStripMenuItem();
 			horárioToolStripMenuItem2 = new ToolStripMenuItem();
-			TxtNome = new TextBox();
+			TxtBusca = new TextBox();
 			label4 = new Label();
 			dataGridView1 = new DataGridView();
 			usuarioBindingSource = new BindingSource(components);
@@ -60,18 +60,24 @@
 			imageList1 = new ImageList(components);
 			BtnSair = new Button();
 			funcionarioBindingSource = new BindingSource(components);
+			groupBox1 = new GroupBox();
+			RdbCPF = new RadioButton();
+			RdBNome = new RadioButton();
 			id = new DataGridViewTextBoxColumn();
 			nome = new DataGridViewTextBoxColumn();
+			Telefone = new DataGridViewTextBoxColumn();
 			datanasc = new DataGridViewTextBoxColumn();
 			cpf = new DataGridViewTextBoxColumn();
 			rg = new DataGridViewTextBoxColumn();
 			endereco = new DataGridViewTextBoxColumn();
 			email = new DataGridViewTextBoxColumn();
 			cargo = new DataGridViewTextBoxColumn();
+			Salario = new DataGridViewTextBoxColumn();
 			menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
 			((System.ComponentModel.ISupportInitialize)funcionarioBindingSource).BeginInit();
+			groupBox1.SuspendLayout();
 			SuspendLayout();
 			// 
 			// menuStrip1
@@ -81,7 +87,7 @@
 			menuStrip1.Location = new Point(0, 0);
 			menuStrip1.Name = "menuStrip1";
 			menuStrip1.Padding = new Padding(7, 3, 0, 3);
-			menuStrip1.Size = new Size(1076, 30);
+			menuStrip1.Size = new Size(1218, 30);
 			menuStrip1.TabIndex = 2;
 			menuStrip1.Text = "menuStrip1";
 			// 
@@ -215,14 +221,14 @@
 			horárioToolStripMenuItem2.Size = new Size(169, 26);
 			horárioToolStripMenuItem2.Text = "Horário";
 			// 
-			// TxtNome
+			// TxtBusca
 			// 
-			TxtNome.Location = new Point(11, 89);
-			TxtNome.Name = "TxtNome";
-			TxtNome.Size = new Size(423, 27);
-			TxtNome.TabIndex = 3;
-			TxtNome.Text = "Digite um nome para pesquisar.";
-			TxtNome.Click += TxtNome_Click;
+			TxtBusca.Location = new Point(11, 89);
+			TxtBusca.Name = "TxtBusca";
+			TxtBusca.Size = new Size(423, 27);
+			TxtBusca.TabIndex = 3;
+			TxtBusca.Text = "Digite um nome para pesquisar.";
+			TxtBusca.Click += TxtNome_Click;
 			// 
 			// label4
 			// 
@@ -236,13 +242,15 @@
 			// 
 			// dataGridView1
 			// 
+			dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, nome, datanasc, cpf, rg, endereco, email, cargo });
+			dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, nome, Telefone, datanasc, cpf, rg, endereco, email, cargo, Salario });
 			dataGridView1.Location = new Point(11, 181);
 			dataGridView1.Name = "dataGridView1";
+			dataGridView1.RightToLeft = RightToLeft.No;
 			dataGridView1.RowHeadersWidth = 51;
 			dataGridView1.RowTemplate.Height = 29;
-			dataGridView1.Size = new Size(1053, 330);
+			dataGridView1.Size = new Size(1180, 445);
 			dataGridView1.TabIndex = 9;
 			dataGridView1.CellClick += dataGridView1_CellClick;
 			// 
@@ -283,6 +291,39 @@
 			// 
 			funcionarioBindingSource.DataSource = typeof(Funcionario);
 			// 
+			// groupBox1
+			// 
+			groupBox1.Controls.Add(RdbCPF);
+			groupBox1.Controls.Add(RdBNome);
+			groupBox1.Location = new Point(774, 33);
+			groupBox1.Name = "groupBox1";
+			groupBox1.Size = new Size(250, 125);
+			groupBox1.TabIndex = 12;
+			groupBox1.TabStop = false;
+			groupBox1.Text = "Pesquisar Por";
+			// 
+			// RdbCPF
+			// 
+			RdbCPF.AutoSize = true;
+			RdbCPF.Location = new Point(21, 73);
+			RdbCPF.Name = "RdbCPF";
+			RdbCPF.Size = new Size(54, 24);
+			RdbCPF.TabIndex = 1;
+			RdbCPF.Text = "CPF";
+			RdbCPF.UseVisualStyleBackColor = true;
+			// 
+			// RdBNome
+			// 
+			RdBNome.AutoSize = true;
+			RdBNome.Checked = true;
+			RdBNome.Location = new Point(21, 43);
+			RdBNome.Name = "RdBNome";
+			RdBNome.Size = new Size(71, 24);
+			RdBNome.TabIndex = 0;
+			RdBNome.TabStop = true;
+			RdBNome.Text = "Nome";
+			RdBNome.UseVisualStyleBackColor = true;
+			// 
 			// id
 			// 
 			id.HeaderText = "id";
@@ -296,6 +337,13 @@
 			nome.MinimumWidth = 6;
 			nome.Name = "nome";
 			nome.Width = 125;
+			// 
+			// Telefone
+			// 
+			Telefone.HeaderText = "Telefone";
+			Telefone.MinimumWidth = 6;
+			Telefone.Name = "Telefone";
+			Telefone.Width = 125;
 			// 
 			// datanasc
 			// 
@@ -340,16 +388,24 @@
 			cargo.Name = "cargo";
 			cargo.Width = 125;
 			// 
+			// Salario
+			// 
+			Salario.HeaderText = "Salário";
+			Salario.MinimumWidth = 6;
+			Salario.Name = "Salario";
+			Salario.Width = 125;
+			// 
 			// PesquisaFuncionario
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(1076, 523);
+			ClientSize = new Size(1218, 648);
+			Controls.Add(groupBox1);
 			Controls.Add(BtnSair);
 			Controls.Add(button1);
 			Controls.Add(dataGridView1);
 			Controls.Add(label4);
-			Controls.Add(TxtNome);
+			Controls.Add(TxtBusca);
 			Controls.Add(menuStrip1);
 			Name = "PesquisaFuncionario";
 			Text = "PesquisaFuncionario";
@@ -359,6 +415,8 @@
 			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
 			((System.ComponentModel.ISupportInitialize)usuarioBindingSource).EndInit();
 			((System.ComponentModel.ISupportInitialize)funcionarioBindingSource).EndInit();
+			groupBox1.ResumeLayout(false);
+			groupBox1.PerformLayout();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -387,7 +445,7 @@
 		private ToolStripMenuItem serviçoToolStripMenuItem2;
 		private ToolStripMenuItem vendaToolStripMenuItem;
 		private ToolStripMenuItem horárioToolStripMenuItem2;
-		private TextBox TxtNome;
+		private TextBox TxtBusca;
 		private Label label4;
 		private BindingSource usuarioBindingSource;
 		private Button button1;
@@ -395,13 +453,18 @@
 		private Button BtnSair;
 		public DataGridView dataGridView1;
 		private BindingSource funcionarioBindingSource;
+		private GroupBox groupBox1;
+		private RadioButton RdbCPF;
+		private RadioButton RdBNome;
 		private DataGridViewTextBoxColumn id;
 		private DataGridViewTextBoxColumn nome;
+		private DataGridViewTextBoxColumn Telefone;
 		private DataGridViewTextBoxColumn datanasc;
 		private DataGridViewTextBoxColumn cpf;
 		private DataGridViewTextBoxColumn rg;
 		private DataGridViewTextBoxColumn endereco;
 		private DataGridViewTextBoxColumn email;
 		private DataGridViewTextBoxColumn cargo;
+		private DataGridViewTextBoxColumn Salario;
 	}
 }

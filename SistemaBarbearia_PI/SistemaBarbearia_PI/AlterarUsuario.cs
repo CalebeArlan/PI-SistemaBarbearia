@@ -22,7 +22,7 @@ namespace SistemaBarbearia_PI
 			InitializeComponent();
 
 			TxtUsuario.Text = nomeUsuario;
-			LblId.Text = Convert.ToString(idUsuario);
+			LblId.Text = "id: " + Convert.ToString(idUsuario);
 			TxtSenha.Text = senha;
 			CbTipoAcesso.SelectedIndex = Convert.ToInt32(tipoAcesso);
 		}
@@ -34,23 +34,13 @@ namespace SistemaBarbearia_PI
 
 		private void BtnCadastrar_Click(object sender, EventArgs e)
 		{
-			Usuario usuario = new Usuario(0, TxtUsuario.Text, TxtSenha.Text, Convert.ToString(CbTipoAcesso.SelectedIndex));
+			Usuario usuario = new Usuario(int.Parse(LblId.Text), TxtUsuario.Text, TxtSenha.Text, Convert.ToString(CbTipoAcesso.SelectedIndex));
 			
 			if (Funcoes.VerivicaVazio(this) == false)
 			{
-				var connection = new MySqlConnection(Conexao.strConexao);
-				connection.Open();
 				try
 				{
-					MySqlCommand cmd = new MySqlCommand($"UPDATE usuarios SET nome_usuario = '{usuario.NomeUsuario}', senha = '{usuario.Senha}', tipo_acesso = {usuario.TipoAcesso} WHERE id = '{LblId.Text}'", connection);
-					cmd.ExecuteNonQuery();
-					connection.Close();
-					MessageBox.Show("Registro alterado com sucesso.");
-
-					PesquisaUsuarios f1 = (PesquisaUsuarios)Application.OpenForms["PesquisaUsuarios"];
-					f1.PesquisarTodosUsuarios();
-
-
+					usuario.Alterar();
                 }
                 catch (Exception ex)
 				{

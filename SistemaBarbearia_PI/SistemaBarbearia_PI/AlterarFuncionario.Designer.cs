@@ -1,6 +1,6 @@
 ﻿namespace SistemaBarbearia_PI
 {
-	partial class CadastroFuncionario
+	partial class AlterarFuncionario
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -47,8 +47,10 @@
 			TxtEndereco = new TextBox();
 			TxtCargo = new TextBox();
 			label6 = new Label();
+			LblId = new Label();
 			TxtSalario = new TextBox();
 			label7 = new Label();
+			BtnExcluir = new Button();
 			SuspendLayout();
 			// 
 			// button1
@@ -57,7 +59,7 @@
 			button1.Margin = new Padding(3, 4, 3, 4);
 			button1.Name = "button1";
 			button1.Size = new Size(86, 31);
-			button1.TabIndex = 11;
+			button1.TabIndex = 19;
 			button1.Text = "Sair";
 			button1.UseVisualStyleBackColor = true;
 			button1.Click += button1_Click;
@@ -68,9 +70,9 @@
 			label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
 			label4.Location = new Point(24, 25);
 			label4.Name = "label4";
-			label4.Size = new Size(411, 41);
+			label4.Size = new Size(290, 41);
 			label4.TabIndex = 17;
-			label4.Text = "Cadastrar Novo Funcionário";
+			label4.Text = "Alterar Funcionário";
 			// 
 			// BtnCadastrar
 			// 
@@ -78,14 +80,14 @@
 			BtnCadastrar.Location = new Point(267, 383);
 			BtnCadastrar.Name = "BtnCadastrar";
 			BtnCadastrar.Size = new Size(64, 55);
-			BtnCadastrar.TabIndex = 10;
+			BtnCadastrar.TabIndex = 16;
 			BtnCadastrar.UseVisualStyleBackColor = true;
 			BtnCadastrar.Click += BtnCadastrar_Click;
 			// 
 			// LblDataNasc
 			// 
 			LblDataNasc.AutoSize = true;
-			LblDataNasc.Location = new Point(26, 192);
+			LblDataNasc.Location = new Point(27, 189);
 			LblDataNasc.Name = "LblDataNasc";
 			LblDataNasc.Size = new Size(148, 20);
 			LblDataNasc.TabIndex = 15;
@@ -94,7 +96,7 @@
 			// LblTelefone
 			// 
 			LblTelefone.AutoSize = true;
-			LblTelefone.Location = new Point(26, 156);
+			LblTelefone.Location = new Point(27, 153);
 			LblTelefone.Name = "LblTelefone";
 			LblTelefone.Size = new Size(69, 20);
 			LblTelefone.TabIndex = 13;
@@ -102,15 +104,15 @@
 			// 
 			// TxtNome
 			// 
-			TxtNome.Location = new Point(81, 87);
+			TxtNome.Location = new Point(82, 84);
 			TxtNome.Name = "TxtNome";
 			TxtNome.Size = new Size(444, 27);
-			TxtNome.TabIndex = 1;
+			TxtNome.TabIndex = 12;
 			// 
 			// LblNome
 			// 
 			LblNome.AutoSize = true;
-			LblNome.Location = new Point(22, 87);
+			LblNome.Location = new Point(23, 84);
 			LblNome.Name = "LblNome";
 			LblNome.Size = new Size(53, 20);
 			LblNome.TabIndex = 11;
@@ -118,15 +120,15 @@
 			// 
 			// TxtEmail
 			// 
-			TxtEmail.Location = new Point(81, 222);
+			TxtEmail.Location = new Point(82, 219);
 			TxtEmail.Name = "TxtEmail";
 			TxtEmail.Size = new Size(228, 27);
-			TxtEmail.TabIndex = 5;
+			TxtEmail.TabIndex = 21;
 			// 
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Location = new Point(26, 225);
+			label1.Location = new Point(27, 222);
 			label1.Name = "label1";
 			label1.Size = new Size(49, 20);
 			label1.TabIndex = 20;
@@ -135,7 +137,7 @@
 			// label2
 			// 
 			label2.AutoSize = true;
-			label2.Location = new Point(27, 258);
+			label2.Location = new Point(28, 255);
 			label2.Name = "label2";
 			label2.Size = new Size(36, 20);
 			label2.TabIndex = 22;
@@ -144,7 +146,7 @@
 			// label3
 			// 
 			label3.AutoSize = true;
-			label3.Location = new Point(29, 291);
+			label3.Location = new Point(30, 288);
 			label3.Name = "label3";
 			label3.Size = new Size(31, 20);
 			label3.TabIndex = 24;
@@ -152,40 +154,40 @@
 			// 
 			// MtxtTelefone
 			// 
-			MtxtTelefone.Location = new Point(101, 153);
+			MtxtTelefone.Location = new Point(102, 150);
 			MtxtTelefone.Mask = "(00)00000-0000";
 			MtxtTelefone.Name = "MtxtTelefone";
 			MtxtTelefone.Size = new Size(174, 27);
-			MtxtTelefone.TabIndex = 3;
+			MtxtTelefone.TabIndex = 27;
 			// 
 			// MtxtDataNasc
 			// 
-			MtxtDataNasc.Location = new Point(177, 189);
+			MtxtDataNasc.Location = new Point(178, 186);
 			MtxtDataNasc.Mask = "00/00/0000";
 			MtxtDataNasc.Name = "MtxtDataNasc";
 			MtxtDataNasc.Size = new Size(174, 27);
-			MtxtDataNasc.TabIndex = 4;
+			MtxtDataNasc.TabIndex = 28;
 			// 
 			// MtxtCPF
 			// 
-			MtxtCPF.Location = new Point(81, 255);
+			MtxtCPF.Location = new Point(82, 252);
 			MtxtCPF.Mask = "000.000.000-00";
 			MtxtCPF.Name = "MtxtCPF";
 			MtxtCPF.Size = new Size(174, 27);
-			MtxtCPF.TabIndex = 6;
+			MtxtCPF.TabIndex = 29;
 			// 
 			// MtxtRG
 			// 
-			MtxtRG.Location = new Point(81, 288);
+			MtxtRG.Location = new Point(82, 285);
 			MtxtRG.Mask = "00.000.000-0";
 			MtxtRG.Name = "MtxtRG";
 			MtxtRG.Size = new Size(174, 27);
-			MtxtRG.TabIndex = 7;
+			MtxtRG.TabIndex = 30;
 			// 
 			// label5
 			// 
 			label5.AutoSize = true;
-			label5.Location = new Point(26, 123);
+			label5.Location = new Point(27, 120);
 			label5.Name = "label5";
 			label5.Size = new Size(71, 20);
 			label5.TabIndex = 31;
@@ -193,50 +195,73 @@
 			// 
 			// TxtEndereco
 			// 
-			TxtEndereco.Location = new Point(103, 120);
+			TxtEndereco.Location = new Point(104, 117);
 			TxtEndereco.Name = "TxtEndereco";
 			TxtEndereco.Size = new Size(228, 27);
-			TxtEndereco.TabIndex = 2;
+			TxtEndereco.TabIndex = 32;
 			// 
 			// TxtCargo
 			// 
-			TxtCargo.Location = new Point(81, 321);
+			TxtCargo.Location = new Point(82, 318);
 			TxtCargo.Name = "TxtCargo";
 			TxtCargo.Size = new Size(228, 27);
-			TxtCargo.TabIndex = 8;
+			TxtCargo.TabIndex = 34;
 			// 
 			// label6
 			// 
 			label6.AutoSize = true;
-			label6.Location = new Point(26, 324);
+			label6.Location = new Point(27, 321);
 			label6.Name = "label6";
 			label6.Size = new Size(52, 20);
 			label6.TabIndex = 33;
 			label6.Text = "Cargo:";
 			// 
+			// LblId
+			// 
+			LblId.AutoSize = true;
+			LblId.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+			LblId.Location = new Point(346, 25);
+			LblId.Name = "LblId";
+			LblId.Size = new Size(55, 41);
+			LblId.TabIndex = 35;
+			LblId.Text = "Id:";
+			// 
 			// TxtSalario
 			// 
-			TxtSalario.Location = new Point(81, 350);
+			TxtSalario.Location = new Point(82, 349);
 			TxtSalario.Name = "TxtSalario";
 			TxtSalario.Size = new Size(228, 27);
-			TxtSalario.TabIndex = 9;
+			TxtSalario.TabIndex = 37;
 			// 
 			// label7
 			// 
 			label7.AutoSize = true;
-			label7.Location = new Point(26, 353);
+			label7.Location = new Point(27, 352);
 			label7.Name = "label7";
 			label7.Size = new Size(58, 20);
-			label7.TabIndex = 35;
+			label7.TabIndex = 36;
 			label7.Text = "Salário:";
 			// 
-			// CadastroFuncionario
+			// BtnExcluir
+			// 
+			BtnExcluir.Location = new Point(128, 395);
+			BtnExcluir.Margin = new Padding(3, 4, 3, 4);
+			BtnExcluir.Name = "BtnExcluir";
+			BtnExcluir.Size = new Size(86, 31);
+			BtnExcluir.TabIndex = 38;
+			BtnExcluir.Text = "Excluir";
+			BtnExcluir.UseVisualStyleBackColor = true;
+			BtnExcluir.Click += BtnExcluir_Click;
+			// 
+			// AlterarFuncionario
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(800, 450);
+			Controls.Add(BtnExcluir);
 			Controls.Add(TxtSalario);
 			Controls.Add(label7);
+			Controls.Add(LblId);
 			Controls.Add(TxtCargo);
 			Controls.Add(label6);
 			Controls.Add(TxtEndereco);
@@ -256,7 +281,7 @@
 			Controls.Add(LblTelefone);
 			Controls.Add(TxtNome);
 			Controls.Add(LblNome);
-			Name = "CadastroFuncionario";
+			Name = "AlterarFuncionario";
 			Text = "CadastroFuncionáriocs";
 			ResumeLayout(false);
 			PerformLayout();
@@ -283,7 +308,9 @@
 		private TextBox TxtEndereco;
 		private TextBox TxtCargo;
 		private Label label6;
+		private Label LblId;
 		private TextBox TxtSalario;
 		private Label label7;
+		private Button BtnExcluir;
 	}
 }

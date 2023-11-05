@@ -10,7 +10,7 @@ namespace SistemaBarbearia_PI
     public class Funcionario : IPessoa
     {
 		public Funcionario() { }
-        public Funcionario(int idfuncionario, string nomefuncionario, string nascfuncionario, string telefone, string cpffuncionario, string rgfuncionario, string enderecofuncionario, string codcargo, string emailfuncionario)
+        public Funcionario(int idfuncionario, string nomefuncionario, string nascfuncionario, string telefone, string cpffuncionario, string rgfuncionario, string enderecofuncionario, string codcargo, string emailfuncionario, double salario)
         {
             Id = idfuncionario;
             Nome = nomefuncionario;
@@ -21,6 +21,7 @@ namespace SistemaBarbearia_PI
             Endereco = enderecofuncionario;
             Cargo = codcargo;
             Email = emailfuncionario;
+			Salario = salario;
         }
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -32,13 +33,15 @@ namespace SistemaBarbearia_PI
 		public string Cargo { get; set; }
 		public string Email { get; set; }
 
+		public double Salario;
+
 		public static MySqlDataReader LocalizaTodosFuncionarios()
 		{
 			try
 			{
 				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
 				MySqlConexaoBanco.Open();
-				string select = "select id, nome, datanasc, cpf, rg, endereco, email, cargo from funcionarios;";
+				string select = "select id, nome, datanasc, cpf, rg, endereco, email, cargo, salario from funcionarios;";
 				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
 				comandoSQL.CommandText = select;
 
@@ -53,13 +56,13 @@ namespace SistemaBarbearia_PI
 			}
 		}
 
-		public MySqlDataReader LocalizaFuncionario(string nome)
+		public MySqlDataReader LocalizaPorNome()
 		{
 			try
 			{
 				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
 				MySqlConexaoBanco.Open();
-				string select = $"select select id, nome, datanasc, cpf, rg, endereco, email, cargo where nome like '%{nome}%';";
+				string select = $"select id, nome, datanasc, cpf, rg, endereco, email, cargo, salario from funcionarios where nome like '%{this.Nome}%';";
 				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
 				comandoSQL.CommandText = select;
 				MySqlDataReader reader = comandoSQL.ExecuteReader();
@@ -73,6 +76,40 @@ namespace SistemaBarbearia_PI
 			}
 
 
+		}
+		public MySqlDataReader LocalizaPorCPF()
+		{
+			try
+			{
+				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
+				MySqlConexaoBanco.Open();
+				string select = $"select id, nome, datanasc, cpf, rg, endereco, email, cargo, salario from funcionarios where cpf like '%{this.CPF}%';";
+				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
+				comandoSQL.CommandText = select;
+				MySqlDataReader reader = comandoSQL.ExecuteReader();
+				return reader;
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Erro no banco de dados - método localizarFuncionario: " + ex.Message);
+				return null;
+			}
+
+
+		}
+		public void Alterar()
+		{
+			var connection = new MySqlConnection(Conexao.strConexao);
+
+			this.DataNasc = (DateTime.Parse(this.DataNasc)).ToString("yyyy-MM-dd");
+
+			connection.Open();
+			MySqlCommand cmd = new MySqlCommand($"UPDATE funcionarios SET nome = {this.Nome}, datanasc = {this.DataNasc}, cpf = {this.CPF}, rg = {this.RG}, endereco = {this.Endereco}, email = {this.Email}, cargo = {this.Cargo}, salario = {this.Salario} WHERE id = {this.Id}", connection);
+			cmd.ExecuteNonQuery();
+			connection.Close();
+			MessageBox.Show("Registro atualizado com sucesso.");
+			
 		}
 
 	}

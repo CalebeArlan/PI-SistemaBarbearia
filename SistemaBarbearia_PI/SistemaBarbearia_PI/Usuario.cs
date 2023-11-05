@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Asn1;
+using Org.BouncyCastle.Asn1.Ocsp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,5 +68,17 @@ namespace SistemaBarbearia_PI
            
             
         }
+		public void Alterar()
+        {
+			var connection = new MySqlConnection(Conexao.strConexao);
+			connection.Open();
+			MySqlCommand cmd = new MySqlCommand($"UPDATE usuarios SET nome_usuario = '{this.NomeUsuario}', senha = '{this.Senha}', tipo_acesso = {this.TipoAcesso} WHERE id = '{this.IdUsuario}'", connection);
+			cmd.ExecuteNonQuery();
+			connection.Close();
+			MessageBox.Show("Registro alterado com sucesso.");
+
+			PesquisaUsuarios f1 = (PesquisaUsuarios)Application.OpenForms["PesquisaUsuarios"];
+			f1.PesquisarTodosUsuarios();
+		}
     }
 }
