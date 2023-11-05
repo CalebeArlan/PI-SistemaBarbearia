@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Windows.Forms;
 
 namespace SistemaBarbearia_PI
 {
@@ -40,7 +42,11 @@ namespace SistemaBarbearia_PI
 
 		private void BtnExcluir_Click(object sender, EventArgs e)
 		{
-			
+			var result = MessageBox.Show("Tem certeza que deseja excluir permanentemente este registro?","Excluir Registro?", MessageBoxButtons.YesNo);
+			if (result == System.Windows.Forms.DialogResult.Yes)
+			{
+				//TODO EXCLUIR
+			}
 		}
 	}
 }
