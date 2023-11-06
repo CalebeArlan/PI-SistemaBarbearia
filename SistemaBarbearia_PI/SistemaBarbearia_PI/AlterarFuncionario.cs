@@ -23,7 +23,18 @@ namespace SistemaBarbearia_PI
 		}
 		public AlterarFuncionario(int id, string nome, string datanasc, string telefone, string cpf, string rg, string endereco, string cargo, string email, double salario)
 		{
+			InitializeComponent();
 
+			LblId.Text = "id: " + Convert.ToString(id);
+			TxtNome.Text = nome;
+			MtxtDataNasc.Text = datanasc;
+			MtxtTelefone.Text = telefone;
+			MtxtCPF.Text = cpf;
+			MtxtRG.Text = rg;
+			TxtEndereco.Text = endereco;
+			TxtCargo.Text = cargo;
+			TxtEmail.Text = email;
+			TxtSalario.Text = salario.ToString();
 		}
 
 		private void BtnCadastrar_Click(object sender, EventArgs e)

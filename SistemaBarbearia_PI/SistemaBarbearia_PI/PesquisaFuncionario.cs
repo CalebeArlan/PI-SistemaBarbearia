@@ -133,14 +133,20 @@ namespace SistemaBarbearia_PI
 
 		public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			Usuario usuarioAlterar = new Usuario();
-			usuarioAlterar.IdUsuario = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-			usuarioAlterar.NomeUsuario = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
-			usuarioAlterar.Senha = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
-			usuarioAlterar.TipoAcesso = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
+			Funcionario funcionario = new Funcionario();
+			funcionario.Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+			funcionario.Nome = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
+			funcionario.Telefone = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
+			funcionario.DataNasc = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
+			funcionario.CPF = Convert.ToString(dataGridView1.CurrentRow.Cells[4].Value);
+			funcionario.RG = Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value);
+			funcionario.Endereco = Convert.ToString(dataGridView1.CurrentRow.Cells[6].Value);
+			funcionario.Email = Convert.ToString(dataGridView1.CurrentRow.Cells[7].Value);
+			funcionario.Cargo = Convert.ToString(dataGridView1.CurrentRow.Cells[8].Value);
+			funcionario.Salario = Convert.ToDouble(dataGridView1.CurrentRow.Cells[9].Value ?? 0);
 
-			AlterarUsuario alterarusuario = new AlterarUsuario(usuarioAlterar.IdUsuario, usuarioAlterar.NomeUsuario, usuarioAlterar.TipoAcesso, usuarioAlterar.Senha);
-			alterarusuario.Show();
+			AlterarFuncionario alterarFuncionario = new AlterarFuncionario(funcionario.Id,funcionario.Nome,funcionario.DataNasc,funcionario.Telefone,funcionario.CPF,funcionario.RG,funcionario.Endereco,funcionario.Cargo,funcionario.Email,funcionario.Salario);
+			alterarFuncionario.Show();
 		}
 
 		public void PesquisarTodosFuncionarios()

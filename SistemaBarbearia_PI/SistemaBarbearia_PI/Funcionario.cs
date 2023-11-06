@@ -41,7 +41,7 @@ namespace SistemaBarbearia_PI
 			{
 				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
 				MySqlConexaoBanco.Open();
-				string select = "select id, nome, datanasc, cpf, rg, endereco, email, cargo, salario from funcionarios;";
+				string select = "select id, nome, telefone, datanasc, cpf, rg, endereco, email, cargo, salario from funcionarios;";
 				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
 				comandoSQL.CommandText = select;
 
@@ -62,7 +62,7 @@ namespace SistemaBarbearia_PI
 			{
 				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
 				MySqlConexaoBanco.Open();
-				string select = $"select id, nome, datanasc, cpf, rg, endereco, email, cargo, salario from funcionarios where nome like '%{this.Nome}%';";
+				string select = $"select id, nome, telefone, datanasc, cpf, rg, endereco, email, cargo, salario from funcionarios where nome like '%{this.Nome}%';";
 				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
 				comandoSQL.CommandText = select;
 				MySqlDataReader reader = comandoSQL.ExecuteReader();
@@ -83,7 +83,7 @@ namespace SistemaBarbearia_PI
 			{
 				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
 				MySqlConexaoBanco.Open();
-				string select = $"select id, nome, datanasc, cpf, rg, endereco, email, cargo, salario from funcionarios where cpf like '%{this.CPF}%';";
+				string select = $"select id, nome, telefone, datanasc, cpf, rg, endereco, email, cargo, salario from funcionarios where cpf like '%{this.CPF}%';";
 				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
 				comandoSQL.CommandText = select;
 				MySqlDataReader reader = comandoSQL.ExecuteReader();
