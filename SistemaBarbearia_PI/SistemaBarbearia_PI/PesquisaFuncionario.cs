@@ -46,8 +46,9 @@ namespace SistemaBarbearia_PI
 									string? coluna1 = reader["id"].ToString();
 									string? coluna2 = reader["nome"].ToString();
 									string? coluna3 = reader["telefone"].ToString();
-									string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
-									string? coluna5 = reader["cpf"].ToString();
+									//string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
+									string? coluna4 = reader["datanasc"].ToString();
+                                    string? coluna5 = reader["cpf"].ToString();
 									string? coluna6 = reader["rg"].ToString();
 									string? coluna7 = reader["endereco"].ToString();
 									string? coluna8 = reader["email"].ToString();
@@ -87,7 +88,11 @@ namespace SistemaBarbearia_PI
 
 						MySqlDataReader reader = funcionario.LocalizaPorCPF();
 
-						if (reader != null)
+
+						PesquisarTodosFuncionarios();
+
+
+						/*if (reader != null)
 						{
 							if (reader.HasRows)
 							{
@@ -97,8 +102,9 @@ namespace SistemaBarbearia_PI
 									string? coluna1 = reader["id"].ToString();
 									string? coluna2 = reader["nome"].ToString();
 									string? coluna3 = reader["telefone"].ToString();
-									string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
-									string? coluna5 = reader["cpf"].ToString();
+                                    //string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
+                                    string? coluna4 = reader["datanasc"].ToString();
+                                    string? coluna5 = reader["cpf"].ToString();
 									string? coluna6 = reader["rg"].ToString();
 									string? coluna7 = reader["endereco"].ToString();
 									string? coluna8 = reader["email"].ToString();
@@ -114,7 +120,7 @@ namespace SistemaBarbearia_PI
 								TxtBusca.Clear();
 								TxtBusca.Focus();
 							}
-						}
+						}*/
 					}
 					else
 					{
@@ -143,7 +149,7 @@ namespace SistemaBarbearia_PI
 			funcionario.Endereco = Convert.ToString(dataGridView1.CurrentRow.Cells[6].Value);
 			funcionario.Email = Convert.ToString(dataGridView1.CurrentRow.Cells[7].Value);
 			funcionario.Cargo = Convert.ToString(dataGridView1.CurrentRow.Cells[8].Value);
-			funcionario.Salario = Convert.ToDouble(dataGridView1.CurrentRow.Cells[9].Value ?? 0);
+			funcionario.Salario = Convert.ToDouble(dataGridView1.CurrentRow.Cells[9].Value);
 
 			AlterarFuncionario alterarFuncionario = new AlterarFuncionario(funcionario.Id,funcionario.Nome,funcionario.DataNasc,funcionario.Telefone,funcionario.CPF,funcionario.RG,funcionario.Endereco,funcionario.Cargo,funcionario.Email,funcionario.Salario);
 			alterarFuncionario.Show();
@@ -159,8 +165,10 @@ namespace SistemaBarbearia_PI
 				string? coluna1 = reader["id"].ToString();
 				string? coluna2 = reader["nome"].ToString();
 				string? coluna3 = reader["telefone"].ToString();
-				string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
-				string? coluna5 = reader["cpf"].ToString();
+				//string? coluna4 = Convert.ToDateTime(reader["datanasc"]).ToShortDateString();
+				string? coluna4 = reader.GetDateTime(reader.GetOrdinal("datanasc")).ToShortDateString();
+               //string? coluna4 = reader["datanasc"].ToString();
+                string? coluna5 = reader["cpf"].ToString();
 				string? coluna6 = reader["rg"].ToString();
 				string? coluna7 = reader["endereco"].ToString();
 				string? coluna8 = reader["email"].ToString();

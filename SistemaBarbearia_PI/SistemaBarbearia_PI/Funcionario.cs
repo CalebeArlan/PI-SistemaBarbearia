@@ -105,12 +105,14 @@ namespace SistemaBarbearia_PI
 			this.DataNasc = (DateTime.Parse(this.DataNasc)).ToString("yyyy-MM-dd");
 
 			connection.Open();
-			MySqlCommand cmd = new MySqlCommand($"UPDATE funcionarios SET nome = {this.Nome}, datanasc = {this.DataNasc}, cpf = {this.CPF}, rg = {this.RG}, endereco = {this.Endereco}, email = {this.Email}, cargo = {this.Cargo}, salario = {this.Salario} WHERE id = {this.Id}", connection);
+			MySqlCommand cmd = new MySqlCommand($"UPDATE funcionarios SET nome = '{this.Nome}', telefone = '{this.Telefone}', datanasc = {this.DataNasc}, cpf = '{this.CPF}', rg = '{this.RG}', endereco = '{this.Endereco}', email = '{this.Email}', cargo = '{this.Cargo}', salario = {this.Salario} WHERE id = '{this.Id}'", connection);
 			cmd.ExecuteNonQuery();
 			connection.Close();
 			MessageBox.Show("Registro atualizado com sucesso.");
-			
-		}
+
+            PesquisaFuncionario f1 = (PesquisaFuncionario)Application.OpenForms["PesquisaFuncionario"];
+            f1.PesquisarTodosFuncionarios();
+        }
 
 	}
 }

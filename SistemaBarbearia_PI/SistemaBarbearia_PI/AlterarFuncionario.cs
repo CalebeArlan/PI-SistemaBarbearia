@@ -25,7 +25,7 @@ namespace SistemaBarbearia_PI
 		{
 			InitializeComponent();
 
-			LblId.Text = "id: " + Convert.ToString(id);
+			LblId.Text = Convert.ToString(id);
 			TxtNome.Text = nome;
 			MtxtDataNasc.Text = datanasc;
 			MtxtTelefone.Text = telefone;
@@ -39,11 +39,21 @@ namespace SistemaBarbearia_PI
 
 		private void BtnCadastrar_Click(object sender, EventArgs e)
 		{
-			Funcionario funcionario = new Funcionario(int.Parse(LblId.Text), TxtNome.Text, MtxtDataNasc.Text, MtxtTelefone.Text, MtxtCPF.Text, MtxtRG.Text, TxtEndereco.Text, TxtCargo.Text, TxtEmail.Text, Double.Parse(TxtSalario.Text));
-			if (Funcoes.VerivicaVazio(this) == false)
+			try
 			{
-				funcionario.Alterar();
+                Funcionario funcionario = new Funcionario(Convert.ToInt32(LblId.Text), TxtNome.Text, MtxtDataNasc.Text, MtxtTelefone.Text, MtxtCPF.Text, MtxtRG.Text, TxtEndereco.Text, TxtCargo.Text, TxtEmail.Text, Convert.ToDouble(TxtSalario.Text));
+                if (Funcoes.VerivicaVazio(this) == false)
+                {
+                    funcionario.Alterar();
+
+                }
+            }
+			catch(Exception ex)
+			{
+				MessageBox.Show("Erro ao atualizar o registro. - AlterarFuncionario.cs " + ex.Message);
 			}
+			
+			
 		}
 
 		private void button1_Click(object sender, EventArgs e)

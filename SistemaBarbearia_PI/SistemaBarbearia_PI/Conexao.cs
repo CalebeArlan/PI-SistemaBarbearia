@@ -9,6 +9,6 @@ namespace SistemaBarbearia_PI
 {
 	public class Conexao
 	{
-		public static string strConexao = "server=localhost;uid=root;database=barbearia";
+		public static string strConexao = "server=localhost;uid=root;database=barbearia;";
 	}
 }

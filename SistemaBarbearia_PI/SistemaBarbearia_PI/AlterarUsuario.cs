@@ -22,7 +22,7 @@ namespace SistemaBarbearia_PI
 			InitializeComponent();
 
 			TxtUsuario.Text = nomeUsuario;
-			LblId.Text = "id: " + Convert.ToString(idUsuario);
+			LblId.Text = Convert.ToString(idUsuario);
 			TxtSenha.Text = senha;
 			CbTipoAcesso.SelectedIndex = Convert.ToInt32(tipoAcesso);
 		}
