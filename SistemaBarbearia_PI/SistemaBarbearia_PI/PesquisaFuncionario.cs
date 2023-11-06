@@ -46,8 +46,8 @@ namespace SistemaBarbearia_PI
 									string? coluna1 = reader["id"].ToString();
 									string? coluna2 = reader["nome"].ToString();
 									string? coluna3 = reader["telefone"].ToString();
-									//string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
-									string? coluna4 = reader["datanasc"].ToString();
+									string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
+									//string? coluna4 = reader["datanasc"].ToString();
                                     string? coluna5 = reader["cpf"].ToString();
 									string? coluna6 = reader["rg"].ToString();
 									string? coluna7 = reader["endereco"].ToString();
@@ -165,9 +165,9 @@ namespace SistemaBarbearia_PI
 				string? coluna1 = reader["id"].ToString();
 				string? coluna2 = reader["nome"].ToString();
 				string? coluna3 = reader["telefone"].ToString();
-				//string? coluna4 = Convert.ToDateTime(reader["datanasc"]).ToShortDateString();
-				string? coluna4 = reader.GetDateTime(reader.GetOrdinal("datanasc")).ToShortDateString();
-               //string? coluna4 = reader["datanasc"].ToString();
+				DateTime data = reader.GetDateTime("datanasc");
+				string? coluna4 = data.ToShortDateString();
+				//string? coluna4 = "15/10/2020";
                 string? coluna5 = reader["cpf"].ToString();
 				string? coluna6 = reader["rg"].ToString();
 				string? coluna7 = reader["endereco"].ToString();
