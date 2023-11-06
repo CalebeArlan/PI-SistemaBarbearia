@@ -26,7 +26,7 @@ namespace SistemaBarbearia_PI
         public string Senha;
         public string TipoAcesso;
 
-        public MySqlDataReader LocalizaTodosUsuarios()
+        public static MySqlDataReader LocalizaTodosUsuarios()
         {
             try
             {
