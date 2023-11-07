@@ -7,19 +7,18 @@ using System.Threading.Tasks;
 
 namespace SistemaBarbearia_PI
 {
-    public class Vendas
+    public class Vendas : Base
     {
         
         public Vendas(int idvenda, int codhora, int codfunc, double valor, string horavenda, string datavenda )
         {
-            IdVendas = idvenda;
+            Id = idvenda;
             CodHorario = codhora;
             CodFuncionario = codfunc;
             ValorVenda = valor;
             HoraVenda = horavenda;
             DataVenda = datavenda;
         }
-        public int IdVendas;
         public int CodHorario;
         public int CodFuncionario;
         public double ValorVenda;

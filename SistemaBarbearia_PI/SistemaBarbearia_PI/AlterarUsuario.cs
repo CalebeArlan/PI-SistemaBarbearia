@@ -35,18 +35,23 @@ namespace SistemaBarbearia_PI
 		private void BtnCadastrar_Click(object sender, EventArgs e)
 		{
 			Usuario usuario = new Usuario(int.Parse(LblId.Text), TxtUsuario.Text, TxtSenha.Text, Convert.ToString(CbTipoAcesso.SelectedIndex));
-			
+
 			if (Funcoes.VerivicaVazio(this) == false)
 			{
 				try
 				{
 					usuario.Alterar();
-                }
-                catch (Exception ex)
+				}
+				catch (Exception ex)
 				{
 					MessageBox.Show("Ocorreu um erro na alteração do registro. " + ex.Message);
 				}
 			}
+		}
+
+		private void BtnExcluir_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

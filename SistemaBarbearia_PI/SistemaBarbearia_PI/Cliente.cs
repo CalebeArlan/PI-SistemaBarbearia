@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SistemaBarbearia_PI
 {
     
-    public class Cliente : IPessoa
+    public class Cliente : Base
     {
         public string strConexao = "server=localhost;uid=root;database=barbearia";
         public Cliente() { }
@@ -23,7 +23,6 @@ namespace SistemaBarbearia_PI
             RG = rgcliente;
             
         }
-        public int Id;
         public string Nome;
         public string Telefone;
         public string Email;
@@ -31,46 +30,49 @@ namespace SistemaBarbearia_PI
         public string CPF;
         public string RG;
 
-    }
-    public static MySqlDataReader LocalizaTodosClientes()
-    {
-        try
-        {
-            MySqlConnection MySqlConexaoBanco = new MySqlConnection(strConexao);
-            MySqlConexaoBanco.Open();
-            string select = "select id, nome, telefone, email, datanasc, cpf, rg from clientes;";
-            MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
-            comandoSQL.CommandText = select;
 
-            MySqlDataReader reader = comandoSQL.ExecuteReader();
-            return reader;
+		public static MySqlDataReader LocalizaTodosClientes()
+		{
+			try
+			{
+				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
+				MySqlConexaoBanco.Open();
+				string select = "select id, nome, telefone, email, datanasc, cpf, rg from clientes;";
+				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
+				comandoSQL.CommandText = select;
 
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Erro no banco de dados - método localizaTodosClientes: " + ex.Message);
-            return null;
-        }
-    }
+				MySqlDataReader reader = comandoSQL.ExecuteReader();
+				return reader;
 
-    public MySqlDataReader LocalizaCliente(string nome)
-    {
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Erro no banco de dados - método localizaTodosClientes: " + ex.Message);
+				return null;
+			}
+		}
 
-        try
-        {
-            MySqlConnection MySqlConexaoBanco = new MySqlConnection(strConexao);
-            MySqlConexaoBanco.Open();
-            string select = $"select id, nome, telefone, email, datanasc, cpf, rg from clientes where nome like '%{nome}%';";
-            MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
-            comandoSQL.CommandText = select;
-            MySqlDataReader reader = comandoSQL.ExecuteReader();
-            return reader;
+		public MySqlDataReader LocalizaCliente(string nome)
+		{
 
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Erro no banco de dados - método localizarCliente: " + ex.Message);
-            return null;
-        }
-    }
+			try
+			{
+				MySqlConnection MySqlConexaoBanco = new MySqlConnection(strConexao);
+				MySqlConexaoBanco.Open();
+				string select = $"select id, nome, telefone, email, datanasc, cpf, rg from clientes where nome like '%{nome}%';";
+				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
+				comandoSQL.CommandText = select;
+				MySqlDataReader reader = comandoSQL.ExecuteReader();
+				return reader;
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Erro no banco de dados - método localizarCliente: " + ex.Message);
+				return null;
+			}
+		}
+
+	}
+   
 }

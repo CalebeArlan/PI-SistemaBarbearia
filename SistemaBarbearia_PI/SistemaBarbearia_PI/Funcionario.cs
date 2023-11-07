@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace SistemaBarbearia_PI
 {
-    public class Funcionario : IPessoa
+    public class Funcionario : Base
     {
 		public Funcionario() { }
-        public Funcionario(int idfuncionario, string nomefuncionario, string nascfuncionario, string telefone, string cpffuncionario, string rgfuncionario, string enderecofuncionario, string codcargo, string emailfuncionario, double salario)
+        public Funcionario(int id, string nomefuncionario, string nascfuncionario, string telefone, string cpffuncionario, string rgfuncionario, string enderecofuncionario, string codcargo, string emailfuncionario, double salario)
         {
-            Id = idfuncionario;
+			Id = id;
             Nome = nomefuncionario;
             DataNasc = nascfuncionario;
             Telefone = telefone;
@@ -23,7 +23,6 @@ namespace SistemaBarbearia_PI
             Email = emailfuncionario;
 			Salario = salario;
         }
-        public int Id { get; set; }
         public string Nome { get; set; }
 		public string DataNasc { get; set; }
         public string Telefone { get; set; }

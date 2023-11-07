@@ -11,17 +11,16 @@ using System.Threading.Tasks;
 
 namespace SistemaBarbearia_PI
 {
-    public class Usuario
+    public class Usuario:Base
     {
         public Usuario() { }
 		public Usuario(int idusuario, string nomeusuario, string senha, string tipoacesso)
         {
-            IdUsuario = idusuario;
+            Id = idusuario;
             NomeUsuario = nomeusuario;
             Senha = senha;
             TipoAcesso = tipoacesso;
         }
-        public int IdUsuario;
         public string NomeUsuario;
         public string Senha;
         public string TipoAcesso;
@@ -72,7 +71,7 @@ namespace SistemaBarbearia_PI
         {
 			var connection = new MySqlConnection(Conexao.strConexao);
 			connection.Open();
-			MySqlCommand cmd = new MySqlCommand($"UPDATE usuarios SET nome_usuario = '{this.NomeUsuario}', senha = '{this.Senha}', tipo_acesso = {this.TipoAcesso} WHERE id = '{this.IdUsuario}'", connection);
+			MySqlCommand cmd = new MySqlCommand($"UPDATE usuarios SET nome_usuario = '{this.NomeUsuario}', senha = '{this.Senha}', tipo_acesso = {this.TipoAcesso} WHERE id = '{this.Id}'", connection);
 			cmd.ExecuteNonQuery();
 			connection.Close();
 			MessageBox.Show("Registro alterado com sucesso.");

@@ -74,19 +74,19 @@ namespace SistemaBarbearia_PI
         public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Usuario usuarioAlterar = new Usuario();
-            usuarioAlterar.IdUsuario = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            usuarioAlterar.Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
             usuarioAlterar.NomeUsuario = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
             usuarioAlterar.Senha = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
             usuarioAlterar.TipoAcesso = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
 
-            AlterarUsuario alterarusuario = new AlterarUsuario(usuarioAlterar.IdUsuario, usuarioAlterar.NomeUsuario, usuarioAlterar.TipoAcesso, usuarioAlterar.Senha);
+            AlterarUsuario alterarusuario = new AlterarUsuario(usuarioAlterar.Id, usuarioAlterar.NomeUsuario, usuarioAlterar.TipoAcesso, usuarioAlterar.Senha);
             alterarusuario.Show();
         }
 
         public void PesquisarTodosUsuarios()
         {
             Usuario usuario = new Usuario();
-            MySqlDataReader reader = usuario.LocalizaTodosUsuarios();
+            MySqlDataReader reader = Usuario.LocalizaTodosUsuarios();
             dataGridView1.Rows.Clear();
             while (reader.Read())
             {
@@ -102,7 +102,7 @@ namespace SistemaBarbearia_PI
         private void PesquisaUsuarios_Load(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
-            MySqlDataReader reader = usuario.LocalizaTodosUsuarios();
+            MySqlDataReader reader = Usuario.LocalizaTodosUsuarios();
 
             while (reader.Read())
             {

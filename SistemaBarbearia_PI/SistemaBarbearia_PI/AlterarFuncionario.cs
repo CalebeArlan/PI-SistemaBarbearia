@@ -63,10 +63,13 @@ namespace SistemaBarbearia_PI
 
 		private void BtnExcluir_Click(object sender, EventArgs e)
 		{
+			Funcionario funcionario = new Funcionario();
+			funcionario.Id = Int32.Parse(LblId.Text);
+
 			var result = MessageBox.Show("Tem certeza que deseja excluir permanentemente este registro?","Excluir Registro?", MessageBoxButtons.YesNo);
 			if (result == System.Windows.Forms.DialogResult.Yes)
 			{
-				//TODO EXCLUIR
+				funcionario.Deletar();
 			}
 		}
 	}

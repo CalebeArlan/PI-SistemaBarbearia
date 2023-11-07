@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace SistemaBarbearia_PI
 {
-	public class Horario
+	public class Horario:Base
 	{//id 	cod_cliente 	cod_servico 	hora 	data_horario 	
 		public Horario(int idhorario, int codcliente, int codservico, string hora, string datahorario)
 		{
 			this.DataHorario = datahorario;
-			this.IdHorario = idhorario;
+			this.Id = idhorario;
 			this.Hora = hora;
 			this.CodCliente = codcliente;
 			this.CodServico = codservico;
 			
 		}
-		public int IdHorario;
+
 		public int CodCliente;
 		public int CodServico;
 		public string Hora;
