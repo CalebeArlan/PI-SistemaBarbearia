@@ -33,7 +33,7 @@ namespace SistemaBarbearia_PI
             if (Funcoes.VerivicaVazio(this) == false)
             {
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand($"INSERT INTO `cliente`(`nome`, `telefone`, `email`, `datanasc`, `cpf`, `rg`) VALUES('{cliente.Nome}','{cliente.Telefone}','{cliente.Email}','{cliente.DataNasc}','{cliente.CPF}','{cliente.RG});", connection);
+                MySqlCommand cmd = new MySqlCommand($"INSERT INTO `clientes`(`nome`, `telefone`, `email`, `datanasc`, `cpf`, `rg`) VALUES('{cliente.Nome}','{cliente.Telefone}','{cliente.Email}','{cliente.DataNasc}','{cliente.CPF}',{cliente.RG});", connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();
                 MessageBox.Show("Cadastrado com sucesso");
