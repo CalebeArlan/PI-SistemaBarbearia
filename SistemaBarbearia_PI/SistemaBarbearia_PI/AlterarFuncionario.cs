@@ -56,7 +56,7 @@ namespace SistemaBarbearia_PI
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Close()
+			Close();
 		}
 
 		private void BtnExcluir_Click(object sender, EventArgs e)

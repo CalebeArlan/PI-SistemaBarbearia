@@ -11,11 +11,11 @@ namespace SistemaBarbearia_PI
 		public Servico(int idservico, string nomeservico, double preco, string descricao)
 		{
 			this.Id = idservico;
-			this.NomeServico = nomeservico;
+			this.Nome = nomeservico;
 			this.Preco = preco;
 			this.Descricao = descricao;
 		}
-		public string NomeServico;
+		public string Nome;
 		public double Preco;
 		public string Descricao;
 	}

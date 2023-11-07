@@ -17,6 +17,9 @@
     <Compile Update="AlterarFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CadastroServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="PesquisaFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
