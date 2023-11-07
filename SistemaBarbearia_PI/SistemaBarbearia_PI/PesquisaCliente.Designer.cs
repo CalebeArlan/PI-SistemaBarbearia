@@ -75,11 +75,13 @@
             // 
             // button1
             // 
+            button1.Image = Properties.Resources.LupaPng;
             button1.Location = new Point(388, 62);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(49, 23);
             button1.TabIndex = 16;
+            button1.Text = "pesq";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 

@@ -12,6 +12,5 @@ namespace SistemaBarbearia_PI
         string CPF { get; set; }
         string RG { get; set; }
         string Telefone { get; set; }
-        string Endereco { get; set; }
     }
 }

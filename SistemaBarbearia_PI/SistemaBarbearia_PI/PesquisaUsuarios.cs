@@ -85,8 +85,7 @@ namespace SistemaBarbearia_PI
 
         public void PesquisarTodosUsuarios()
         {
-            Usuario usuario = new Usuario();
-            MySqlDataReader reader = usuario.LocalizaTodosUsuarios();
+            MySqlDataReader reader = Usuario.LocalizaTodosUsuarios();
             dataGridView1.Rows.Clear();
             while (reader.Read())
             {
@@ -101,8 +100,8 @@ namespace SistemaBarbearia_PI
 
         private void PesquisaUsuarios_Load(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
-            MySqlDataReader reader = usuario.LocalizaTodosUsuarios();
+            
+            MySqlDataReader reader = Usuario.LocalizaTodosUsuarios();
 
             while (reader.Read())
             {
