@@ -70,6 +70,11 @@ namespace SistemaBarbearia_PI
 			if (result == System.Windows.Forms.DialogResult.Yes)
 			{
 				funcionario.Deletar();
+
+				MessageBox.Show("Registro deletado com sucesso.");
+
+				PesquisaFuncionario f1 = (PesquisaFuncionario)Application.OpenForms["PesquisaFuncionario"];
+				f1.PesquisarTodosFuncionarios();
 			}
 		}
 	}
