@@ -39,7 +39,7 @@ namespace SistemaBarbearia_PI
                                 string? coluna2 = reader["nome"].ToString();
                                 string? coluna3 = reader["telefone"].ToString();
                                 string? coluna4 = reader["email"].ToString();
-                                string? coluna5 = reader["datanasc"].ToString();
+                                string? coluna5 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
                                 string? coluna6 = reader["cpf"].ToString();
                                 string? coluna7 = reader["rg"].ToString();
 
@@ -80,8 +80,8 @@ namespace SistemaBarbearia_PI
             cliente.CPF = Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value);
             cliente.RG = Convert.ToString(dataGridView1.CurrentRow.Cells[6].Value);
 
-            AlterarCliente alterarcliente = new AlterarCliente(cliente.Id,cliente.Nome,cliente.Telefone,cliente.Email,cliente.DataNasc,cliente.CPF,cliente.RG);
-             alterarcliente.Show();
+            AlterarCliente alterarcliente = new AlterarCliente(cliente.Id, cliente.Nome, cliente.Telefone, cliente.Email, cliente.DataNasc, cliente.CPF, cliente.RG);
+            alterarcliente.Show();
         }
 
         private void TxtNome_Click(object sender, EventArgs e)
@@ -104,7 +104,7 @@ namespace SistemaBarbearia_PI
                 string? coluna2 = reader["nome"].ToString();
                 string? coluna3 = reader["telefone"].ToString();
                 string? coluna4 = reader["email"].ToString();
-                string? coluna5 = reader["datanasc"].ToString();
+                string? coluna5 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
                 string? coluna6 = reader["cpf"].ToString();
                 string? coluna7 = reader["rg"].ToString();
 
@@ -117,7 +117,7 @@ namespace SistemaBarbearia_PI
         private void PesquisaCliente_Load(object sender, EventArgs e)
         {
             PesquisaTodosClientes();
-           
+
         }
     }
 }

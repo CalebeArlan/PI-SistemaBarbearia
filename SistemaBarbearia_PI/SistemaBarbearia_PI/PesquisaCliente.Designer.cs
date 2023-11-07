@@ -31,9 +31,6 @@
             BtnSair = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
-            nome_usuario = new DataGridViewTextBoxColumn();
-            tipo_acesso = new DataGridViewTextBoxColumn();
             label4 = new Label();
             TxtNome = new TextBox();
             label1 = new Label();
@@ -59,6 +56,13 @@
             serviçoToolStripMenuItem2 = new ToolStripMenuItem();
             vendaToolStripMenuItem = new ToolStripMenuItem();
             horárioToolStripMenuItem2 = new ToolStripMenuItem();
+            id = new DataGridViewTextBoxColumn();
+            nome = new DataGridViewTextBoxColumn();
+            telefone = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            datanasc = new DataGridViewTextBoxColumn();
+            cpf = new DataGridViewTextBoxColumn();
+            rg = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -88,7 +92,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, nome_usuario, tipo_acesso });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, nome, telefone, email, datanasc, cpf, rg });
             dataGridView1.Location = new Point(12, 131);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
@@ -97,27 +101,6 @@
             dataGridView1.Size = new Size(679, 193);
             dataGridView1.TabIndex = 15;
             dataGridView1.CellClick += dataGridView1_CellClick;
-            // 
-            // id
-            // 
-            id.HeaderText = "id";
-            id.MinimumWidth = 6;
-            id.Name = "id";
-            id.Width = 125;
-            // 
-            // nome_usuario
-            // 
-            nome_usuario.HeaderText = "nome_usuario";
-            nome_usuario.MinimumWidth = 6;
-            nome_usuario.Name = "nome_usuario";
-            nome_usuario.Width = 125;
-            // 
-            // tipo_acesso
-            // 
-            tipo_acesso.HeaderText = "tipo_acesso";
-            tipo_acesso.MinimumWidth = 6;
-            tipo_acesso.Name = "tipo_acesso";
-            tipo_acesso.Width = 125;
             // 
             // label4
             // 
@@ -286,6 +269,43 @@
             horárioToolStripMenuItem2.Size = new Size(137, 22);
             horárioToolStripMenuItem2.Text = "Horário";
             // 
+            // id
+            // 
+            id.HeaderText = "id";
+            id.MinimumWidth = 6;
+            id.Name = "id";
+            id.Width = 125;
+            // 
+            // nome
+            // 
+            nome.HeaderText = "Nome";
+            nome.Name = "nome";
+            // 
+            // telefone
+            // 
+            telefone.HeaderText = "Telefone";
+            telefone.Name = "telefone";
+            // 
+            // email
+            // 
+            email.HeaderText = "Email";
+            email.Name = "email";
+            // 
+            // datanasc
+            // 
+            datanasc.HeaderText = "Data de Nascimento";
+            datanasc.Name = "datanasc";
+            // 
+            // cpf
+            // 
+            cpf.HeaderText = "CPF";
+            cpf.Name = "cpf";
+            // 
+            // rg
+            // 
+            rg.HeaderText = "RG";
+            rg.Name = "rg";
+            // 
             // PesquisaCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -313,9 +333,6 @@
         private Button BtnSair;
         private Button button1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn nome_usuario;
-        private DataGridViewTextBoxColumn tipo_acesso;
         private Label label4;
         private TextBox TxtNome;
         private Label label1;
@@ -341,5 +358,12 @@
         private ToolStripMenuItem serviçoToolStripMenuItem2;
         private ToolStripMenuItem vendaToolStripMenuItem;
         private ToolStripMenuItem horárioToolStripMenuItem2;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn nome;
+        private DataGridViewTextBoxColumn telefone;
+        private DataGridViewTextBoxColumn email;
+        private DataGridViewTextBoxColumn datanasc;
+        private DataGridViewTextBoxColumn cpf;
+        private DataGridViewTextBoxColumn rg;
     }
 }
