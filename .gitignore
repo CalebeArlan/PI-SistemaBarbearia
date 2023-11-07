@@ -96,7 +96,7 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
-
+*.suo
 # Chutzpah Test files
 _Chutzpah*
 
@@ -395,3 +395,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+SistemaBarbearia_PI/.vs/SistemaBarbearia_PI/v17/.suo

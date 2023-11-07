@@ -52,13 +52,11 @@ namespace SistemaBarbearia_PI
 			{
 				MessageBox.Show("Erro ao atualizar o registro. - AlterarFuncionario.cs " + ex.Message);
 			}
-			
-			
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Close();
+			Close()
 		}
 
 		private void BtnExcluir_Click(object sender, EventArgs e)
