@@ -102,9 +102,10 @@ namespace SistemaBarbearia_PI
 		{
 			var connection = new MySqlConnection(Conexao.strConexao);
 
-			this.DataNasc = (DateTime.Parse(this.DataNasc)).ToString("yyyy-MM-dd");
-
-			connection.Open();
+			// this.DataNasc = (DateTime.Parse(this.DataNasc)).ToString("yyyy-MM-dd");
+			DateTime datan = Convert.ToDateTime(this.DataNasc);
+			this.DataNasc = datan.ToString("yyyy-MM-dd");
+            connection.Open();
 			MySqlCommand cmd = new MySqlCommand($"UPDATE funcionarios SET nome = '{this.Nome}', telefone = '{this.Telefone}', datanasc = {this.DataNasc}, cpf = '{this.CPF}', rg = '{this.RG}', endereco = '{this.Endereco}', email = '{this.Email}', cargo = '{this.Cargo}', salario = {this.Salario} WHERE id = '{this.Id}'", connection);
 			cmd.ExecuteNonQuery();
 			connection.Close();

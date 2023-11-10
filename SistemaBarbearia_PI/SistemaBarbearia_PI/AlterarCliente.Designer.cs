@@ -44,6 +44,7 @@
             BtnExcluir = new Button();
             button1 = new Button();
             BtnCadastrar = new Button();
+            LblId = new Label();
             SuspendLayout();
             // 
             // label4
@@ -130,7 +131,7 @@
             // 
             MtxtRG.Location = new Point(43, 187);
             MtxtRG.Margin = new Padding(3, 2, 3, 2);
-            MtxtRG.Mask = "999.999.999-99";
+            MtxtRG.Mask = "99.999.999-9";
             MtxtRG.Name = "MtxtRG";
             MtxtRG.Size = new Size(153, 23);
             MtxtRG.TabIndex = 39;
@@ -170,6 +171,7 @@
             BtnExcluir.TabIndex = 42;
             BtnExcluir.Text = "Excluir";
             BtnExcluir.UseVisualStyleBackColor = true;
+            BtnExcluir.Click += BtnExcluir_Click;
             // 
             // button1
             // 
@@ -179,6 +181,7 @@
             button1.TabIndex = 41;
             button1.Text = "Sair";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // BtnCadastrar
             // 
@@ -191,11 +194,22 @@
             BtnCadastrar.UseVisualStyleBackColor = true;
             BtnCadastrar.Click += BtnCadastrar_Click;
             // 
+            // LblId
+            // 
+            LblId.AutoSize = true;
+            LblId.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            LblId.Location = new Point(217, 9);
+            LblId.Name = "LblId";
+            LblId.Size = new Size(37, 32);
+            LblId.TabIndex = 43;
+            LblId.Text = "Id";
+            // 
             // AlterarCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 344);
+            Controls.Add(LblId);
             Controls.Add(BtnExcluir);
             Controls.Add(button1);
             Controls.Add(BtnCadastrar);
@@ -236,5 +250,6 @@
         private Button BtnExcluir;
         private Button button1;
         private Button BtnCadastrar;
+        private Label LblId;
     }
 }

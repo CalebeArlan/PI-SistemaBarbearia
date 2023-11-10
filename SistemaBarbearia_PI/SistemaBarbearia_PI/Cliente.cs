@@ -76,6 +76,7 @@ namespace SistemaBarbearia_PI
             var connection = new MySqlConnection(Conexao.strConexao);
 
             this.DataNasc = (DateTime.Parse(this.DataNasc)).ToString("yyyy-MM-dd");
+          //this.DataNasc = (DateTime.Parse(this.DataNasc)).ToString("yyyy-MM-dd");
 
             connection.Open();
             MySqlCommand cmd = new MySqlCommand($"UPDATE clientes SET nome = '{this.Nome}', telefone = '{this.Telefone}', email = '{this.Email}', datanasc = {this.DataNasc}, cpf = '{this.CPF}', rg = '{this.RG}' WHERE id = '{this.Id}'", connection);

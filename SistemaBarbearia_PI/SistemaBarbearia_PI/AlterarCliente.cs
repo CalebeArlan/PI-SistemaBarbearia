@@ -17,6 +17,7 @@ namespace SistemaBarbearia_PI
         {
             InitializeComponent();
 
+            LblId.Text = Convert.ToString(id);
             TxtNome.Text = nome;
             MtxtTelefone.Text = telefone;
             TxtEmail.Text = email;
@@ -29,7 +30,7 @@ namespace SistemaBarbearia_PI
         {
             try
             {
-                Cliente cliente = new Cliente(0,TxtNome.Text, MtxtTelefone.Text, TxtEmail.Text, MtxtDataNasc.Text, MtxtCPF.Text, MtxtRG.Text);
+                Cliente cliente = new Cliente(Convert.ToInt32(LblId.Text), TxtNome.Text, MtxtTelefone.Text, TxtEmail.Text, MtxtDataNasc.Text, MtxtCPF.Text, MtxtRG.Text);
                 if (Funcoes.VerivicaVazio(this) == false)
                 {
                     cliente.Alterar();
@@ -40,6 +41,18 @@ namespace SistemaBarbearia_PI
             {
                 MessageBox.Show("Erro ao atualizar o registro. - AlterarFuncionario.cs " + ex.Message);
             }
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = new Cliente();
+            cliente.Id = Convert.ToInt32(LblId.Text);
+           // cliente.Excluir;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

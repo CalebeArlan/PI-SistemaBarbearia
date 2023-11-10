@@ -49,7 +49,7 @@
             // 
             MtxtRG.Location = new Point(62, 188);
             MtxtRG.Margin = new Padding(3, 2, 3, 2);
-            MtxtRG.Mask = "999.999.999-99";
+            MtxtRG.Mask = "99.999.999-9";
             MtxtRG.Name = "MtxtRG";
             MtxtRG.Size = new Size(153, 23);
             MtxtRG.TabIndex = 30;
