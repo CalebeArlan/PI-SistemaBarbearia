@@ -51,6 +51,7 @@
             serviçoToolStripMenuItem2 = new ToolStripMenuItem();
             vendaToolStripMenuItem = new ToolStripMenuItem();
             horárioToolStripMenuItem2 = new ToolStripMenuItem();
+            vendaToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -89,7 +90,7 @@
             // 
             // novoToolStripMenuItem1
             // 
-            novoToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, usuárioToolStripMenuItem, funcionárioToolStripMenuItem, serviçoToolStripMenuItem, horárioToolStripMenuItem });
+            novoToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { usuárioToolStripMenuItem, funcionárioToolStripMenuItem, clienteToolStripMenuItem, serviçoToolStripMenuItem, horárioToolStripMenuItem, vendaToolStripMenuItem1 });
             novoToolStripMenuItem1.Name = "novoToolStripMenuItem1";
             novoToolStripMenuItem1.Size = new Size(48, 20);
             novoToolStripMenuItem1.Text = "Novo";
@@ -97,34 +98,34 @@
             // clienteToolStripMenuItem
             // 
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(180, 22);
+            clienteToolStripMenuItem.Size = new Size(137, 22);
             clienteToolStripMenuItem.Text = "Cliente";
             clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click;
             // 
             // usuárioToolStripMenuItem
             // 
             usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            usuárioToolStripMenuItem.Size = new Size(180, 22);
+            usuárioToolStripMenuItem.Size = new Size(137, 22);
             usuárioToolStripMenuItem.Text = "Usuário";
             usuárioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
             // 
             // funcionárioToolStripMenuItem
             // 
             funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(180, 22);
+            funcionárioToolStripMenuItem.Size = new Size(137, 22);
             funcionárioToolStripMenuItem.Text = "Funcionário";
             funcionárioToolStripMenuItem.Click += funcionárioToolStripMenuItem_Click;
             // 
             // serviçoToolStripMenuItem
             // 
             serviçoToolStripMenuItem.Name = "serviçoToolStripMenuItem";
-            serviçoToolStripMenuItem.Size = new Size(180, 22);
+            serviçoToolStripMenuItem.Size = new Size(137, 22);
             serviçoToolStripMenuItem.Text = "Serviço";
             // 
             // horárioToolStripMenuItem
             // 
             horárioToolStripMenuItem.Name = "horárioToolStripMenuItem";
-            horárioToolStripMenuItem.Size = new Size(180, 22);
+            horárioToolStripMenuItem.Size = new Size(137, 22);
             horárioToolStripMenuItem.Text = "Horário";
             // 
             // editarToolStripMenuItem
@@ -166,7 +167,7 @@
             // 
             // pesquisarToolStripMenuItem
             // 
-            pesquisarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuárioToolStripMenuItem2, funcionárioToolStripMenuItem2, clienteToolStripMenuItem2, serviçoToolStripMenuItem2, vendaToolStripMenuItem, horárioToolStripMenuItem2 });
+            pesquisarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuárioToolStripMenuItem2, funcionárioToolStripMenuItem2, clienteToolStripMenuItem2, serviçoToolStripMenuItem2, horárioToolStripMenuItem2, vendaToolStripMenuItem });
             pesquisarToolStripMenuItem.Name = "pesquisarToolStripMenuItem";
             pesquisarToolStripMenuItem.Size = new Size(69, 20);
             pesquisarToolStripMenuItem.Text = "Pesquisar";
@@ -174,41 +175,47 @@
             // usuárioToolStripMenuItem2
             // 
             usuárioToolStripMenuItem2.Name = "usuárioToolStripMenuItem2";
-            usuárioToolStripMenuItem2.Size = new Size(180, 22);
+            usuárioToolStripMenuItem2.Size = new Size(137, 22);
             usuárioToolStripMenuItem2.Text = "Usuário";
             usuárioToolStripMenuItem2.Click += usuárioToolStripMenuItem2_Click;
             // 
             // funcionárioToolStripMenuItem2
             // 
             funcionárioToolStripMenuItem2.Name = "funcionárioToolStripMenuItem2";
-            funcionárioToolStripMenuItem2.Size = new Size(180, 22);
+            funcionárioToolStripMenuItem2.Size = new Size(137, 22);
             funcionárioToolStripMenuItem2.Text = "Funcionário";
             funcionárioToolStripMenuItem2.Click += funcionárioToolStripMenuItem2_Click;
             // 
             // clienteToolStripMenuItem2
             // 
             clienteToolStripMenuItem2.Name = "clienteToolStripMenuItem2";
-            clienteToolStripMenuItem2.Size = new Size(180, 22);
+            clienteToolStripMenuItem2.Size = new Size(137, 22);
             clienteToolStripMenuItem2.Text = "Cliente";
             clienteToolStripMenuItem2.Click += clienteToolStripMenuItem2_Click;
             // 
             // serviçoToolStripMenuItem2
             // 
             serviçoToolStripMenuItem2.Name = "serviçoToolStripMenuItem2";
-            serviçoToolStripMenuItem2.Size = new Size(180, 22);
+            serviçoToolStripMenuItem2.Size = new Size(137, 22);
             serviçoToolStripMenuItem2.Text = "Serviço";
             // 
             // vendaToolStripMenuItem
             // 
             vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            vendaToolStripMenuItem.Size = new Size(180, 22);
+            vendaToolStripMenuItem.Size = new Size(137, 22);
             vendaToolStripMenuItem.Text = "Venda";
             // 
             // horárioToolStripMenuItem2
             // 
             horárioToolStripMenuItem2.Name = "horárioToolStripMenuItem2";
-            horárioToolStripMenuItem2.Size = new Size(180, 22);
+            horárioToolStripMenuItem2.Size = new Size(137, 22);
             horárioToolStripMenuItem2.Text = "Horário";
+            // 
+            // vendaToolStripMenuItem1
+            // 
+            vendaToolStripMenuItem1.Name = "vendaToolStripMenuItem1";
+            vendaToolStripMenuItem1.Size = new Size(137, 22);
+            vendaToolStripMenuItem1.Text = "Venda";
             // 
             // Menu
             // 
@@ -251,5 +258,6 @@
         private ToolStripMenuItem serviçoToolStripMenuItem2;
         private ToolStripMenuItem vendaToolStripMenuItem;
         private ToolStripMenuItem horárioToolStripMenuItem2;
+        private ToolStripMenuItem vendaToolStripMenuItem1;
     }
 }

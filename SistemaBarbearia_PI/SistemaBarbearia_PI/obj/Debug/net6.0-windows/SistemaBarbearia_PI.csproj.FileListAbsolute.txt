@@ -361,3 +361,4 @@ C:\Users\artuo\OneDrive\Documentos\GitHub\PI-SistemaBarbearia\SistemaBarbearia_P
 C:\Users\artuo\OneDrive\Documentos\GitHub\PI-SistemaBarbearia\SistemaBarbearia_PI\SistemaBarbearia_PI\obj\Debug\net6.0-windows\SistemaBarbearia_PI.genruntimeconfig.cache
 C:\Users\artuo\OneDrive\Documentos\GitHub\PI-SistemaBarbearia\SistemaBarbearia_PI\SistemaBarbearia_PI\obj\Debug\net6.0-windows\ref\SistemaBarbearia_PI.dll
 C:\Users\artuo\OneDrive\Documentos\GitHub\PI-SistemaBarbearia\SistemaBarbearia_PI\SistemaBarbearia_PI\obj\Debug\net6.0-windows\SistemaBarbearia_PI.CadastraCliente.resources
+C:\Users\artuo\OneDrive\Documentos\GitHub\PI-SistemaBarbearia\SistemaBarbearia_PI\SistemaBarbearia_PI\obj\Debug\net6.0-windows\SistemaBarbearia_PI.CadastraVenda.resources
