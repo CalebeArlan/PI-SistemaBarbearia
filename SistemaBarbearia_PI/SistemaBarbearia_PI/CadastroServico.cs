@@ -38,8 +38,6 @@ namespace SistemaBarbearia_PI
 				{
 					MessageBox.Show("Erro ao realizar o cadastro - BtnCadastrar_Click " + ex.Message);
 				}
-
-				
 			}
 		}
 
