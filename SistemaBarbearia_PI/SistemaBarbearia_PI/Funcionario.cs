@@ -34,27 +34,6 @@ namespace SistemaBarbearia_PI
 
 		public double Salario;
 
-		public static MySqlDataReader LocalizaTodosFuncionarios()
-		{
-			try
-			{
-				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
-				MySqlConexaoBanco.Open();
-				string select = "select id, nome, telefone, datanasc, cpf, rg, endereco, email, cargo, salario from funcionarios;";
-				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
-				comandoSQL.CommandText = select;
-
-				MySqlDataReader reader = comandoSQL.ExecuteReader();
-				return reader;
-
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Erro no banco de dados - método localizaTodosFuncionarios: " + ex.Message);
-				return null;
-			}
-		}
-
 		public MySqlDataReader LocalizaPorNome()
 		{
 			try

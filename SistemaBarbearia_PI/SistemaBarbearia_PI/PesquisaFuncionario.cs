@@ -88,39 +88,7 @@ namespace SistemaBarbearia_PI
 
 						MySqlDataReader reader = funcionario.LocalizaPorCPF();
 
-
 						PesquisarTodosFuncionarios();
-
-
-						/*if (reader != null)
-						{
-							if (reader.HasRows)
-							{
-								dataGridView1.Rows.Clear();
-								while (reader.Read())
-								{
-									string? coluna1 = reader["id"].ToString();
-									string? coluna2 = reader["nome"].ToString();
-									string? coluna3 = reader["telefone"].ToString();
-                                    //string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
-                                    string? coluna4 = reader["datanasc"].ToString();
-                                    string? coluna5 = reader["cpf"].ToString();
-									string? coluna6 = reader["rg"].ToString();
-									string? coluna7 = reader["endereco"].ToString();
-									string? coluna8 = reader["email"].ToString();
-									string? coluna9 = reader["cargo"].ToString();
-									string? coluna10 = reader["salario"].ToString();
-
-									dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10);
-								}
-							}
-							else
-							{
-								MessageBox.Show("Funcionário não encontrado.");
-								TxtBusca.Clear();
-								TxtBusca.Focus();
-							}
-						}*/
 					}
 					else
 					{
@@ -158,7 +126,7 @@ namespace SistemaBarbearia_PI
 		public void PesquisarTodosFuncionarios()
 		{
 			Funcionario funcionario = new Funcionario();
-			MySqlDataReader reader = Funcionario.LocalizaTodosFuncionarios();
+			MySqlDataReader reader = Funcionario.LocalizaTodos("funcionarios");
 			dataGridView1.Rows.Clear();
 			while (reader.Read())
 			{
@@ -167,7 +135,6 @@ namespace SistemaBarbearia_PI
 				string? coluna3 = reader["telefone"].ToString();
 				DateTime data = reader.GetDateTime("datanasc");
 				string? coluna4 = data.ToShortDateString();
-				//string? coluna4 = "15/10/2020";
                 string? coluna5 = reader["cpf"].ToString();
 				string? coluna6 = reader["rg"].ToString();
 				string? coluna7 = reader["endereco"].ToString();

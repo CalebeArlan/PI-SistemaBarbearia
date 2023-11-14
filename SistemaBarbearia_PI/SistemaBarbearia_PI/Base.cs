@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,14 +23,13 @@ namespace SistemaBarbearia_PI
 			connection.Close();
 		}
 
-		public MySqlDataReader LocalizaTodos()
+		public static MySqlDataReader LocalizaTodos(string tabela)
 		{
 			try
 			{
-				string nome = this.GetType().Name + "s";
 				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
 				MySqlConexaoBanco.Open();
-				string select = $"select * from {nome};";
+				string select = $"select * from {tabela};";
 				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
 				comandoSQL.CommandText = select;
 
