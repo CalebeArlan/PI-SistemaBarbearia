@@ -126,16 +126,24 @@ namespace SistemaBarbearia_PI
 		public void PesquisarTodosFuncionarios()
 		{
 			Funcionario funcionario = new Funcionario();
-			MySqlDataReader reader = Funcionario.LocalizaTodos("funcionarios");
+			MySqlDataReader reader = Base.LocalizaTodos("funcionarios");
 			dataGridView1.Rows.Clear();
 			while (reader.Read())
 			{
 				string? coluna1 = reader["id"].ToString();
 				string? coluna2 = reader["nome"].ToString();
 				string? coluna3 = reader["telefone"].ToString();
-				DateTime data = reader.GetDateTime("datanasc");
+				DateTime data;
+				try
+				{
+					data = reader.GetDateTime(reader.GetOrdinal("datanasc"));
+				}
+				catch (MySqlConversionException)
+				{
+					data = DateTime.MinValue; // ou qualquer outro valor padrão desejado
+				}
 				string? coluna4 = data.ToShortDateString();
-                string? coluna5 = reader["cpf"].ToString();
+				string? coluna5 = reader["cpf"].ToString();
 				string? coluna6 = reader["rg"].ToString();
 				string? coluna7 = reader["endereco"].ToString();
 				string? coluna8 = reader["email"].ToString();

@@ -47,6 +47,7 @@
 			// 
 			TxtSenha.Location = new Point(141, 241);
 			TxtSenha.Name = "TxtSenha";
+			TxtSenha.PasswordChar = '*';
 			TxtSenha.Size = new Size(347, 27);
 			TxtSenha.TabIndex = 1;
 			// 

@@ -24,10 +24,11 @@ namespace SistemaBarbearia_PI
 			Funcionario funcionario = new Funcionario(0,TxtNome.Text, MtxtDataNasc.Text, MtxtTelefone.Text, MtxtCPF.Text, MtxtRG.Text, TxtEndereco.Text, TxtCargo.Text, TxtEmail.Text, Double.Parse(TxtSalario.Text));
 			var connection = new MySqlConnection(Conexao.strConexao);
 
-			funcionario.DataNasc = (DateTime.Parse(funcionario.DataNasc)).ToString("yyyy-MM-dd");
+			funcionario.DataNasc = DateTime.ParseExact(MtxtDataNasc.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
 
 			if (Funcoes.VerivicaVazio(this) == false)
 			{
+				Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 				connection.Open();
 				MySqlCommand cmd = new MySqlCommand($"INSERT INTO `funcionarios`(`nome`, `telefone`, `datanasc`, `cpf`, `rg`, `endereco`, `email`, `cargo`, `salario`) VALUES('{funcionario.Nome}','{funcionario.Telefone}','{funcionario.DataNasc}','{funcionario.CPF}','{funcionario.RG}','{funcionario.Endereco}','{funcionario.Email}','{funcionario.Cargo}',{funcionario.Salario})", connection);
 				cmd.ExecuteNonQuery();

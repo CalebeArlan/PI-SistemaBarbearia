@@ -20,6 +20,9 @@
     <Compile Update="CadastroServico.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PesquisaServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="PesquisaFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>

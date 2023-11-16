@@ -85,7 +85,7 @@ namespace SistemaBarbearia_PI
 
         public void PesquisarTodosUsuarios()
         {
-            MySqlDataReader reader = Usuario.LocalizaTodos();
+            MySqlDataReader reader = Base.LocalizaTodos("usuarios");
             dataGridView1.Rows.Clear();
             while (reader.Read())
             {

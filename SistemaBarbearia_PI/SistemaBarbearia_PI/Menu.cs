@@ -53,5 +53,11 @@ namespace SistemaBarbearia_PI
 			CadastroServico cadastroservico = new CadastroServico();
 			cadastroservico.Show();
 		}
+
+		private void serviçoToolStripMenuItem2_Click(object sender, EventArgs e)
+		{
+			PesquisaServico pesquisaservico = new PesquisaServico();
+			pesquisaservico.Show();
+		}
 	}
 }
