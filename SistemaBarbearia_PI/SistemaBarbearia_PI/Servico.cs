@@ -51,6 +51,7 @@ namespace SistemaBarbearia_PI
 			MessageBox.Show("Registro atualizado com sucesso.");
 
 			PesquisaServico f1 = (PesquisaServico)Application.OpenForms["PesquisaServico"];
+			f1.PesquisarTodosServicos();
 		}
 	}
 }

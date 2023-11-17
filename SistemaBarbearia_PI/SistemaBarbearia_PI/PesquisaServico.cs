@@ -73,20 +73,14 @@ namespace SistemaBarbearia_PI
 
 		public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			Funcionario funcionario = new Funcionario();
-			funcionario.Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-			funcionario.Nome = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
-			funcionario.Telefone = Convert.ToString(dataGridView1.CurrentRow.Cells[2].Value);
-			funcionario.DataNasc = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
-			funcionario.CPF = Convert.ToString(dataGridView1.CurrentRow.Cells[4].Value);
-			funcionario.RG = Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value);
-			funcionario.Endereco = Convert.ToString(dataGridView1.CurrentRow.Cells[6].Value);
-			funcionario.Email = Convert.ToString(dataGridView1.CurrentRow.Cells[7].Value);
-			funcionario.Cargo = Convert.ToString(dataGridView1.CurrentRow.Cells[8].Value);
-			funcionario.Salario = Convert.ToDouble(dataGridView1.CurrentRow.Cells[9].Value);
+			Servico servico = new Servico();
+			servico.Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+			servico.Nome = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
+			servico.Preco = Convert.ToDouble(dataGridView1.CurrentRow.Cells[2].Value);
+			servico.Descricao = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
 
-			AlterarFuncionario alterarFuncionario = new AlterarFuncionario(funcionario.Id, funcionario.Nome, funcionario.DataNasc, funcionario.Telefone, funcionario.CPF, funcionario.RG, funcionario.Endereco, funcionario.Cargo, funcionario.Email, funcionario.Salario);
-			alterarFuncionario.Show();
+			AlterarServico alterarServico = new AlterarServico(servico.Id, servico.Nome, servico.Preco, servico.Descricao);
+			alterarServico.Show();
 		}
 
 		public void PesquisarTodosServicos()
