@@ -23,10 +23,10 @@ namespace SistemaBarbearia_PI
             {
                 if (!TxtNome.Text.Equals(""))
                 {
-                    Usuario usuario = new Usuario();
-                    usuario.NomeUsuario = TxtNome.Text;
+                    Cliente cliente = new Cliente();
+                    cliente.Nome = TxtNome.Text;
 
-                    MySqlDataReader reader = usuario.LocalizaUsuario(usuario.NomeUsuario);
+                    MySqlDataReader reader = cliente.LocalizaCliente(cliente.Nome);
 
                     if (reader != null)
                     {
@@ -36,17 +36,21 @@ namespace SistemaBarbearia_PI
                             while (reader.Read())
                             {
                                 string? coluna1 = reader["id"].ToString();
-                                string? coluna2 = reader["nome_usuario"].ToString();
-                                string? coluna3 = reader["tipo_acesso"].ToString();
+                                string? coluna2 = reader["nome"].ToString();
+                                string? coluna3 = reader["telefone"].ToString();
+                                string? coluna4 = reader["email"].ToString();
+                                string? coluna5 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
+                                string? coluna6 = reader["cpf"].ToString();
+                                string? coluna7 = reader["rg"].ToString();
 
-                                dataGridView1.Rows.Add(coluna1, coluna2, coluna3);
+                                dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7);
                             }
 
 
                         }
                         else
                         {
-                            MessageBox.Show("Usuário não encontrado.");
+                            MessageBox.Show("Cliente não encontrado.");
                             TxtNome.Clear();
                             TxtNome.Focus();
                         }
@@ -60,7 +64,7 @@ namespace SistemaBarbearia_PI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao encontrar usuário: " + ex.Message);
+                MessageBox.Show("Erro ao encontrar cliente: " + ex.Message);
             }
 
         }
@@ -76,8 +80,8 @@ namespace SistemaBarbearia_PI
             cliente.CPF = Convert.ToString(dataGridView1.CurrentRow.Cells[5].Value);
             cliente.RG = Convert.ToString(dataGridView1.CurrentRow.Cells[6].Value);
 
-            /* AlterarCliente alterarcliente = new AlterarCliente();
-             alterarcliente.Show();*/
+            AlterarCliente alterarcliente = new AlterarCliente(cliente.Id, cliente.Nome, cliente.Telefone, cliente.Email, cliente.DataNasc, cliente.CPF, cliente.RG);
+            alterarcliente.Show();
         }
 
         private void TxtNome_Click(object sender, EventArgs e)
@@ -90,16 +94,30 @@ namespace SistemaBarbearia_PI
             this.Close();
         }
 
-        private void PesquisaCliente_Load(object sender, EventArgs e)
+        public void PesquisaTodosClientes()
         {
-            Cliente cliente = new Cliente();
-            MySqlDataReader reader = Base.LocalizaTodos("clientes");
+            MySqlDataReader reader = Cliente.LocalizaTodosClientes();
             dataGridView1.Rows.Clear();
             while (reader.Read())
             {
-                
-                
+                string? coluna1 = reader["id"].ToString();
+                string? coluna2 = reader["nome"].ToString();
+                string? coluna3 = reader["telefone"].ToString();
+                string? coluna4 = reader["email"].ToString();
+                string? coluna5 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
+                string? coluna6 = reader["cpf"].ToString();
+                string? coluna7 = reader["rg"].ToString();
+
+                dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7);
+
+
             }
+        }
+
+        private void PesquisaCliente_Load(object sender, EventArgs e)
+        {
+            PesquisaTodosClientes();
+
         }
     }
 }
