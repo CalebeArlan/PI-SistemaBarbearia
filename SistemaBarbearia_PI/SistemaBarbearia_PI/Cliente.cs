@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace SistemaBarbearia_PI
 {
     
-    public class Cliente : IPessoa
+    public class Cliente : Base
     {
         public Cliente() { }
         public Cliente(int idcliente, string nomecliente, string telefonecliente, string emailcliente, string nasccliente, string cpfcliente, string rgcliente)

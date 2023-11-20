@@ -50,7 +50,7 @@ namespace SistemaBarbearia_PI
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("Erro no banco de dados - método localizarFuncionario: " + ex.Message);
+				MessageBox.Show("Erro no banco de dados - método localizarPorNome: " + ex.Message);
 				return null;
 			}
 
