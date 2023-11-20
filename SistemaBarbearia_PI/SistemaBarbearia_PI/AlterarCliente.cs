@@ -47,7 +47,8 @@ namespace SistemaBarbearia_PI
         {
             Cliente cliente = new Cliente();
             cliente.Id = Convert.ToInt32(LblId.Text);
-           // cliente.Excluir;
+            cliente.Deletar();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

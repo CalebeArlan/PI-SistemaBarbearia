@@ -180,6 +180,7 @@ namespace SistemaBarbearia_PI
 
 		private void BtnPesquisaTodos_Click(object sender, EventArgs e)
 		{
+			TxtBusca.Clear();
 			PesquisarTodosHorarios();
 		}
 	}
