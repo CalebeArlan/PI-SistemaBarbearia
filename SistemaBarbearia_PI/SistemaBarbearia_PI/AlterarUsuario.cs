@@ -51,7 +51,20 @@ namespace SistemaBarbearia_PI
 
 		private void BtnExcluir_Click(object sender, EventArgs e)
 		{
+			Usuario usuario = new Usuario();
+			usuario.Id = Int32.Parse(LblId.Text);
 
+			var result = MessageBox.Show("Tem certeza que deseja excluir permanentemente este registro?", "Excluir Registro?", MessageBoxButtons.YesNo);
+			if (result == System.Windows.Forms.DialogResult.Yes)
+			{
+				usuario.Deletar();
+
+				MessageBox.Show("Registro deletado com sucesso.");
+
+				PesquisaUsuarios f1 = (PesquisaUsuarios)Application.OpenForms["PesquisaUsuarios"];
+				f1.PesquisarTodosUsuarios();
+				Close();
+			}
 		}
 	}
 }

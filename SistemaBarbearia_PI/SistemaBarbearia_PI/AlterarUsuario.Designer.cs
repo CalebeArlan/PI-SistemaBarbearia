@@ -44,7 +44,7 @@
 			// 
 			// BtnSair
 			// 
-			BtnSair.Location = new Point(37, 259);
+			BtnSair.Location = new Point(37, 211);
 			BtnSair.Margin = new Padding(3, 4, 3, 4);
 			BtnSair.Name = "BtnSair";
 			BtnSair.Size = new Size(86, 31);
@@ -56,7 +56,7 @@
 			// BtnCadastrar
 			// 
 			BtnCadastrar.Image = Properties.Resources.icons8_ok_48;
-			BtnCadastrar.Location = new Point(294, 235);
+			BtnCadastrar.Location = new Point(285, 199);
 			BtnCadastrar.Name = "BtnCadastrar";
 			BtnCadastrar.Size = new Size(64, 55);
 			BtnCadastrar.TabIndex = 16;
@@ -76,7 +76,7 @@
 			// 
 			TxtSenha.Location = new Point(93, 120);
 			TxtSenha.Name = "TxtSenha";
-			TxtSenha.Size = new Size(265, 27);
+			TxtSenha.Size = new Size(662, 27);
 			TxtSenha.TabIndex = 14;
 			// 
 			// LblSenha
@@ -92,7 +92,7 @@
 			// 
 			TxtUsuario.Location = new Point(102, 86);
 			TxtUsuario.Name = "TxtUsuario";
-			TxtUsuario.Size = new Size(254, 27);
+			TxtUsuario.Size = new Size(651, 27);
 			TxtUsuario.TabIndex = 12;
 			// 
 			// LblUsuario
@@ -124,7 +124,7 @@
 			// 
 			// BtnExcluir
 			// 
-			BtnExcluir.Location = new Point(142, 259);
+			BtnExcluir.Location = new Point(142, 211);
 			BtnExcluir.Margin = new Padding(3, 4, 3, 4);
 			BtnExcluir.Name = "BtnExcluir";
 			BtnExcluir.Size = new Size(86, 31);
@@ -150,7 +150,7 @@
 			CbTipoAcesso.Location = new Point(153, 152);
 			CbTipoAcesso.Margin = new Padding(3, 4, 3, 4);
 			CbTipoAcesso.Name = "CbTipoAcesso";
-			CbTipoAcesso.Size = new Size(204, 28);
+			CbTipoAcesso.Size = new Size(222, 28);
 			CbTipoAcesso.TabIndex = 18;
 			CbTipoAcesso.Text = "Escolha o tipo de acesso.";
 			// 
@@ -158,7 +158,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(914, 600);
+			ClientSize = new Size(784, 316);
 			Controls.Add(LblId);
 			Controls.Add(BtnExcluir);
 			Controls.Add(label5);
