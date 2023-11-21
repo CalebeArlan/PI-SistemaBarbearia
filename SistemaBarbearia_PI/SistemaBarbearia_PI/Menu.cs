@@ -15,7 +15,6 @@ namespace SistemaBarbearia_PI
         public Menu()
         {
             InitializeComponent();
-
         }
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -65,6 +64,7 @@ namespace SistemaBarbearia_PI
             CadastroHorario cadastrohorario = new CadastroHorario();
             cadastrohorario.Show();
         }
+
     }
 
 

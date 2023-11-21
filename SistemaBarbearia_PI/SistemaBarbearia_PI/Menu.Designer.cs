@@ -132,40 +132,40 @@
             // usuárioToolStripMenuItem2
             // 
             usuárioToolStripMenuItem2.Name = "usuárioToolStripMenuItem2";
-            usuárioToolStripMenuItem2.Size = new Size(180, 22);
+            usuárioToolStripMenuItem2.Size = new Size(137, 22);
             usuárioToolStripMenuItem2.Text = "Usuário";
             usuárioToolStripMenuItem2.Click += usuárioToolStripMenuItem2_Click;
             // 
             // funcionárioToolStripMenuItem2
             // 
             funcionárioToolStripMenuItem2.Name = "funcionárioToolStripMenuItem2";
-            funcionárioToolStripMenuItem2.Size = new Size(180, 22);
+            funcionárioToolStripMenuItem2.Size = new Size(137, 22);
             funcionárioToolStripMenuItem2.Text = "Funcionário";
             funcionárioToolStripMenuItem2.Click += funcionárioToolStripMenuItem2_Click;
             // 
             // clienteToolStripMenuItem2
             // 
             clienteToolStripMenuItem2.Name = "clienteToolStripMenuItem2";
-            clienteToolStripMenuItem2.Size = new Size(180, 22);
+            clienteToolStripMenuItem2.Size = new Size(137, 22);
             clienteToolStripMenuItem2.Text = "Cliente";
             // 
             // serviçoToolStripMenuItem2
             // 
             serviçoToolStripMenuItem2.Name = "serviçoToolStripMenuItem2";
-            serviçoToolStripMenuItem2.Size = new Size(180, 22);
+            serviçoToolStripMenuItem2.Size = new Size(137, 22);
             serviçoToolStripMenuItem2.Text = "Serviço";
             serviçoToolStripMenuItem2.Click += serviçoToolStripMenuItem2_Click;
             // 
             // vendaToolStripMenuItem
             // 
             vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            vendaToolStripMenuItem.Size = new Size(180, 22);
+            vendaToolStripMenuItem.Size = new Size(137, 22);
             vendaToolStripMenuItem.Text = "Venda";
             // 
             // horárioToolStripMenuItem2
             // 
             horárioToolStripMenuItem2.Name = "horárioToolStripMenuItem2";
-            horárioToolStripMenuItem2.Size = new Size(180, 22);
+            horárioToolStripMenuItem2.Size = new Size(137, 22);
             horárioToolStripMenuItem2.Text = "Horário";
             // 
             // Menu
