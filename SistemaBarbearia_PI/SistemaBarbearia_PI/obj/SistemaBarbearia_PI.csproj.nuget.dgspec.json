@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Noturnos\\Documents\\GitHub\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj": {}
+    "C:\\Users\\artuo\\OneDrive\\Documentos\\GitHub\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Noturnos\\Documents\\GitHub\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj": {
+    "C:\\Users\\artuo\\OneDrive\\Documentos\\GitHub\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Noturnos\\Documents\\GitHub\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
+        "projectUniqueName": "C:\\Users\\artuo\\OneDrive\\Documentos\\GitHub\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
         "projectName": "SistemaBarbearia_PI",
-        "projectPath": "C:\\Users\\Noturnos\\Documents\\GitHub\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
-        "packagesPath": "C:\\Users\\Noturnos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Noturnos\\Documents\\GitHub\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\obj\\",
+        "projectPath": "C:\\Users\\artuo\\OneDrive\\Documentos\\GitHub\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\SistemaBarbearia_PI.csproj",
+        "packagesPath": "C:\\Users\\artuo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\artuo\\OneDrive\\Documentos\\GitHub\\PI-SistemaBarbearia\\SistemaBarbearia_PI\\SistemaBarbearia_PI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Noturnos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\artuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

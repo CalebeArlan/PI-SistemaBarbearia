@@ -38,12 +38,6 @@
             funcionárioToolStripMenuItem = new ToolStripMenuItem();
             serviçoToolStripMenuItem = new ToolStripMenuItem();
             horárioToolStripMenuItem = new ToolStripMenuItem();
-            editarToolStripMenuItem = new ToolStripMenuItem();
-            clienteToolStripMenuItem1 = new ToolStripMenuItem();
-            usuárioToolStripMenuItem1 = new ToolStripMenuItem();
-            funcionárioToolStripMenuItem1 = new ToolStripMenuItem();
-            serviçoToolStripMenuItem1 = new ToolStripMenuItem();
-            horárioToolStripMenuItem1 = new ToolStripMenuItem();
             pesquisarToolStripMenuItem = new ToolStripMenuItem();
             usuárioToolStripMenuItem2 = new ToolStripMenuItem();
             funcionárioToolStripMenuItem2 = new ToolStripMenuItem();
@@ -66,7 +60,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { aToolStripMenuItem, novoToolStripMenuItem1, editarToolStripMenuItem, pesquisarToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { aToolStripMenuItem, novoToolStripMenuItem1, pesquisarToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -97,73 +91,36 @@
             // clienteToolStripMenuItem
             // 
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(180, 22);
+            clienteToolStripMenuItem.Size = new Size(137, 22);
             clienteToolStripMenuItem.Text = "Cliente";
             // 
             // usuárioToolStripMenuItem
             // 
             usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            usuárioToolStripMenuItem.Size = new Size(180, 22);
+            usuárioToolStripMenuItem.Size = new Size(137, 22);
             usuárioToolStripMenuItem.Text = "Usuário";
             usuárioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
             // 
             // funcionárioToolStripMenuItem
             // 
             funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(180, 22);
+            funcionárioToolStripMenuItem.Size = new Size(137, 22);
             funcionárioToolStripMenuItem.Text = "Funcionário";
             funcionárioToolStripMenuItem.Click += funcionárioToolStripMenuItem_Click;
             // 
             // serviçoToolStripMenuItem
             // 
             serviçoToolStripMenuItem.Name = "serviçoToolStripMenuItem";
-            serviçoToolStripMenuItem.Size = new Size(180, 22);
+            serviçoToolStripMenuItem.Size = new Size(137, 22);
             serviçoToolStripMenuItem.Text = "Serviço";
             serviçoToolStripMenuItem.Click += serviçoToolStripMenuItem_Click;
             // 
             // horárioToolStripMenuItem
             // 
             horárioToolStripMenuItem.Name = "horárioToolStripMenuItem";
-            horárioToolStripMenuItem.Size = new Size(180, 22);
+            horárioToolStripMenuItem.Size = new Size(137, 22);
             horárioToolStripMenuItem.Text = "Horário";
             horárioToolStripMenuItem.Click += horárioToolStripMenuItem_Click;
-            // 
-            // editarToolStripMenuItem
-            // 
-            editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem1, usuárioToolStripMenuItem1, funcionárioToolStripMenuItem1, serviçoToolStripMenuItem1, horárioToolStripMenuItem1 });
-            editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(49, 20);
-            editarToolStripMenuItem.Text = "Editar";
-            // 
-            // clienteToolStripMenuItem1
-            // 
-            clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            clienteToolStripMenuItem1.Size = new Size(137, 22);
-            clienteToolStripMenuItem1.Text = "Cliente";
-            // 
-            // usuárioToolStripMenuItem1
-            // 
-            usuárioToolStripMenuItem1.Name = "usuárioToolStripMenuItem1";
-            usuárioToolStripMenuItem1.Size = new Size(137, 22);
-            usuárioToolStripMenuItem1.Text = "Usuário";
-            // 
-            // funcionárioToolStripMenuItem1
-            // 
-            funcionárioToolStripMenuItem1.Name = "funcionárioToolStripMenuItem1";
-            funcionárioToolStripMenuItem1.Size = new Size(137, 22);
-            funcionárioToolStripMenuItem1.Text = "Funcionário";
-            // 
-            // serviçoToolStripMenuItem1
-            // 
-            serviçoToolStripMenuItem1.Name = "serviçoToolStripMenuItem1";
-            serviçoToolStripMenuItem1.Size = new Size(137, 22);
-            serviçoToolStripMenuItem1.Text = "Serviço";
-            // 
-            // horárioToolStripMenuItem1
-            // 
-            horárioToolStripMenuItem1.Name = "horárioToolStripMenuItem1";
-            horárioToolStripMenuItem1.Size = new Size(137, 22);
-            horárioToolStripMenuItem1.Text = "Horário";
             // 
             // pesquisarToolStripMenuItem
             // 
@@ -175,40 +132,40 @@
             // usuárioToolStripMenuItem2
             // 
             usuárioToolStripMenuItem2.Name = "usuárioToolStripMenuItem2";
-            usuárioToolStripMenuItem2.Size = new Size(137, 22);
+            usuárioToolStripMenuItem2.Size = new Size(180, 22);
             usuárioToolStripMenuItem2.Text = "Usuário";
             usuárioToolStripMenuItem2.Click += usuárioToolStripMenuItem2_Click;
             // 
             // funcionárioToolStripMenuItem2
             // 
             funcionárioToolStripMenuItem2.Name = "funcionárioToolStripMenuItem2";
-            funcionárioToolStripMenuItem2.Size = new Size(137, 22);
+            funcionárioToolStripMenuItem2.Size = new Size(180, 22);
             funcionárioToolStripMenuItem2.Text = "Funcionário";
             funcionárioToolStripMenuItem2.Click += funcionárioToolStripMenuItem2_Click;
             // 
             // clienteToolStripMenuItem2
             // 
             clienteToolStripMenuItem2.Name = "clienteToolStripMenuItem2";
-            clienteToolStripMenuItem2.Size = new Size(137, 22);
+            clienteToolStripMenuItem2.Size = new Size(180, 22);
             clienteToolStripMenuItem2.Text = "Cliente";
             // 
             // serviçoToolStripMenuItem2
             // 
             serviçoToolStripMenuItem2.Name = "serviçoToolStripMenuItem2";
-            serviçoToolStripMenuItem2.Size = new Size(137, 22);
+            serviçoToolStripMenuItem2.Size = new Size(180, 22);
             serviçoToolStripMenuItem2.Text = "Serviço";
             serviçoToolStripMenuItem2.Click += serviçoToolStripMenuItem2_Click;
             // 
             // vendaToolStripMenuItem
             // 
             vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            vendaToolStripMenuItem.Size = new Size(137, 22);
+            vendaToolStripMenuItem.Size = new Size(180, 22);
             vendaToolStripMenuItem.Text = "Venda";
             // 
             // horárioToolStripMenuItem2
             // 
             horárioToolStripMenuItem2.Name = "horárioToolStripMenuItem2";
-            horárioToolStripMenuItem2.Size = new Size(137, 22);
+            horárioToolStripMenuItem2.Size = new Size(180, 22);
             horárioToolStripMenuItem2.Text = "Horário";
             // 
             // Menu
@@ -238,12 +195,6 @@
         private ToolStripMenuItem funcionárioToolStripMenuItem;
         private ToolStripMenuItem serviçoToolStripMenuItem;
         private ToolStripMenuItem horárioToolStripMenuItem;
-        private ToolStripMenuItem editarToolStripMenuItem;
-        private ToolStripMenuItem clienteToolStripMenuItem1;
-        private ToolStripMenuItem usuárioToolStripMenuItem1;
-        private ToolStripMenuItem funcionárioToolStripMenuItem1;
-        private ToolStripMenuItem serviçoToolStripMenuItem1;
-        private ToolStripMenuItem horárioToolStripMenuItem1;
         private ToolStripMenuItem sairToolStripMenuItem;
         private ToolStripMenuItem pesquisarToolStripMenuItem;
         private ToolStripMenuItem usuárioToolStripMenuItem2;

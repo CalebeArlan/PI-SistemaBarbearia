@@ -66,22 +66,6 @@ namespace SistemaBarbearia_PI
             cadastrohorario.Show();
         }
     }
-        private void funcionárioToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            PesquisaFuncionario pesquisafuncionario = new PesquisaFuncionario();
-            pesquisafuncionario.Show();
-        }
 
-        private void clienteToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            PesquisaCliente pesquisacliente = new PesquisaCliente();
-            pesquisacliente.Show();
-        }
 
-        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CadastraCliente cadastraCliente = new CadastraCliente();
-            cadastraCliente.Show();
-        }
-    }
 }
