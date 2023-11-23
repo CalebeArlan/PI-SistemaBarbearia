@@ -99,35 +99,35 @@
 			// clienteToolStripMenuItem
 			// 
 			clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-			clienteToolStripMenuItem.Size = new Size(224, 26);
+			clienteToolStripMenuItem.Size = new Size(169, 26);
 			clienteToolStripMenuItem.Text = "Cliente";
 			clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click_1;
 			// 
 			// usuárioToolStripMenuItem
 			// 
 			usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-			usuárioToolStripMenuItem.Size = new Size(224, 26);
+			usuárioToolStripMenuItem.Size = new Size(169, 26);
 			usuárioToolStripMenuItem.Text = "Usuário";
 			usuárioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
 			// 
 			// funcionárioToolStripMenuItem
 			// 
 			funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-			funcionárioToolStripMenuItem.Size = new Size(224, 26);
+			funcionárioToolStripMenuItem.Size = new Size(169, 26);
 			funcionárioToolStripMenuItem.Text = "Funcionário";
 			funcionárioToolStripMenuItem.Click += funcionárioToolStripMenuItem_Click;
 			// 
 			// serviçoToolStripMenuItem
 			// 
 			serviçoToolStripMenuItem.Name = "serviçoToolStripMenuItem";
-			serviçoToolStripMenuItem.Size = new Size(224, 26);
+			serviçoToolStripMenuItem.Size = new Size(169, 26);
 			serviçoToolStripMenuItem.Text = "Serviço";
 			serviçoToolStripMenuItem.Click += serviçoToolStripMenuItem_Click;
 			// 
 			// horárioToolStripMenuItem
 			// 
 			horárioToolStripMenuItem.Name = "horárioToolStripMenuItem";
-			horárioToolStripMenuItem.Size = new Size(224, 26);
+			horárioToolStripMenuItem.Size = new Size(169, 26);
 			horárioToolStripMenuItem.Text = "Horário";
 			horárioToolStripMenuItem.Click += horárioToolStripMenuItem_Click;
 			// 
@@ -227,6 +227,7 @@
 			Margin = new Padding(3, 4, 3, 4);
 			Name = "Menu";
 			Text = "Menu";
+			Load += Menu_Load;
 			menuStrip1.ResumeLayout(false);
 			menuStrip1.PerformLayout();
 			ResumeLayout(false);

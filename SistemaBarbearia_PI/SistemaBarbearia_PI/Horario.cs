@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,34 @@ namespace SistemaBarbearia_PI
 			this.CodCliente = codcliente;
 			this.CodServico = codservico;
 			
+		}
+
+		public MySqlDataReader LocalizaCods()
+		{
+			MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
+			MySqlConexaoBanco.Open();
+			string select = $"SELECT cod_servico, cod_cliente from horarios where id = {this.Id};";
+			MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
+			comandoSQL.CommandText = select;
+			MySqlDataReader reader = comandoSQL.ExecuteReader();
+			return reader;
+		}
+
+		public void Alterar()
+		{
+			var connection = new MySqlConnection(Conexao.strConexao);
+
+			this.DataHorario = (DateTime.Parse(this.DataHorario)).ToString("yyyy-MM-dd");
+			Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+
+			connection.Open();
+			MySqlCommand cmd = new MySqlCommand($"UPDATE horarios SET cod_cliente = '{this.CodCliente}', cod_servico = '{this.CodServico}', hora = '{this.Hora}', data_horario = {this.DataHorario}", connection);
+			cmd.ExecuteNonQuery();
+			connection.Close();
+			MessageBox.Show("Registro atualizado com sucesso.");
+
+			PesquisaHorario pesquisaHorario = (PesquisaHorario)Application.OpenForms["PesquisaHorario"];
+			pesquisaHorario.PesquisarTodosHorarios();
 		}
 
 		public MySqlDataReader LocalizaPorNome(string nome)

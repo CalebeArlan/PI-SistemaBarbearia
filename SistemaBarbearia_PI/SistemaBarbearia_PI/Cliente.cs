@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +24,6 @@ namespace SistemaBarbearia_PI
             RG = rgcliente;
             
         }
-        public int Id { get; set; }
         public string Nome { get; set; }
         public string Telefone { get; set; }
         public string Email { get; set; }
@@ -75,11 +76,10 @@ namespace SistemaBarbearia_PI
         {
             var connection = new MySqlConnection(Conexao.strConexao);
 
-            this.DataNasc = (DateTime.Parse(this.DataNasc)).ToString("yyyy-MM-dd");
-          //this.DataNasc = (DateTime.Parse(this.DataNasc)).ToString("yyyy-MM-dd");
-
             connection.Open();
-            MySqlCommand cmd = new MySqlCommand($"UPDATE clientes SET nome = '{this.Nome}', telefone = '{this.Telefone}', email = '{this.Email}', datanasc = {this.DataNasc}, cpf = '{this.CPF}', rg = '{this.RG}' WHERE id = '{this.Id}'", connection);
+			this.DataNasc = (DateTime.Parse(this.DataNasc)).ToString("yyyy-MM-dd");
+			Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+			MySqlCommand cmd = new MySqlCommand($"UPDATE clientes SET nome = '{this.Nome}', telefone = '{this.Telefone}', email = '{this.Email}', datanasc = '{this.DataNasc}', cpf = '{this.CPF}', rg = '{this.RG}' WHERE id = '{this.Id}'", connection);
             cmd.ExecuteNonQuery();
             connection.Close();
             MessageBox.Show("Registro atualizado com sucesso.");

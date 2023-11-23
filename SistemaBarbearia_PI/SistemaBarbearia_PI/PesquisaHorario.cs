@@ -125,14 +125,19 @@ namespace SistemaBarbearia_PI
 
 		public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			Servico servico = new Servico();
-			servico.Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-			servico.Nome = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value);
-			servico.Preco = Convert.ToDouble(dataGridView1.CurrentRow.Cells[2].Value);
-			servico.Descricao = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
+			Horario horario = new Horario();
+			horario.Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
-			AlterarServico alterarServico = new AlterarServico(servico.Id, servico.Nome, servico.Preco, servico.Descricao);
-			alterarServico.Show();
+			MySqlDataReader reader = horario.LocalizaCods();
+
+			reader.Read();
+			horario.CodCliente = Convert.ToInt32(reader["cod_cliente"]);
+			horario.CodServico = Convert.ToInt32(reader["cod_servico"]);
+			horario.Hora = Convert.ToString(dataGridView1.CurrentRow.Cells[3].Value);
+			horario.DataHorario = Convert.ToString(dataGridView1.CurrentRow.Cells[4].Value);
+
+			AlterarHorario alterarHorario = new AlterarHorario(horario.Id, horario.CodCliente, horario.CodServico, horario.Hora, horario.DataHorario);
+			alterarHorario.Show();
 		}
 
 		public void PesquisarTodosHorarios()

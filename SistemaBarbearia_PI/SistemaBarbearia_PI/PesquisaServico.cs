@@ -85,8 +85,7 @@ namespace SistemaBarbearia_PI
 
 		public void PesquisarTodosServicos()
 		{
-			Servico servico = new Servico();
-			MySqlDataReader reader = Servico.LocalizaTodos("servicos");
+			MySqlDataReader reader = Base.LocalizaTodos("servicos");
 			dataGridView1.Rows.Clear();
 			while (reader.Read())
 			{

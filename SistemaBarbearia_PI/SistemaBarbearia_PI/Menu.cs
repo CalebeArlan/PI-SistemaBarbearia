@@ -95,6 +95,18 @@ namespace SistemaBarbearia_PI
 			CadastraCliente cadastraCliente = new CadastraCliente();
 			cadastraCliente.Show();
 		}
+
+		private void Menu_Load(object sender, EventArgs e)
+		{
+			if(FrmLoginUsuario.TipoAcesso != '0')
+			{
+				funcionárioToolStripMenuItem.Visible = false;
+				usuárioToolStripMenuItem.Visible = false;
+
+				funcionárioToolStripMenuItem2.Visible = false;
+				usuárioToolStripMenuItem2.Visible = false;
+			}
+		}
 	}
 }
 
