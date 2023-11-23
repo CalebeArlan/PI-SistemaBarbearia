@@ -12,16 +12,7 @@ namespace SistemaBarbearia_PI
 	public class Base
 	{
 		public int Id;
-		public int Tipo_Acesso;
-
-		public void Verifica_Acesso()
-		{
-			var connection = new MySqlConnection(Conexao.strConexao);
-			connection.Open();
-			MySqlCommand cmd = new MySqlCommand($"select tipo_acesso from usuarios", connection);
-			cmd.ExecuteNonQuery();
-			connection.Close();
-		}
+		public char Tipo_Acesso;
 
         public void Deletar()
 		{

@@ -61,7 +61,7 @@ namespace SistemaBarbearia_PI
 			try
 			{
 				MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
-				MySqlConexaoBanco.Open();
+				MySqlConexaoBanco.Open(); 
 				string select = $"select id, nome, telefone, datanasc, cpf, rg, endereco, email, cargo, salario from funcionarios where cpf like '%{this.CPF}%';";
 				MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
 				comandoSQL.CommandText = select;

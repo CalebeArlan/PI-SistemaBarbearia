@@ -29,8 +29,24 @@ namespace SistemaBarbearia_PI
 
 
 		}
+        public char Verifica_Acesso(string nome, string senha)
+        {
+			
+			/* var connection = new MySqlConnection(Conexao.strConexao);
+			 connection.Open();
+			 MySqlCommand cmd = new MySqlCommand($"select tipo_acesso from usuarios where nome_usuario = {nome} and senha = {senha}", connection);
+			 cmd.ExecuteNonQuery();
+			 connection.Close();*/
+			MySqlConnection MySqlConexaoBanco = new MySqlConnection(Conexao.strConexao);
+			MySqlConexaoBanco.Open();
+			string select = $"select tipo_acesso from usuarios where nome_usuario = {nome} and senha = {senha}";
+			MySqlCommand comandoSQL = MySqlConexaoBanco.CreateCommand();
+			comandoSQL.CommandText = select;
+			MySqlDataReader reader = comandoSQL.ExecuteReader();
 
-		private void button1_Click(object sender, EventArgs e)
+            return tipo_acesso;
+        }
+        private void button1_Click(object sender, EventArgs e)
 		{
 			string usuario = TxtUsuario.Text;
 			string senha = TxtSenha.Text;
