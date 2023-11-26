@@ -21,7 +21,7 @@ namespace SistemaBarbearia_PI
 
 		private void BtnCadastrar_Click(object sender, EventArgs e)
 		{
-			Funcionario funcionario = new Funcionario(0,TxtNome.Text, MtxtDataNasc.Text, MtxtTelefone.Text, MtxtCPF.Text, MtxtRG.Text, TxtEndereco.Text, TxtCargo.Text, TxtEmail.Text, Double.Parse(TxtSalario.Text));
+			Funcionario funcionario = new Funcionario(0, TxtNome.Text, MtxtDataNasc.Text, MtxtTelefone.Text, MtxtCPF.Text, MtxtRG.Text, TxtEndereco.Text, TxtCargo.Text, TxtEmail.Text, Double.Parse(TxtSalario.Text), CbSituacao.Text);
 			var connection = new MySqlConnection(Conexao.strConexao);
 
 			funcionario.DataNasc = DateTime.ParseExact(MtxtDataNasc.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
@@ -30,16 +30,16 @@ namespace SistemaBarbearia_PI
 			{
 				Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 				connection.Open();
-				MySqlCommand cmd = new MySqlCommand($"INSERT INTO `funcionarios`(`nome`, `telefone`, `datanasc`, `cpf`, `rg`, `endereco`, `email`, `cargo`, `salario`) VALUES('{funcionario.Nome}','{funcionario.Telefone}','{funcionario.DataNasc}','{funcionario.CPF}','{funcionario.RG}','{funcionario.Endereco}','{funcionario.Email}','{funcionario.Cargo}',{funcionario.Salario})", connection);
+				MySqlCommand cmd = new MySqlCommand($"INSERT INTO `funcionarios`(`nome`, `telefone`, `datanasc`, `cpf`, `rg`, `endereco`, `email`, `cargo`, `salario`,`situacao`) VALUES('{funcionario.Nome}','{funcionario.Telefone}','{funcionario.DataNasc}','{funcionario.CPF}','{funcionario.RG}','{funcionario.Endereco}','{funcionario.Email}','{funcionario.Cargo}',{funcionario.Salario}, '{funcionario.Situacao}')", connection);
 				cmd.ExecuteNonQuery();
 				connection.Close();
 				MessageBox.Show("Cadastrado com sucesso");
 			}
 		}
-
 		private void button1_Click(object sender, EventArgs e)
 		{
 			Close();
 		}
+
 	}
 }

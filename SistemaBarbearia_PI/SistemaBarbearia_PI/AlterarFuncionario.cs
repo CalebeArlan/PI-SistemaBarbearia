@@ -21,7 +21,7 @@ namespace SistemaBarbearia_PI
 		{
 			InitializeComponent();
 		}
-		public AlterarFuncionario(int id, string nome, string datanasc, string telefone, string cpf, string rg, string endereco, string cargo, string email, double salario)
+		public AlterarFuncionario(int id, string nome, string datanasc, string telefone, string cpf, string rg, string endereco, string cargo, string email, double salario, string situacao)
 		{
 			InitializeComponent();
 
@@ -35,20 +35,27 @@ namespace SistemaBarbearia_PI
 			TxtCargo.Text = cargo;
 			TxtEmail.Text = email;
 			TxtSalario.Text = salario.ToString();
+			if(situacao == "Ativo")
+			{
+				CbSituacao.SelectedIndex = 0;
+			}
+			else if(situacao == "Desativado"){
+				CbSituacao.SelectedIndex = 1;
+			}
 		}
 
 		private void BtnCadastrar_Click(object sender, EventArgs e)
 		{
 			try
 			{
-                Funcionario funcionario = new Funcionario(Convert.ToInt32(LblId.Text), TxtNome.Text, MtxtDataNasc.Text, MtxtTelefone.Text, MtxtCPF.Text, MtxtRG.Text, TxtEndereco.Text, TxtCargo.Text, TxtEmail.Text, Convert.ToDouble(TxtSalario.Text));
-                if (Funcoes.VerivicaVazio(this) == false)
-                {
-                    funcionario.Alterar();
+				Funcionario funcionario = new Funcionario(Convert.ToInt32(LblId.Text), TxtNome.Text, MtxtDataNasc.Text, MtxtTelefone.Text, MtxtCPF.Text, MtxtRG.Text, TxtEndereco.Text, TxtCargo.Text, TxtEmail.Text, Convert.ToDouble(TxtSalario.Text), CbSituacao.Text);
+				if (Funcoes.VerivicaVazio(this) == false)
+				{
+					funcionario.Alterar();
 
-                }
-            }
-			catch(Exception ex)
+				}
+			}
+			catch (Exception ex)
 			{
 				MessageBox.Show("Erro ao atualizar o registro. - AlterarFuncionario.cs " + ex.Message);
 			}
@@ -64,7 +71,7 @@ namespace SistemaBarbearia_PI
 			Funcionario funcionario = new Funcionario();
 			funcionario.Id = Int32.Parse(LblId.Text);
 
-			var result = MessageBox.Show("Tem certeza que deseja excluir permanentemente este registro?","Excluir Registro?", MessageBoxButtons.YesNo);
+			var result = MessageBox.Show("Tem certeza que deseja excluir permanentemente este registro?", "Excluir Registro?", MessageBoxButtons.YesNo);
 			if (result == System.Windows.Forms.DialogResult.Yes)
 			{
 				funcionario.Deletar();

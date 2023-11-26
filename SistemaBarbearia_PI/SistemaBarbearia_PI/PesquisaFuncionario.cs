@@ -25,6 +25,14 @@ namespace SistemaBarbearia_PI
 
 		private void button1_Click(object sender, EventArgs e)
 		{
+			if (CkbFiltroDesativos.Checked == true)
+			{
+				Funcionario.FiltroAtivo = true;
+			}
+			else
+			{
+				Funcionario.FiltroAtivo = false;
+			}
 			if (RdBNome.Checked == true)
 			{
 				try
@@ -33,6 +41,8 @@ namespace SistemaBarbearia_PI
 					{
 						Funcionario funcionario = new Funcionario();
 						funcionario.Nome = TxtBusca.Text;
+
+
 
 						MySqlDataReader reader = funcionario.LocalizaPorNome();
 
@@ -48,14 +58,15 @@ namespace SistemaBarbearia_PI
 									string? coluna3 = reader["telefone"].ToString();
 									string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
 									//string? coluna4 = reader["datanasc"].ToString();
-                                    string? coluna5 = reader["cpf"].ToString();
+									string? coluna5 = reader["cpf"].ToString();
 									string? coluna6 = reader["rg"].ToString();
 									string? coluna7 = reader["endereco"].ToString();
 									string? coluna8 = reader["email"].ToString();
 									string? coluna9 = reader["cargo"].ToString();
 									string? coluna10 = reader["salario"].ToString();
+									string? coluna11 = reader["situacao"].ToString();
 
-									dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10);
+									dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10, coluna11);
 								}
 							}
 							else
@@ -84,16 +95,44 @@ namespace SistemaBarbearia_PI
 					if (!TxtBusca.Text.Equals(""))
 					{
 						Funcionario funcionario = new Funcionario();
-						funcionario.CPF = TxtBusca.Text;
+						funcionario.CPF = MktBuscaCPF.Text;
 
 						MySqlDataReader reader = funcionario.LocalizaPorCPF();
 
-						PesquisarTodosFuncionarios();
-					}
-					else
-					{
-						MessageBox.Show("Favor preencher o campo Nome para pesquisa");
-						TxtBusca.Focus();
+						if (reader != null)
+						{
+							if (reader.HasRows)
+							{
+								dataGridView1.Rows.Clear();
+								while (reader.Read())
+								{
+									string? coluna1 = reader["id"].ToString();
+									string? coluna2 = reader["nome"].ToString();
+									string? coluna3 = reader["telefone"].ToString();
+									string? coluna4 = ((DateTime)reader["datanasc"]).Date.ToShortDateString();
+									//string? coluna4 = reader["datanasc"].ToString();
+									string? coluna5 = reader["cpf"].ToString();
+									string? coluna6 = reader["rg"].ToString();
+									string? coluna7 = reader["endereco"].ToString();
+									string? coluna8 = reader["email"].ToString();
+									string? coluna9 = reader["cargo"].ToString();
+									string? coluna10 = reader["salario"].ToString();
+									string? coluna11 = reader["situacao"].ToString();
+
+									dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10, coluna11);
+								}
+							}
+							else
+							{
+								MessageBox.Show("Nenhum funcionário encontrado.");
+							}
+
+						}
+						else
+						{
+							MessageBox.Show("Favor preencher o campo CPF para pesquisa");
+							TxtBusca.Focus();
+						}
 					}
 				}
 				catch (Exception ex)
@@ -118,15 +157,16 @@ namespace SistemaBarbearia_PI
 			funcionario.Email = Convert.ToString(dataGridView1.CurrentRow.Cells[7].Value);
 			funcionario.Cargo = Convert.ToString(dataGridView1.CurrentRow.Cells[8].Value);
 			funcionario.Salario = Convert.ToDouble(dataGridView1.CurrentRow.Cells[9].Value);
+			funcionario.Situacao = Convert.ToString(dataGridView1.CurrentRow.Cells[10].Value);
 
-			AlterarFuncionario alterarFuncionario = new AlterarFuncionario(funcionario.Id,funcionario.Nome,funcionario.DataNasc,funcionario.Telefone,funcionario.CPF,funcionario.RG,funcionario.Endereco,funcionario.Cargo,funcionario.Email,funcionario.Salario);
+			AlterarFuncionario alterarFuncionario = new AlterarFuncionario(funcionario.Id, funcionario.Nome, funcionario.DataNasc, funcionario.Telefone, funcionario.CPF, funcionario.RG, funcionario.Endereco, funcionario.Cargo, funcionario.Email, funcionario.Salario, funcionario.Situacao);
 			alterarFuncionario.Show();
 		}
 
 		public void PesquisarTodosFuncionarios()
 		{
 			Funcionario funcionario = new Funcionario();
-			MySqlDataReader reader = Base.LocalizaTodos("funcionarios");
+			MySqlDataReader reader = Funcionario.LocalizaTodos();
 			dataGridView1.Rows.Clear();
 			while (reader.Read())
 			{
@@ -149,8 +189,9 @@ namespace SistemaBarbearia_PI
 				string? coluna8 = reader["email"].ToString();
 				string? coluna9 = reader["cargo"].ToString();
 				string? coluna10 = reader["salario"].ToString();
+				string? coluna11 = reader["situacao"].ToString();
 
-				dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10);
+				dataGridView1.Rows.Add(coluna1, coluna2, coluna3, coluna4, coluna5, coluna6, coluna7, coluna8, coluna9, coluna10, coluna11);
 			}
 		}
 
@@ -166,6 +207,33 @@ namespace SistemaBarbearia_PI
 		private void BtnSair_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void BtnPesquisaTodos_Click(object sender, EventArgs e)
+		{
+			if (CkbFiltroDesativos.Checked == true)
+			{
+				Funcionario.FiltroAtivo = false;
+			}
+			else
+			{
+				Funcionario.FiltroAtivo = true;
+			}
+			PesquisarTodosFuncionarios();
+		}
+
+		private void RdbCPF_CheckedChanged(object sender, EventArgs e)
+		{
+			if(RdbCPF.Checked == true)
+			{
+				MktBuscaCPF.Visible = true;
+				TxtBusca.Visible = false;
+			}
+			else
+			{
+				MktBuscaCPF.Visible = false;
+				TxtBusca.Visible = true;
+			}
 		}
 	}
 }

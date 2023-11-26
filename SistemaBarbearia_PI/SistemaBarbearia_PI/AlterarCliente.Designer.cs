@@ -143,7 +143,7 @@
 			// MtxtCPF
 			// 
 			MtxtCPF.Location = new Point(58, 174);
-			MtxtCPF.Mask = "999.999.999-99";
+			MtxtCPF.Mask = "999,999,999-99";
 			MtxtCPF.Name = "MtxtCPF";
 			MtxtCPF.Size = new Size(265, 27);
 			MtxtCPF.TabIndex = 37;
@@ -198,6 +198,7 @@
 			LblId.Size = new Size(47, 41);
 			LblId.TabIndex = 43;
 			LblId.Text = "Id";
+			LblId.Visible = false;
 			// 
 			// AlterarCliente
 			// 
@@ -223,7 +224,7 @@
 			Controls.Add(label4);
 			Margin = new Padding(3, 4, 3, 4);
 			Name = "AlterarCliente";
-			Text = "AlterarCliente";
+			Text = "Alterar Cliente";
 			ResumeLayout(false);
 			PerformLayout();
 		}

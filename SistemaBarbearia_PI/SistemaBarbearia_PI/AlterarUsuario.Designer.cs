@@ -142,6 +142,7 @@
 			LblId.Size = new Size(55, 41);
 			LblId.TabIndex = 23;
 			LblId.Text = "Id:";
+			LblId.Visible = false;
 			// 
 			// CbTipoAcesso
 			// 

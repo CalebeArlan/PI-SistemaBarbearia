@@ -55,14 +55,6 @@
 			TxtBusca = new TextBox();
 			label4 = new Label();
 			dataGridView1 = new DataGridView();
-			usuarioBindingSource = new BindingSource(components);
-			button1 = new Button();
-			imageList1 = new ImageList(components);
-			BtnSair = new Button();
-			funcionarioBindingSource = new BindingSource(components);
-			groupBox1 = new GroupBox();
-			RdbCPF = new RadioButton();
-			RdBNome = new RadioButton();
 			id = new DataGridViewTextBoxColumn();
 			nome = new DataGridViewTextBoxColumn();
 			Telefone = new DataGridViewTextBoxColumn();
@@ -73,6 +65,18 @@
 			email = new DataGridViewTextBoxColumn();
 			cargo = new DataGridViewTextBoxColumn();
 			Salario = new DataGridViewTextBoxColumn();
+			Situacao = new DataGridViewTextBoxColumn();
+			usuarioBindingSource = new BindingSource(components);
+			button1 = new Button();
+			imageList1 = new ImageList(components);
+			BtnSair = new Button();
+			funcionarioBindingSource = new BindingSource(components);
+			groupBox1 = new GroupBox();
+			RdbCPF = new RadioButton();
+			RdBNome = new RadioButton();
+			CkbFiltroDesativos = new CheckBox();
+			BtnPesquisaTodos = new Button();
+			MktBuscaCPF = new MaskedTextBox();
 			menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
 			((System.ComponentModel.ISupportInitialize)usuarioBindingSource).BeginInit();
@@ -223,7 +227,7 @@
 			// 
 			// TxtBusca
 			// 
-			TxtBusca.Location = new Point(11, 89);
+			TxtBusca.Location = new Point(12, 89);
 			TxtBusca.Name = "TxtBusca";
 			TxtBusca.Size = new Size(423, 27);
 			TxtBusca.TabIndex = 3;
@@ -244,7 +248,7 @@
 			// 
 			dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 			dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, nome, Telefone, datanasc, cpf, rg, endereco, email, cargo, Salario });
+			dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, nome, Telefone, datanasc, cpf, rg, endereco, email, cargo, Salario, Situacao });
 			dataGridView1.Location = new Point(11, 181);
 			dataGridView1.Name = "dataGridView1";
 			dataGridView1.RightToLeft = RightToLeft.No;
@@ -253,76 +257,6 @@
 			dataGridView1.Size = new Size(1180, 445);
 			dataGridView1.TabIndex = 9;
 			dataGridView1.CellClick += dataGridView1_CellClick;
-			// 
-			// usuarioBindingSource
-			// 
-			usuarioBindingSource.DataSource = typeof(Usuario);
-			// 
-			// button1
-			// 
-			button1.ImageKey = "LupaPng.png";
-			button1.ImageList = imageList1;
-			button1.Location = new Point(441, 89);
-			button1.Name = "button1";
-			button1.Size = new Size(56, 31);
-			button1.TabIndex = 10;
-			button1.UseVisualStyleBackColor = true;
-			button1.Click += button1_Click;
-			// 
-			// imageList1
-			// 
-			imageList1.ColorDepth = ColorDepth.Depth8Bit;
-			imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-			imageList1.TransparentColor = Color.Transparent;
-			imageList1.Images.SetKeyName(0, "LupaPng.png");
-			// 
-			// BtnSair
-			// 
-			BtnSair.Location = new Point(535, 88);
-			BtnSair.Margin = new Padding(3, 4, 3, 4);
-			BtnSair.Name = "BtnSair";
-			BtnSair.Size = new Size(86, 31);
-			BtnSair.TabIndex = 11;
-			BtnSair.Text = "Sair";
-			BtnSair.UseVisualStyleBackColor = true;
-			BtnSair.Click += BtnSair_Click;
-			// 
-			// funcionarioBindingSource
-			// 
-			funcionarioBindingSource.DataSource = typeof(Funcionario);
-			// 
-			// groupBox1
-			// 
-			groupBox1.Controls.Add(RdbCPF);
-			groupBox1.Controls.Add(RdBNome);
-			groupBox1.Location = new Point(774, 33);
-			groupBox1.Name = "groupBox1";
-			groupBox1.Size = new Size(250, 125);
-			groupBox1.TabIndex = 12;
-			groupBox1.TabStop = false;
-			groupBox1.Text = "Pesquisar Por";
-			// 
-			// RdbCPF
-			// 
-			RdbCPF.AutoSize = true;
-			RdbCPF.Location = new Point(21, 73);
-			RdbCPF.Name = "RdbCPF";
-			RdbCPF.Size = new Size(54, 24);
-			RdbCPF.TabIndex = 1;
-			RdbCPF.Text = "CPF";
-			RdbCPF.UseVisualStyleBackColor = true;
-			// 
-			// RdBNome
-			// 
-			RdBNome.AutoSize = true;
-			RdBNome.Checked = true;
-			RdBNome.Location = new Point(21, 43);
-			RdBNome.Name = "RdBNome";
-			RdBNome.Size = new Size(71, 24);
-			RdBNome.TabIndex = 0;
-			RdBNome.TabStop = true;
-			RdBNome.Text = "Nome";
-			RdBNome.UseVisualStyleBackColor = true;
 			// 
 			// id
 			// 
@@ -395,11 +329,122 @@
 			Salario.Name = "Salario";
 			Salario.Width = 125;
 			// 
+			// Situacao
+			// 
+			Situacao.HeaderText = "Situação";
+			Situacao.MinimumWidth = 6;
+			Situacao.Name = "Situacao";
+			Situacao.Width = 125;
+			// 
+			// usuarioBindingSource
+			// 
+			usuarioBindingSource.DataSource = typeof(Usuario);
+			// 
+			// button1
+			// 
+			button1.ImageKey = "LupaPng.png";
+			button1.ImageList = imageList1;
+			button1.Location = new Point(441, 89);
+			button1.Name = "button1";
+			button1.Size = new Size(56, 31);
+			button1.TabIndex = 10;
+			button1.UseVisualStyleBackColor = true;
+			button1.Click += button1_Click;
+			// 
+			// imageList1
+			// 
+			imageList1.ColorDepth = ColorDepth.Depth8Bit;
+			imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+			imageList1.TransparentColor = Color.Transparent;
+			imageList1.Images.SetKeyName(0, "LupaPng.png");
+			// 
+			// BtnSair
+			// 
+			BtnSair.Location = new Point(535, 88);
+			BtnSair.Margin = new Padding(3, 4, 3, 4);
+			BtnSair.Name = "BtnSair";
+			BtnSair.Size = new Size(86, 31);
+			BtnSair.TabIndex = 11;
+			BtnSair.Text = "Sair";
+			BtnSair.UseVisualStyleBackColor = true;
+			BtnSair.Click += BtnSair_Click;
+			// 
+			// funcionarioBindingSource
+			// 
+			funcionarioBindingSource.DataSource = typeof(Funcionario);
+			// 
+			// groupBox1
+			// 
+			groupBox1.Controls.Add(RdbCPF);
+			groupBox1.Controls.Add(RdBNome);
+			groupBox1.Location = new Point(866, 32);
+			groupBox1.Name = "groupBox1";
+			groupBox1.Size = new Size(250, 87);
+			groupBox1.TabIndex = 12;
+			groupBox1.TabStop = false;
+			groupBox1.Text = "Pesquisar Por";
+			// 
+			// RdbCPF
+			// 
+			RdbCPF.AutoSize = true;
+			RdbCPF.Location = new Point(146, 43);
+			RdbCPF.Name = "RdbCPF";
+			RdbCPF.Size = new Size(54, 24);
+			RdbCPF.TabIndex = 1;
+			RdbCPF.Text = "CPF";
+			RdbCPF.UseVisualStyleBackColor = true;
+			RdbCPF.CheckedChanged += RdbCPF_CheckedChanged;
+			// 
+			// RdBNome
+			// 
+			RdBNome.AutoSize = true;
+			RdBNome.Checked = true;
+			RdBNome.Location = new Point(29, 43);
+			RdBNome.Name = "RdBNome";
+			RdBNome.Size = new Size(71, 24);
+			RdBNome.TabIndex = 0;
+			RdBNome.TabStop = true;
+			RdBNome.Text = "Nome";
+			RdBNome.UseVisualStyleBackColor = true;
+			// 
+			// CkbFiltroDesativos
+			// 
+			CkbFiltroDesativos.AutoSize = true;
+			CkbFiltroDesativos.Location = new Point(876, 125);
+			CkbFiltroDesativos.Name = "CkbFiltroDesativos";
+			CkbFiltroDesativos.Size = new Size(240, 24);
+			CkbFiltroDesativos.TabIndex = 13;
+			CkbFiltroDesativos.Text = "Exibir Funcionários Desativados";
+			CkbFiltroDesativos.UseVisualStyleBackColor = true;
+			// 
+			// BtnPesquisaTodos
+			// 
+			BtnPesquisaTodos.Location = new Point(12, 134);
+			BtnPesquisaTodos.Margin = new Padding(3, 4, 3, 4);
+			BtnPesquisaTodos.Name = "BtnPesquisaTodos";
+			BtnPesquisaTodos.Size = new Size(142, 31);
+			BtnPesquisaTodos.TabIndex = 16;
+			BtnPesquisaTodos.Text = "Pesquisar Todos";
+			BtnPesquisaTodos.UseVisualStyleBackColor = true;
+			BtnPesquisaTodos.Click += BtnPesquisaTodos_Click;
+			// 
+			// MktBuscaCPF
+			// 
+			MktBuscaCPF.Location = new Point(12, 88);
+			MktBuscaCPF.Mask = "000.000.000-00";
+			MktBuscaCPF.Name = "MktBuscaCPF";
+			MktBuscaCPF.Size = new Size(423, 27);
+			MktBuscaCPF.TabIndex = 17;
+			MktBuscaCPF.Visible = false;
+			// 
 			// PesquisaFuncionario
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(1218, 648);
+			Controls.Add(MktBuscaCPF);
+			Controls.Add(BtnPesquisaTodos);
+			Controls.Add(CkbFiltroDesativos);
 			Controls.Add(groupBox1);
 			Controls.Add(BtnSair);
 			Controls.Add(button1);
@@ -466,5 +511,9 @@
 		private DataGridViewTextBoxColumn email;
 		private DataGridViewTextBoxColumn cargo;
 		private DataGridViewTextBoxColumn Salario;
+		private DataGridViewTextBoxColumn Situacao;
+		private CheckBox CkbFiltroDesativos;
+		private Button BtnPesquisaTodos;
+		private MaskedTextBox MktBuscaCPF;
 	}
 }

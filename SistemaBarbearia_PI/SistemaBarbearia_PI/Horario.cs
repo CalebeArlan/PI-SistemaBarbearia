@@ -40,7 +40,7 @@ namespace SistemaBarbearia_PI
 			Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
 			connection.Open();
-			MySqlCommand cmd = new MySqlCommand($"UPDATE horarios SET cod_cliente = '{this.CodCliente}', cod_servico = '{this.CodServico}', hora = '{this.Hora}', data_horario = {this.DataHorario}", connection);
+			MySqlCommand cmd = new MySqlCommand($"UPDATE horarios SET cod_cliente = '{this.CodCliente}', cod_servico = '{this.CodServico}', hora = '{this.Hora}', data_horario = '{this.DataHorario}'", connection);
 			cmd.ExecuteNonQuery();
 			connection.Close();
 			MessageBox.Show("Registro atualizado com sucesso.");
