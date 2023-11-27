@@ -21,12 +21,14 @@ namespace SistemaBarbearia_PI
 		{
 			InitializeComponent();
 		}
+		int CodCliente;
+		int CodServico;
 		public AlterarHorario(int id, int cod_cliente, int cod_servico, string hora, string data_horario)
 		{
 			InitializeComponent();
 
-			SelecionarLinhaPorID(cod_cliente, dataGridView1);
-			SelecionarLinhaPorID(cod_servico, dataGridView2);
+			CodCliente = cod_cliente;
+			CodServico = cod_servico;
 			LblId.Text = Convert.ToString(id);
 			DtpHorario.Text = hora;
 			DtpData.Text = data_horario;
@@ -34,21 +36,16 @@ namespace SistemaBarbearia_PI
 
 		}
 
-		private void SelecionarLinhaPorID(int id, DataGridView datagrid)
+		private void SelecionarLinhaPorID(int id, DataGridView datagrid, string campo)
 		{
 			foreach (DataGridViewRow row in datagrid.Rows)
-			{
-				if( row.Index > 0)
+			{ 
+				int idDaLinha = Convert.ToInt32(row.Cells[campo].Value);
+				if (idDaLinha == id)
 				{
-					int idDaLinha = Convert.ToInt32(row.Cells["id"].Value);
-
-					if (idDaLinha == id)
-					{
-						row.Selected = true;
-						break;
-					}
+					row.Selected = true;
+					break;
 				}
-				
 			}
 		}
 
@@ -76,13 +73,13 @@ namespace SistemaBarbearia_PI
 
 		private void BtnExcluir_Click(object sender, EventArgs e)
 		{
-			Servico servico = new Servico();
-			servico.Id = Int32.Parse(LblId.Text);
+			Horario horario = new Horario();
+			horario.Id = Int32.Parse(LblId.Text);
 
 			var result = MessageBox.Show("Tem certeza que deseja excluir permanentemente este registro?", "Excluir Registro?", MessageBoxButtons.YesNo);
 			if (result == System.Windows.Forms.DialogResult.Yes)
 			{
-				servico.Deletar();
+				horario.Deletar();
 
 				MessageBox.Show("Registro deletado com sucesso.");
 
@@ -125,6 +122,8 @@ namespace SistemaBarbearia_PI
 		private void AlterarHorario_Load(object sender, EventArgs e)
 		{
 			AtualizaTabelas();
+			SelecionarLinhaPorID(CodCliente, dataGridView1, "id");
+			SelecionarLinhaPorID(CodServico, dataGridView2, "id2");
 		}
 	}
 }

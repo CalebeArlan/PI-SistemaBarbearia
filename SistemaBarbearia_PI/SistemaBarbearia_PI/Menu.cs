@@ -98,7 +98,7 @@ namespace SistemaBarbearia_PI
 
 		private void Menu_Load(object sender, EventArgs e)
 		{
-			if(FrmLoginUsuario.TipoAcesso != '0')
+			if (FrmLoginUsuario.TipoAcesso != '0')
 			{
 				funcionárioToolStripMenuItem.Visible = false;
 				usuárioToolStripMenuItem.Visible = false;

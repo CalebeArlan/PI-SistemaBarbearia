@@ -227,6 +227,7 @@
 			LblId.Size = new Size(55, 41);
 			LblId.TabIndex = 35;
 			LblId.Text = "Id:";
+			LblId.Visible = false;
 			// 
 			// TxtSalario
 			// 
@@ -277,7 +278,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(800, 451);
+			ClientSize = new Size(800, 427);
 			Controls.Add(CbSituacao);
 			Controls.Add(label8);
 			Controls.Add(BtnExcluir);

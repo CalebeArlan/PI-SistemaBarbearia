@@ -35,11 +35,12 @@ namespace SistemaBarbearia_PI
 			TxtCargo.Text = cargo;
 			TxtEmail.Text = email;
 			TxtSalario.Text = salario.ToString();
-			if(situacao == "Ativo")
+			if (situacao == "Ativo")
 			{
 				CbSituacao.SelectedIndex = 0;
 			}
-			else if(situacao == "Desativado"){
+			else if (situacao == "Desativado")
+			{
 				CbSituacao.SelectedIndex = 1;
 			}
 		}

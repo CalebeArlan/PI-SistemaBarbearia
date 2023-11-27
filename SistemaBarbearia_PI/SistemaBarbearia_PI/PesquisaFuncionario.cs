@@ -224,7 +224,7 @@ namespace SistemaBarbearia_PI
 
 		private void RdbCPF_CheckedChanged(object sender, EventArgs e)
 		{
-			if(RdbCPF.Checked == true)
+			if (RdbCPF.Checked == true)
 			{
 				MktBuscaCPF.Visible = true;
 				TxtBusca.Visible = false;

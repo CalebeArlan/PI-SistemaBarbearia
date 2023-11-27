@@ -58,9 +58,9 @@
 			label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
 			label4.Location = new Point(24, 25);
 			label4.Name = "label4";
-			label4.Size = new Size(290, 41);
+			label4.Size = new Size(227, 41);
 			label4.TabIndex = 17;
-			label4.Text = "Alterar Funcionário";
+			label4.Text = "Alterar Serviço";
 			// 
 			// BtnCadastrar
 			// 
@@ -76,7 +76,7 @@
 			// 
 			TxtNome.Location = new Point(82, 84);
 			TxtNome.Name = "TxtNome";
-			TxtNome.Size = new Size(444, 27);
+			TxtNome.Size = new Size(394, 27);
 			TxtNome.TabIndex = 12;
 			// 
 			// LblNome
@@ -91,7 +91,7 @@
 			// label5
 			// 
 			label5.AutoSize = true;
-			label5.Location = new Point(22, 135);
+			label5.Location = new Point(482, 87);
 			label5.Name = "label5";
 			label5.Size = new Size(49, 20);
 			label5.TabIndex = 31;
@@ -100,9 +100,9 @@
 			// 
 			// TxtPreco
 			// 
-			TxtPreco.Location = new Point(82, 132);
+			TxtPreco.Location = new Point(542, 84);
 			TxtPreco.Name = "TxtPreco";
-			TxtPreco.Size = new Size(444, 27);
+			TxtPreco.Size = new Size(319, 27);
 			TxtPreco.TabIndex = 32;
 			// 
 			// LblId
@@ -114,6 +114,7 @@
 			LblId.Size = new Size(55, 41);
 			LblId.TabIndex = 35;
 			LblId.Text = "Id:";
+			LblId.Visible = false;
 			// 
 			// BtnExcluir
 			// 
@@ -128,17 +129,17 @@
 			// 
 			// TxtDescricao
 			// 
-			TxtDescricao.Location = new Point(103, 185);
+			TxtDescricao.Location = new Point(24, 143);
 			TxtDescricao.Multiline = true;
 			TxtDescricao.Name = "TxtDescricao";
-			TxtDescricao.Size = new Size(423, 115);
+			TxtDescricao.Size = new Size(837, 200);
 			TxtDescricao.TabIndex = 39;
 			// 
 			// label1
 			// 
 			label1.AutoSize = true;
 			label1.ImageAlign = ContentAlignment.MiddleLeft;
-			label1.Location = new Point(22, 185);
+			label1.Location = new Point(24, 120);
 			label1.Name = "label1";
 			label1.Size = new Size(74, 20);
 			label1.TabIndex = 40;
@@ -148,7 +149,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(800, 450);
+			ClientSize = new Size(889, 450);
 			Controls.Add(TxtDescricao);
 			Controls.Add(label1);
 			Controls.Add(BtnExcluir);
@@ -161,7 +162,7 @@
 			Controls.Add(TxtNome);
 			Controls.Add(LblNome);
 			Name = "AlterarServico";
-			Text = "CadastroFuncionáriocs";
+			Text = "Alterar Serviço";
 			ResumeLayout(false);
 			PerformLayout();
 		}

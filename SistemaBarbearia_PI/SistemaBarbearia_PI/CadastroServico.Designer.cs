@@ -63,7 +63,7 @@
 			// BtnCadastrar
 			// 
 			BtnCadastrar.Image = Properties.Resources.icons8_ok_48;
-			BtnCadastrar.Location = new Point(267, 383);
+			BtnCadastrar.Location = new Point(114, 383);
 			BtnCadastrar.Name = "BtnCadastrar";
 			BtnCadastrar.Size = new Size(64, 55);
 			BtnCadastrar.TabIndex = 10;
@@ -74,7 +74,7 @@
 			// 
 			TxtNome.Location = new Point(81, 87);
 			TxtNome.Name = "TxtNome";
-			TxtNome.Size = new Size(444, 27);
+			TxtNome.Size = new Size(305, 27);
 			TxtNome.TabIndex = 1;
 			// 
 			// LblNome
@@ -88,16 +88,16 @@
 			// 
 			// TxtDescricao
 			// 
-			TxtDescricao.Location = new Point(102, 153);
+			TxtDescricao.Location = new Point(24, 149);
 			TxtDescricao.Multiline = true;
 			TxtDescricao.Name = "TxtDescricao";
-			TxtDescricao.Size = new Size(423, 115);
+			TxtDescricao.Size = new Size(717, 200);
 			TxtDescricao.TabIndex = 5;
 			// 
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Location = new Point(22, 156);
+			label1.Location = new Point(24, 128);
 			label1.Name = "label1";
 			label1.Size = new Size(74, 20);
 			label1.TabIndex = 20;
@@ -106,7 +106,7 @@
 			// label5
 			// 
 			label5.AutoSize = true;
-			label5.Location = new Point(22, 123);
+			label5.Location = new Point(392, 90);
 			label5.Name = "label5";
 			label5.Size = new Size(46, 20);
 			label5.TabIndex = 31;
@@ -114,9 +114,9 @@
 			// 
 			// TxtPreco
 			// 
-			TxtPreco.Location = new Point(81, 120);
+			TxtPreco.Location = new Point(451, 87);
 			TxtPreco.Name = "TxtPreco";
-			TxtPreco.Size = new Size(250, 27);
+			TxtPreco.Size = new Size(290, 27);
 			TxtPreco.TabIndex = 2;
 			// 
 			// CadastroServico
@@ -134,7 +134,7 @@
 			Controls.Add(TxtNome);
 			Controls.Add(LblNome);
 			Name = "CadastroServico";
-			Text = "CadastroFuncionáriocs";
+			Text = "Cadastrar Novo Serviço";
 			ResumeLayout(false);
 			PerformLayout();
 		}

@@ -39,7 +39,7 @@
 			button3 = new Button();
 			imageList1 = new ImageList(components);
 			dataGridView2 = new DataGridView();
-			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+			id2 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
 			preco = new DataGridViewTextBoxColumn();
 			descricao = new DataGridViewTextBoxColumn();
@@ -51,6 +51,7 @@
 			GrpSelecionarCliente = new GroupBox();
 			button2 = new Button();
 			dataGridView1 = new DataGridView();
+			TxtNome = new TextBox();
 			id = new DataGridViewTextBoxColumn();
 			nome = new DataGridViewTextBoxColumn();
 			telefone = new DataGridViewTextBoxColumn();
@@ -58,7 +59,6 @@
 			datanasc = new DataGridViewTextBoxColumn();
 			cpf = new DataGridViewTextBoxColumn();
 			rg = new DataGridViewTextBoxColumn();
-			TxtNome = new TextBox();
 			groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
 			GrpSelecionarCliente.SuspendLayout();
@@ -105,6 +105,7 @@
 			LblId.Size = new Size(55, 41);
 			LblId.TabIndex = 35;
 			LblId.Text = "Id:";
+			LblId.Visible = false;
 			// 
 			// BtnExcluir
 			// 
@@ -149,7 +150,7 @@
 			// dataGridView2
 			// 
 			dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, preco, descricao });
+			dataGridView2.Columns.AddRange(new DataGridViewColumn[] { id2, dataGridViewTextBoxColumn2, preco, descricao });
 			dataGridView2.Location = new Point(6, 64);
 			dataGridView2.MultiSelect = false;
 			dataGridView2.Name = "dataGridView2";
@@ -160,13 +161,13 @@
 			dataGridView2.Size = new Size(502, 170);
 			dataGridView2.TabIndex = 35;
 			// 
-			// dataGridViewTextBoxColumn1
+			// id2
 			// 
-			dataGridViewTextBoxColumn1.HeaderText = "id";
-			dataGridViewTextBoxColumn1.MinimumWidth = 6;
-			dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-			dataGridViewTextBoxColumn1.ReadOnly = true;
-			dataGridViewTextBoxColumn1.Width = 125;
+			id2.HeaderText = "id";
+			id2.MinimumWidth = 6;
+			id2.Name = "id2";
+			id2.ReadOnly = true;
+			id2.Width = 125;
 			// 
 			// dataGridViewTextBoxColumn2
 			// 
@@ -275,6 +276,14 @@
 			dataGridView1.Size = new Size(502, 170);
 			dataGridView1.TabIndex = 35;
 			// 
+			// TxtNome
+			// 
+			TxtNome.Location = new Point(6, 27);
+			TxtNome.Name = "TxtNome";
+			TxtNome.Size = new Size(423, 27);
+			TxtNome.TabIndex = 34;
+			TxtNome.Text = "Digite um nome para pesquisar.";
+			// 
 			// id
 			// 
 			id.HeaderText = "id";
@@ -331,14 +340,6 @@
 			rg.ReadOnly = true;
 			rg.Width = 125;
 			// 
-			// TxtNome
-			// 
-			TxtNome.Location = new Point(6, 27);
-			TxtNome.Name = "TxtNome";
-			TxtNome.Size = new Size(423, 27);
-			TxtNome.TabIndex = 34;
-			TxtNome.Text = "Digite um nome para pesquisar.";
-			// 
 			// AlterarHorario
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
@@ -356,7 +357,7 @@
 			Controls.Add(label4);
 			Controls.Add(BtnCadastrar);
 			Name = "AlterarHorario";
-			Text = "CadastroFuncionáriocs";
+			Text = "Alterar Horário";
 			Load += AlterarHorario_Load;
 			groupBox1.ResumeLayout(false);
 			groupBox1.PerformLayout();
@@ -391,10 +392,6 @@
 		private GroupBox groupBox1;
 		private Button button3;
 		private DataGridView dataGridView2;
-		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-		private DataGridViewTextBoxColumn preco;
-		private DataGridViewTextBoxColumn descricao;
 		private TextBox TxtPesquisaServico;
 		private DateTimePicker DtpHorario;
 		private DateTimePicker DtpData;
@@ -403,6 +400,12 @@
 		private GroupBox GrpSelecionarCliente;
 		private Button button2;
 		private DataGridView dataGridView1;
+		private TextBox TxtNome;
+		private ImageList imageList1;
+		private DataGridViewTextBoxColumn id2;
+		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+		private DataGridViewTextBoxColumn preco;
+		private DataGridViewTextBoxColumn descricao;
 		private DataGridViewTextBoxColumn id;
 		private DataGridViewTextBoxColumn nome;
 		private DataGridViewTextBoxColumn telefone;
@@ -410,7 +413,5 @@
 		private DataGridViewTextBoxColumn datanasc;
 		private DataGridViewTextBoxColumn cpf;
 		private DataGridViewTextBoxColumn rg;
-		private TextBox TxtNome;
-		private ImageList imageList1;
 	}
 }

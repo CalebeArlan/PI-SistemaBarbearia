@@ -97,7 +97,7 @@
 			// LblData
 			// 
 			LblData.AutoSize = true;
-			LblData.Location = new Point(29, 96);
+			LblData.Location = new Point(24, 97);
 			LblData.Name = "LblData";
 			LblData.Size = new Size(44, 20);
 			LblData.TabIndex = 11;
@@ -106,7 +106,7 @@
 			// label5
 			// 
 			label5.AutoSize = true;
-			label5.Location = new Point(270, 96);
+			label5.Location = new Point(251, 97);
 			label5.Name = "label5";
 			label5.Size = new Size(63, 20);
 			label5.TabIndex = 31;
@@ -116,7 +116,7 @@
 			// 
 			DtpData.CustomFormat = "";
 			DtpData.Format = DateTimePickerFormat.Short;
-			DtpData.Location = new Point(93, 91);
+			DtpData.Location = new Point(74, 92);
 			DtpData.Margin = new Padding(3, 4, 3, 4);
 			DtpData.Name = "DtpData";
 			DtpData.Size = new Size(151, 27);
@@ -126,7 +126,7 @@
 			// 
 			DtpHorario.CustomFormat = "HH:mm";
 			DtpHorario.Format = DateTimePickerFormat.Custom;
-			DtpHorario.Location = new Point(333, 91);
+			DtpHorario.Location = new Point(314, 92);
 			DtpHorario.Margin = new Padding(3, 4, 3, 4);
 			DtpHorario.Name = "DtpHorario";
 			DtpHorario.ShowUpDown = true;
@@ -334,7 +334,7 @@
 			Controls.Add(LblData);
 			Controls.Add(GrpSelecionarCliente);
 			Name = "CadastroHorario";
-			Text = "CadastroHoráriocs";
+			Text = "Cadastrar Novo Horário";
 			Load += CadastroHorario_Load;
 			((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
 			GrpSelecionarCliente.ResumeLayout(false);
