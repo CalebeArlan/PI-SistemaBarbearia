@@ -19,7 +19,7 @@ namespace SistemaBarbearia_PI
 			{
 				var conexao = new MySqlConnection(Conexao.strConexao);
 				conexao.Open();
-				MessageBox.Show("Conexão bem sucedida");
+				//MessageBox.Show("Conexão bem sucedida");
 			}
 			catch (Exception ex)
 			{

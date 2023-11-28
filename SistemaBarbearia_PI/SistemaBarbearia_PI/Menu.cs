@@ -100,12 +100,84 @@ namespace SistemaBarbearia_PI
 		{
 			if (FrmLoginUsuario.TipoAcesso != '0')
 			{
-				funcionárioToolStripMenuItem.Visible = false;
-				usuárioToolStripMenuItem.Visible = false;
+				LblModoDashboard.Text = "Você está no modo de Funcionário";
 
-				funcionárioToolStripMenuItem2.Visible = false;
-				usuárioToolStripMenuItem2.Visible = false;
+				BtnCadastrarFuncionario.Visible = false;
+				BtnPesquisarFuncionario.Visible = false;
+
+				BtnCadastrarUsuário.Visible = false;
+				BtnPesquisarUsuario.Visible = false;
 			}
+			else
+			{
+				LblModoDashboard.Text = "Você está no modo de Administrador";
+
+				BtnCadastrarFuncionario.Visible = true;
+				BtnPesquisarFuncionario.Visible = true;
+
+				BtnCadastrarUsuário.Visible = true;
+				BtnPesquisarUsuario.Visible = true;
+			}
+		}
+
+		private void button6_Click(object sender, EventArgs e)
+		{
+			FrmCadastroUsuario frmcadastrousuario = new FrmCadastroUsuario();
+			frmcadastrousuario.Show();
+		}
+
+		private void button5_Click(object sender, EventArgs e)
+		{
+			PesquisaUsuarios pesquisausuario = new PesquisaUsuarios();
+			pesquisausuario.Show();
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			CadastraCliente cliente = new CadastraCliente();
+			cliente.Show();
+		}
+
+		private void button4_Click(object sender, EventArgs e)
+		{
+			PesquisaCliente pesquisaCliente = new PesquisaCliente();
+			pesquisaCliente.Show();
+		}
+
+		private void button8_Click(object sender, EventArgs e)
+		{
+			CadastroServico cadastroServico = new CadastroServico();
+			cadastroServico.Show();
+		}
+
+		private void button7_Click(object sender, EventArgs e)
+		{
+			PesquisaServico pesquisaServico = new PesquisaServico();
+			pesquisaServico.Show();
+		}
+
+		private void button10_Click(object sender, EventArgs e)
+		{
+			CadastroHorario cadastroHorario = new CadastroHorario();
+			cadastroHorario.Show();
+		}
+
+		private void button9_Click(object sender, EventArgs e)
+		{
+			PesquisaHorario pesquisaHorario = new PesquisaHorario();
+			pesquisaHorario.Show();
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			CadastroFuncionario cadastroFuncionario = new CadastroFuncionario();
+			cadastroFuncionario.Show();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			PesquisaFuncionario pesquisaFuncionario = new PesquisaFuncionario();
+			pesquisaFuncionario.Show();
 		}
 	}
 }

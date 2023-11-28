@@ -28,43 +28,45 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
 			statusStrip1 = new StatusStrip();
 			menuStrip1 = new MenuStrip();
 			aToolStripMenuItem = new ToolStripMenuItem();
 			sairToolStripMenuItem = new ToolStripMenuItem();
-			novoToolStripMenuItem1 = new ToolStripMenuItem();
-			clienteToolStripMenuItem = new ToolStripMenuItem();
-			usuárioToolStripMenuItem = new ToolStripMenuItem();
-			funcionárioToolStripMenuItem = new ToolStripMenuItem();
-			serviçoToolStripMenuItem = new ToolStripMenuItem();
-			horárioToolStripMenuItem = new ToolStripMenuItem();
-			pesquisarToolStripMenuItem = new ToolStripMenuItem();
-			usuárioToolStripMenuItem2 = new ToolStripMenuItem();
-			funcionárioToolStripMenuItem2 = new ToolStripMenuItem();
-			clienteToolStripMenuItem2 = new ToolStripMenuItem();
-			serviçoToolStripMenuItem2 = new ToolStripMenuItem();
-			horárioToolStripMenuItem2 = new ToolStripMenuItem();
+			BtnCadastrarFuncionario = new Button();
+			imageList1 = new ImageList(components);
+			BtnPesquisarFuncionario = new Button();
+			BtnCadastrarCliente = new Button();
+			BtnPesquisarCliente = new Button();
+			BtnPesquisarUsuario = new Button();
+			BtnCadastrarUsuário = new Button();
+			BtnPesquisarServico = new Button();
+			BtnCadastrarServiço = new Button();
+			BtnPesquisarHorario = new Button();
+			BtnCadastrarHorario = new Button();
+			LblModoDashboard = new Label();
 			menuStrip1.SuspendLayout();
 			SuspendLayout();
 			// 
 			// statusStrip1
 			// 
 			statusStrip1.ImageScalingSize = new Size(20, 20);
-			statusStrip1.Location = new Point(0, 578);
+			statusStrip1.Location = new Point(0, 472);
 			statusStrip1.Name = "statusStrip1";
 			statusStrip1.Padding = new Padding(1, 0, 16, 0);
-			statusStrip1.Size = new Size(914, 22);
+			statusStrip1.Size = new Size(1127, 22);
 			statusStrip1.TabIndex = 0;
 			statusStrip1.Text = "Sistema de Gestão e Agendamento de Barbearia  v4.1";
 			// 
 			// menuStrip1
 			// 
 			menuStrip1.ImageScalingSize = new Size(20, 20);
-			menuStrip1.Items.AddRange(new ToolStripItem[] { aToolStripMenuItem, novoToolStripMenuItem1, pesquisarToolStripMenuItem });
+			menuStrip1.Items.AddRange(new ToolStripItem[] { aToolStripMenuItem });
 			menuStrip1.Location = new Point(0, 0);
 			menuStrip1.Name = "menuStrip1";
 			menuStrip1.Padding = new Padding(7, 3, 0, 3);
-			menuStrip1.Size = new Size(914, 30);
+			menuStrip1.Size = new Size(1127, 30);
 			menuStrip1.TabIndex = 1;
 			menuStrip1.Text = "menuStrip1";
 			// 
@@ -78,99 +80,227 @@
 			// sairToolStripMenuItem
 			// 
 			sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-			sairToolStripMenuItem.Size = new Size(117, 26);
+			sairToolStripMenuItem.Size = new Size(224, 26);
 			sairToolStripMenuItem.Text = "Sair";
 			sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
 			// 
-			// novoToolStripMenuItem1
+			// BtnCadastrarFuncionario
 			// 
-			novoToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, usuárioToolStripMenuItem, funcionárioToolStripMenuItem, serviçoToolStripMenuItem, horárioToolStripMenuItem });
-			novoToolStripMenuItem1.Name = "novoToolStripMenuItem1";
-			novoToolStripMenuItem1.Size = new Size(59, 24);
-			novoToolStripMenuItem1.Text = "Novo";
+			BtnCadastrarFuncionario.BackColor = Color.FromArgb(5, 11, 82);
+			BtnCadastrarFuncionario.FlatAppearance.BorderSize = 0;
+			BtnCadastrarFuncionario.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+			BtnCadastrarFuncionario.ForeColor = SystemColors.ButtonHighlight;
+			BtnCadastrarFuncionario.ImageKey = "icons8-crachá-50_branco.png";
+			BtnCadastrarFuncionario.ImageList = imageList1;
+			BtnCadastrarFuncionario.Location = new Point(886, 247);
+			BtnCadastrarFuncionario.Name = "BtnCadastrarFuncionario";
+			BtnCadastrarFuncionario.Padding = new Padding(1);
+			BtnCadastrarFuncionario.Size = new Size(212, 93);
+			BtnCadastrarFuncionario.TabIndex = 2;
+			BtnCadastrarFuncionario.Text = "Cadastrar Funcionário";
+			BtnCadastrarFuncionario.TextImageRelation = TextImageRelation.ImageAboveText;
+			BtnCadastrarFuncionario.UseVisualStyleBackColor = false;
+			BtnCadastrarFuncionario.Click += button1_Click;
 			// 
-			// clienteToolStripMenuItem
+			// imageList1
 			// 
-			clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-			clienteToolStripMenuItem.Size = new Size(169, 26);
-			clienteToolStripMenuItem.Text = "Cliente";
-			clienteToolStripMenuItem.Click += clienteToolStripMenuItem_Click_1;
+			imageList1.ColorDepth = ColorDepth.Depth8Bit;
+			imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+			imageList1.TransparentColor = Color.Transparent;
+			imageList1.Images.SetKeyName(0, "icons8-crachá-50_branco.png");
+			imageList1.Images.SetKeyName(1, "icons8-gestão-de-cliente-50_branco.png");
+			imageList1.Images.SetKeyName(2, "UserVector_Branco.png");
+			imageList1.Images.SetKeyName(3, "Servico_Icone_Branco.png");
+			imageList1.Images.SetKeyName(4, "Calendario-Icone_Branco.png");
 			// 
-			// usuárioToolStripMenuItem
+			// BtnPesquisarFuncionario
 			// 
-			usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-			usuárioToolStripMenuItem.Size = new Size(169, 26);
-			usuárioToolStripMenuItem.Text = "Usuário";
-			usuárioToolStripMenuItem.Click += usuárioToolStripMenuItem_Click;
+			BtnPesquisarFuncionario.BackColor = Color.FromArgb(5, 11, 82);
+			BtnPesquisarFuncionario.FlatAppearance.BorderSize = 0;
+			BtnPesquisarFuncionario.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+			BtnPesquisarFuncionario.ForeColor = SystemColors.ButtonHighlight;
+			BtnPesquisarFuncionario.ImageKey = "icons8-crachá-50_branco.png";
+			BtnPesquisarFuncionario.ImageList = imageList1;
+			BtnPesquisarFuncionario.Location = new Point(886, 346);
+			BtnPesquisarFuncionario.Name = "BtnPesquisarFuncionario";
+			BtnPesquisarFuncionario.Padding = new Padding(1);
+			BtnPesquisarFuncionario.Size = new Size(212, 93);
+			BtnPesquisarFuncionario.TabIndex = 3;
+			BtnPesquisarFuncionario.Text = "Pesquisar Funcionário";
+			BtnPesquisarFuncionario.TextImageRelation = TextImageRelation.ImageAboveText;
+			BtnPesquisarFuncionario.UseVisualStyleBackColor = false;
+			BtnPesquisarFuncionario.Click += button2_Click;
 			// 
-			// funcionárioToolStripMenuItem
+			// BtnCadastrarCliente
 			// 
-			funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-			funcionárioToolStripMenuItem.Size = new Size(169, 26);
-			funcionárioToolStripMenuItem.Text = "Funcionário";
-			funcionárioToolStripMenuItem.Click += funcionárioToolStripMenuItem_Click;
+			BtnCadastrarCliente.BackColor = Color.FromArgb(5, 11, 82);
+			BtnCadastrarCliente.FlatAppearance.BorderSize = 0;
+			BtnCadastrarCliente.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+			BtnCadastrarCliente.ForeColor = SystemColors.ButtonHighlight;
+			BtnCadastrarCliente.ImageKey = "icons8-gestão-de-cliente-50_branco.png";
+			BtnCadastrarCliente.ImageList = imageList1;
+			BtnCadastrarCliente.Location = new Point(235, 247);
+			BtnCadastrarCliente.Name = "BtnCadastrarCliente";
+			BtnCadastrarCliente.Padding = new Padding(1);
+			BtnCadastrarCliente.Size = new Size(212, 93);
+			BtnCadastrarCliente.TabIndex = 4;
+			BtnCadastrarCliente.Text = "Cadastrar Cliente";
+			BtnCadastrarCliente.TextImageRelation = TextImageRelation.ImageAboveText;
+			BtnCadastrarCliente.UseVisualStyleBackColor = false;
+			BtnCadastrarCliente.Click += button3_Click;
 			// 
-			// serviçoToolStripMenuItem
+			// BtnPesquisarCliente
 			// 
-			serviçoToolStripMenuItem.Name = "serviçoToolStripMenuItem";
-			serviçoToolStripMenuItem.Size = new Size(169, 26);
-			serviçoToolStripMenuItem.Text = "Serviço";
-			serviçoToolStripMenuItem.Click += serviçoToolStripMenuItem_Click;
+			BtnPesquisarCliente.BackColor = Color.FromArgb(5, 11, 82);
+			BtnPesquisarCliente.FlatAppearance.BorderSize = 0;
+			BtnPesquisarCliente.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+			BtnPesquisarCliente.ForeColor = SystemColors.ButtonHighlight;
+			BtnPesquisarCliente.ImageKey = "icons8-gestão-de-cliente-50_branco.png";
+			BtnPesquisarCliente.ImageList = imageList1;
+			BtnPesquisarCliente.Location = new Point(235, 346);
+			BtnPesquisarCliente.Name = "BtnPesquisarCliente";
+			BtnPesquisarCliente.Padding = new Padding(1);
+			BtnPesquisarCliente.Size = new Size(212, 93);
+			BtnPesquisarCliente.TabIndex = 5;
+			BtnPesquisarCliente.Text = "Pesquisar Cliente";
+			BtnPesquisarCliente.TextImageRelation = TextImageRelation.ImageAboveText;
+			BtnPesquisarCliente.UseVisualStyleBackColor = false;
+			BtnPesquisarCliente.Click += button4_Click;
 			// 
-			// horárioToolStripMenuItem
+			// BtnPesquisarUsuario
 			// 
-			horárioToolStripMenuItem.Name = "horárioToolStripMenuItem";
-			horárioToolStripMenuItem.Size = new Size(169, 26);
-			horárioToolStripMenuItem.Text = "Horário";
-			horárioToolStripMenuItem.Click += horárioToolStripMenuItem_Click;
+			BtnPesquisarUsuario.BackColor = Color.FromArgb(5, 11, 82);
+			BtnPesquisarUsuario.FlatAppearance.BorderSize = 0;
+			BtnPesquisarUsuario.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+			BtnPesquisarUsuario.ForeColor = SystemColors.ButtonHighlight;
+			BtnPesquisarUsuario.ImageKey = "UserVector_Branco.png";
+			BtnPesquisarUsuario.ImageList = imageList1;
+			BtnPesquisarUsuario.Location = new Point(18, 346);
+			BtnPesquisarUsuario.Name = "BtnPesquisarUsuario";
+			BtnPesquisarUsuario.Padding = new Padding(1);
+			BtnPesquisarUsuario.Size = new Size(212, 93);
+			BtnPesquisarUsuario.TabIndex = 7;
+			BtnPesquisarUsuario.Text = "Pesquisar Usuário";
+			BtnPesquisarUsuario.TextImageRelation = TextImageRelation.ImageAboveText;
+			BtnPesquisarUsuario.UseVisualStyleBackColor = false;
+			BtnPesquisarUsuario.Click += button5_Click;
 			// 
-			// pesquisarToolStripMenuItem
+			// BtnCadastrarUsuário
 			// 
-			pesquisarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuárioToolStripMenuItem2, funcionárioToolStripMenuItem2, clienteToolStripMenuItem2, serviçoToolStripMenuItem2, horárioToolStripMenuItem2 });
-			pesquisarToolStripMenuItem.Name = "pesquisarToolStripMenuItem";
-			pesquisarToolStripMenuItem.Size = new Size(84, 24);
-			pesquisarToolStripMenuItem.Text = "Pesquisar";
+			BtnCadastrarUsuário.BackColor = Color.FromArgb(5, 11, 82);
+			BtnCadastrarUsuário.FlatAppearance.BorderSize = 0;
+			BtnCadastrarUsuário.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+			BtnCadastrarUsuário.ForeColor = SystemColors.ButtonHighlight;
+			BtnCadastrarUsuário.ImageKey = "UserVector_Branco.png";
+			BtnCadastrarUsuário.ImageList = imageList1;
+			BtnCadastrarUsuário.Location = new Point(18, 247);
+			BtnCadastrarUsuário.Name = "BtnCadastrarUsuário";
+			BtnCadastrarUsuário.Padding = new Padding(1);
+			BtnCadastrarUsuário.Size = new Size(212, 93);
+			BtnCadastrarUsuário.TabIndex = 6;
+			BtnCadastrarUsuário.Text = "Cadastrar Usuário";
+			BtnCadastrarUsuário.TextImageRelation = TextImageRelation.ImageAboveText;
+			BtnCadastrarUsuário.UseVisualStyleBackColor = false;
+			BtnCadastrarUsuário.Click += button6_Click;
 			// 
-			// usuárioToolStripMenuItem2
+			// BtnPesquisarServico
 			// 
-			usuárioToolStripMenuItem2.Name = "usuárioToolStripMenuItem2";
-			usuárioToolStripMenuItem2.Size = new Size(224, 26);
-			usuárioToolStripMenuItem2.Text = "Usuário";
-			usuárioToolStripMenuItem2.Click += usuárioToolStripMenuItem2_Click;
+			BtnPesquisarServico.BackColor = Color.FromArgb(5, 11, 82);
+			BtnPesquisarServico.FlatAppearance.BorderSize = 0;
+			BtnPesquisarServico.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+			BtnPesquisarServico.ForeColor = SystemColors.ButtonHighlight;
+			BtnPesquisarServico.ImageKey = "Servico_Icone_Branco.png";
+			BtnPesquisarServico.ImageList = imageList1;
+			BtnPesquisarServico.Location = new Point(452, 346);
+			BtnPesquisarServico.Name = "BtnPesquisarServico";
+			BtnPesquisarServico.Padding = new Padding(1);
+			BtnPesquisarServico.Size = new Size(212, 93);
+			BtnPesquisarServico.TabIndex = 9;
+			BtnPesquisarServico.Text = "Pesquisar Serviço";
+			BtnPesquisarServico.TextImageRelation = TextImageRelation.ImageAboveText;
+			BtnPesquisarServico.UseVisualStyleBackColor = false;
+			BtnPesquisarServico.Click += button7_Click;
 			// 
-			// funcionárioToolStripMenuItem2
+			// BtnCadastrarServiço
 			// 
-			funcionárioToolStripMenuItem2.Name = "funcionárioToolStripMenuItem2";
-			funcionárioToolStripMenuItem2.Size = new Size(224, 26);
-			funcionárioToolStripMenuItem2.Text = "Funcionário";
-			funcionárioToolStripMenuItem2.Click += funcionárioToolStripMenuItem2_Click;
+			BtnCadastrarServiço.BackColor = Color.FromArgb(5, 11, 82);
+			BtnCadastrarServiço.FlatAppearance.BorderSize = 0;
+			BtnCadastrarServiço.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+			BtnCadastrarServiço.ForeColor = SystemColors.ButtonHighlight;
+			BtnCadastrarServiço.ImageKey = "Servico_Icone_Branco.png";
+			BtnCadastrarServiço.ImageList = imageList1;
+			BtnCadastrarServiço.Location = new Point(452, 247);
+			BtnCadastrarServiço.Name = "BtnCadastrarServiço";
+			BtnCadastrarServiço.Padding = new Padding(1);
+			BtnCadastrarServiço.Size = new Size(212, 93);
+			BtnCadastrarServiço.TabIndex = 8;
+			BtnCadastrarServiço.Text = "Cadastrar Serviço";
+			BtnCadastrarServiço.TextImageRelation = TextImageRelation.ImageAboveText;
+			BtnCadastrarServiço.UseVisualStyleBackColor = false;
+			BtnCadastrarServiço.Click += button8_Click;
 			// 
-			// clienteToolStripMenuItem2
+			// BtnPesquisarHorario
 			// 
-			clienteToolStripMenuItem2.Name = "clienteToolStripMenuItem2";
-			clienteToolStripMenuItem2.Size = new Size(224, 26);
-			clienteToolStripMenuItem2.Text = "Cliente";
-			clienteToolStripMenuItem2.Click += clienteToolStripMenuItem2_Click_1;
+			BtnPesquisarHorario.BackColor = Color.FromArgb(5, 11, 82);
+			BtnPesquisarHorario.FlatAppearance.BorderSize = 0;
+			BtnPesquisarHorario.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+			BtnPesquisarHorario.ForeColor = SystemColors.ButtonHighlight;
+			BtnPesquisarHorario.ImageKey = "Calendario-Icone_Branco.png";
+			BtnPesquisarHorario.ImageList = imageList1;
+			BtnPesquisarHorario.Location = new Point(669, 346);
+			BtnPesquisarHorario.Name = "BtnPesquisarHorario";
+			BtnPesquisarHorario.Padding = new Padding(1);
+			BtnPesquisarHorario.Size = new Size(212, 93);
+			BtnPesquisarHorario.TabIndex = 11;
+			BtnPesquisarHorario.Text = "Pesquisar Horário";
+			BtnPesquisarHorario.TextImageRelation = TextImageRelation.ImageAboveText;
+			BtnPesquisarHorario.UseVisualStyleBackColor = false;
+			BtnPesquisarHorario.Click += button9_Click;
 			// 
-			// serviçoToolStripMenuItem2
+			// BtnCadastrarHorario
 			// 
-			serviçoToolStripMenuItem2.Name = "serviçoToolStripMenuItem2";
-			serviçoToolStripMenuItem2.Size = new Size(224, 26);
-			serviçoToolStripMenuItem2.Text = "Serviço";
-			serviçoToolStripMenuItem2.Click += serviçoToolStripMenuItem2_Click;
+			BtnCadastrarHorario.BackColor = Color.FromArgb(5, 11, 82);
+			BtnCadastrarHorario.FlatAppearance.BorderSize = 0;
+			BtnCadastrarHorario.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+			BtnCadastrarHorario.ForeColor = SystemColors.ButtonHighlight;
+			BtnCadastrarHorario.ImageKey = "Calendario-Icone_Branco.png";
+			BtnCadastrarHorario.ImageList = imageList1;
+			BtnCadastrarHorario.Location = new Point(669, 247);
+			BtnCadastrarHorario.Name = "BtnCadastrarHorario";
+			BtnCadastrarHorario.Padding = new Padding(1);
+			BtnCadastrarHorario.Size = new Size(212, 93);
+			BtnCadastrarHorario.TabIndex = 10;
+			BtnCadastrarHorario.Text = "Agendar Horário";
+			BtnCadastrarHorario.TextImageRelation = TextImageRelation.ImageAboveText;
+			BtnCadastrarHorario.UseVisualStyleBackColor = false;
+			BtnCadastrarHorario.Click += button10_Click;
 			// 
-			// horárioToolStripMenuItem2
+			// LblModoDashboard
 			// 
-			horárioToolStripMenuItem2.Name = "horárioToolStripMenuItem2";
-			horárioToolStripMenuItem2.Size = new Size(224, 26);
-			horárioToolStripMenuItem2.Text = "Horário";
-			horárioToolStripMenuItem2.Click += horárioToolStripMenuItem2_Click;
+			LblModoDashboard.AutoSize = true;
+			LblModoDashboard.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
+			LblModoDashboard.Location = new Point(325, 104);
+			LblModoDashboard.Name = "LblModoDashboard";
+			LblModoDashboard.Size = new Size(493, 41);
+			LblModoDashboard.TabIndex = 12;
+			LblModoDashboard.Text = "Você está no modo Administrador ";
 			// 
 			// Menu
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(914, 600);
+			ClientSize = new Size(1127, 494);
+			Controls.Add(LblModoDashboard);
+			Controls.Add(BtnPesquisarHorario);
+			Controls.Add(BtnCadastrarHorario);
+			Controls.Add(BtnPesquisarServico);
+			Controls.Add(BtnCadastrarServiço);
+			Controls.Add(BtnPesquisarUsuario);
+			Controls.Add(BtnCadastrarUsuário);
+			Controls.Add(BtnPesquisarCliente);
+			Controls.Add(BtnCadastrarCliente);
+			Controls.Add(BtnPesquisarFuncionario);
+			Controls.Add(BtnCadastrarFuncionario);
 			Controls.Add(statusStrip1);
 			Controls.Add(menuStrip1);
 			MainMenuStrip = menuStrip1;
@@ -202,5 +332,17 @@
 		private ToolStripMenuItem clienteToolStripMenuItem2;
 		private ToolStripMenuItem serviçoToolStripMenuItem2;
 		private ToolStripMenuItem horárioToolStripMenuItem2;
+		private Button BtnCadastrarFuncionario;
+		private ImageList imageList1;
+		private Button BtnPesquisarFuncionario;
+		private Button BtnCadastrarCliente;
+		private Button BtnPesquisarCliente;
+		private Button BtnPesquisarUsuario;
+		private Button BtnCadastrarUsuário;
+		private Button BtnPesquisarServico;
+		private Button BtnCadastrarServiço;
+		private Button BtnPesquisarHorario;
+		private Button BtnCadastrarHorario;
+		private Label LblModoDashboard;
 	}
 }
