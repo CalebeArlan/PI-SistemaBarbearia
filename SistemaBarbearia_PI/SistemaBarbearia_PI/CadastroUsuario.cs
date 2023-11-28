@@ -31,6 +31,10 @@ namespace SistemaBarbearia_PI
 				cmd.ExecuteNonQuery();
 				connection.Close();
 				MessageBox.Show("Cadastrado com sucesso");
+
+				TxtSenha.Clear();
+				TxtUsuario.Clear();
+				CbTipoAcesso.SelectedIndex = 0;
 			}
 
 		}

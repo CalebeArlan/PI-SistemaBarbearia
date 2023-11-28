@@ -53,14 +53,14 @@
 			// 
 			TxtUsuario.Location = new Point(77, 108);
 			TxtUsuario.Name = "TxtUsuario";
-			TxtUsuario.Size = new Size(254, 27);
+			TxtUsuario.Size = new Size(534, 27);
 			TxtUsuario.TabIndex = 1;
 			// 
 			// TxtSenha
 			// 
 			TxtSenha.Location = new Point(67, 141);
 			TxtSenha.Name = "TxtSenha";
-			TxtSenha.Size = new Size(265, 27);
+			TxtSenha.Size = new Size(544, 27);
 			TxtSenha.TabIndex = 3;
 			// 
 			// label2
@@ -84,7 +84,7 @@
 			// BtnCadastrar
 			// 
 			BtnCadastrar.Image = Properties.Resources.icons8_ok_48;
-			BtnCadastrar.Location = new Point(269, 278);
+			BtnCadastrar.Location = new Point(128, 278);
 			BtnCadastrar.Name = "BtnCadastrar";
 			BtnCadastrar.Size = new Size(64, 58);
 			BtnCadastrar.TabIndex = 6;
@@ -114,7 +114,7 @@
 			// 
 			// button1
 			// 
-			button1.Location = new Point(11, 305);
+			button1.Location = new Point(14, 292);
 			button1.Margin = new Padding(3, 4, 3, 4);
 			button1.Name = "button1";
 			button1.Size = new Size(86, 31);
@@ -127,7 +127,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(800, 451);
+			ClientSize = new Size(623, 364);
 			Controls.Add(button1);
 			Controls.Add(CbTipoAcesso);
 			Controls.Add(label4);

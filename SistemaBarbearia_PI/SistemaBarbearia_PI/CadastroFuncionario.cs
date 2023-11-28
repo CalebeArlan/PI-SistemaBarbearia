@@ -34,6 +34,17 @@ namespace SistemaBarbearia_PI
 				cmd.ExecuteNonQuery();
 				connection.Close();
 				MessageBox.Show("Cadastrado com sucesso");
+
+
+				TxtNome.Clear();
+				TxtEndereco.Clear();
+				TxtEmail.Clear();
+				TxtCargo.Clear();
+				TxtSalario.Clear();
+				MtxtCPF.Clear();
+				MtxtDataNasc.Clear();
+				MtxtRG.Clear();
+				MtxtTelefone.Clear();
 			}
 		}
 		private void button1_Click(object sender, EventArgs e)
